@@ -1,0 +1,25 @@
+<dx-toolbar>
+    <dxi-item 
+        location="before"
+        widget="dxButton"
+        locateInMenu="auto"
+        [options]="{
+            icon: 'menu',
+            onClick: showMenu
+        }">
+    </dxi-item>
+    <dxi-item 
+        location="center"
+        locateInMenu="auto">
+        <div *dxTemplate>
+            <h4>Demo</h4>
+        </div>
+    </dxi-item>
+</dx-toolbar>
+<dx-tree-view 
+    [items]="menuItems" 
+    class="navigation-treeview" 
+    (onItemClick)="onItemSelectionChanged($event)" 
+    [selectByClick]="true"
+    selectionMode="single">
+</dx-tree-view>

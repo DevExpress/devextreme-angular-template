@@ -1,0 +1,13 @@
+<dx-slide-out-view
+    class="slide-layout"
+    swipeEnabled="false"
+    [(menuVisible)]="menuVisible">
+    <navigation-menu *dxTemplate="let dataMenu of 'menu'"
+        [navigationMenuOpened]="menuVisible"
+        (clickOnMenuButton)="clickOnMenuButton($event)">
+    </navigation-menu>
+    <div *dxTemplate="let dataContent of 'content'">
+        <header></header>
+        <router-outlet></router-outlet>
+    </div>
+</dx-slide-out-view>
