@@ -4,7 +4,7 @@ import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'navigation-menu',
+    selector: 'app-navigation-menu',
     templateUrl: './navigation-menu.component.html'
 })
 export class NavigationMenuComponent implements OnInit {

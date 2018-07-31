@@ -6,7 +6,7 @@ import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { DxPopupModule } from 'devextreme-angular/ui/popup';
 
 @Component({
-    selector: 'header',
+    selector: 'app-header',
     templateUrl: 'header.component.html',
     styles: [`
         .image-container {
