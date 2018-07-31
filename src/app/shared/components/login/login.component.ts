@@ -12,8 +12,8 @@ import { DxValidationGroupModule } from 'devextreme-angular/ui/validation-group'
     templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
-    login: string = "";
-    password: string = "";
+    login = '';
+    password = '';
 
     @Output()
     public onLoginClick: EventEmitter<any> = new EventEmitter<any>();
@@ -23,21 +23,22 @@ export class LoginComponent implements OnInit {
     ngOnInit() { }
 
     loginClick(args) {
-        if (!args.validationGroup.validate().isValid)
+        if (!args.validationGroup.validate().isValid) {
             return;
+        }
 
-        this.onLoginClick.next({ 
-            "password": this.password, 
-            "login": this.login 
+        this.onLoginClick.next({
+            'password': this.password,
+            'login': this.login
         });
     }
 }
 
 @NgModule({
-    imports: [ 
-        CommonModule, 
+    imports: [
+        CommonModule,
         DxButtonModule,
-        DxTextBoxModule, 
+        DxTextBoxModule,
         DxValidatorModule,
         DxValidationGroupModule
     ],
