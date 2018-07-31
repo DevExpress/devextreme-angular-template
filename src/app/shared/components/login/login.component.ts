@@ -16,18 +16,18 @@ export class LoginComponent implements OnInit {
     password = '';
 
     @Output()
-    public onLoginClick: EventEmitter<any> = new EventEmitter<any>();
+    public loginClick: EventEmitter<any> = new EventEmitter<any>();
 
     constructor() { }
 
     ngOnInit() { }
 
-    loginClick(args) {
+    onLoginClick(args) {
         if (!args.validationGroup.validate().isValid) {
             return;
         }
 
-        this.onLoginClick.next({
+        this.loginClick.next({
             'password': this.password,
             'login': this.login
         });

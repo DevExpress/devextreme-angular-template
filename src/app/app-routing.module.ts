@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Route, Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { ProfileComponent, ProfileModule } from './pages/profile/profile.component';
 import { SettingsComponent, SettingsModule } from './pages/settings/settings.component';
