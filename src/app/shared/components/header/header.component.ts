@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LoginModule } from '../login/login.component';
@@ -23,11 +23,20 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 })
 
 export class HeaderComponent {
+    @Input() menuVisible = false;
+
+    @Output() menuVisibleChange = new EventEmitter<boolean>();
+
     showLoginPopup = false;
     userLogin: any = null;
     isUserAuthorized = false;
 
     constructor() {}
+
+    toggleMenu = () => {
+        this.menuVisible = !this.menuVisible;
+        this.menuVisibleChange.emit(this.menuVisible);
+    }
 
     onShowLoginPopup = () => {
         this.showLoginPopup = true;

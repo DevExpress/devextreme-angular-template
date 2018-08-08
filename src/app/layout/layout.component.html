@@ -1,0 +1,16 @@
+<div class="container">
+    <app-header class="header" [(menuVisible)]="menuVisible"></app-header>
+    <dx-drawer
+        class="content"
+        [mode]="menuMode"
+        [showMode]="menuShowMode"
+        [minWidth]="minMenuWidth"
+        [showShader]="shaderEnabled"
+        [(menuVisible)]="menuVisible">
+    
+        <app-navigation-menu *dxTemplate="let dataMenu of 'menu'">
+        </app-navigation-menu>
+        
+        <ng-content *dxTemplate="let dataMenu of 'content'"></ng-content>
+    </dx-drawer>
+</div>

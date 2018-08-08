@@ -5,10 +5,6 @@ import { Component } from '@angular/core';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-    menuVisible = true;
+export class AppComponent  {
 
-    clickOnMenuButton(value) {
-        this.menuVisible = !value;
-    }
 }

@@ -1,16 +1,22 @@
-import { Component, NgModule, Output, Input, EventEmitter, OnInit } from '@angular/core';
+import { Component, NgModule, Output, EventEmitter } from '@angular/core';
 import { DxTreeViewModule } from 'devextreme-angular/ui/tree-view';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navigation-menu',
-    templateUrl: './navigation-menu.component.html'
+    templateUrl: './navigation-menu.component.html',
+    styles: [`
+        :host {
+            display: block;
+            background-color: lightgray;
+            height: 100%;
+        }
+    `]
 })
-export class NavigationMenuComponent implements OnInit {
-    @Output() clickOnMenuButton = new EventEmitter<boolean>();
+export class NavigationMenuComponent {
     @Output() selectedItemsChanged = new EventEmitter<string>();
-    @Input() navigationMenuOpened: boolean;
+
     menuItems = [{
         text: 'Home',
         expanded: true,
@@ -30,12 +36,6 @@ export class NavigationMenuComponent implements OnInit {
   ];
 
   constructor(private router: Router) { }
-
-  ngOnInit() {}
-
-  showMenu = () => {
-      this.clickOnMenuButton.emit(this.navigationMenuOpened);
-  }
 
   onItemSelectionChanged(event) {
       this.selectedItemsChanged.emit(event.itemData.text);
