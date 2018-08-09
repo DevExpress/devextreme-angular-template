@@ -1,5 +1,5 @@
 <div class="container">
-    <app-header class="header" [(menuVisible)]="menuVisible"></app-header>
+    <app-header class="header" (menuToggle)="menuVisible = !menuVisible;"></app-header>
     <dx-drawer
         class="content"
         [mode]="menuMode"

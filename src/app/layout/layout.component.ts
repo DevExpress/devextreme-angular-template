@@ -10,7 +10,7 @@ import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
     styleUrls: ['./layout.component.scss']
 })
 export class AppLayoutComponent implements OnInit {
-    menuVisible = true;
+    menuVisible = false;
     menuMode = 'persistent';
     menuShowMode = 'shrink';
     minMenuWidth = 0;

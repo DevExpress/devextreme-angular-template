@@ -23,9 +23,7 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 })
 
 export class HeaderComponent {
-    @Input() menuVisible = false;
-
-    @Output() menuVisibleChange = new EventEmitter<boolean>();
+    @Output() menuToggle = new EventEmitter<boolean>();
 
     showLoginPopup = false;
     userLogin: any = null;
@@ -34,8 +32,7 @@ export class HeaderComponent {
     constructor() {}
 
     toggleMenu = () => {
-        this.menuVisible = !this.menuVisible;
-        this.menuVisibleChange.emit(this.menuVisible);
+        this.menuToggle.emit();
     }
 
     onShowLoginPopup = () => {
