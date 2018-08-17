@@ -10,9 +10,9 @@ import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
     styleUrls: ['./layout.component.scss']
 })
 export class AppLayoutComponent implements OnInit {
-    menuVisible = false;
-    menuMode = 'persistent';
-    menuShowMode = 'shrink';
+    menuOpened = false;
+    menuMode = 'shrink';
+    menuRevealMode = 'expand';
     minMenuWidth = 0;
     shaderEnabled = false;
 
@@ -25,8 +25,8 @@ export class AppLayoutComponent implements OnInit {
                 const isXSmall = this.breakpointObserver.isMatched(Breakpoints.XSmall);
                 const isLarge = this.breakpointObserver.isMatched(Breakpoints.Large);
 
-                this.menuMode = isLarge ? 'persistent' : 'temporary';
-                this.menuShowMode = isXSmall ? 'slide' : 'shrink';
+                this.menuMode = isLarge ? 'shrink' : 'overlap';
+                this.menuRevealMode = isXSmall ? 'slide' : 'expand';
                 this.minMenuWidth = isXSmall ? 0 : 50;
                 this.shaderEnabled = isLarge ? false : true;
         });

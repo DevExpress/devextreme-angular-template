@@ -1,12 +1,12 @@
 <div class="container">
-    <app-header class="header" (menuToggle)="menuVisible = !menuVisible;"></app-header>
+    <app-header class="header" (menuToggle)="menuOpened = !menuOpened;"></app-header>
     <dx-drawer
         class="content"
-        [mode]="menuMode"
-        [showMode]="menuShowMode"
+        [openedStateMode]="menuMode"
+        [revealMode]="menuRevealMode"
         [minWidth]="minMenuWidth"
-        [showShader]="shaderEnabled"
-        [(menuVisible)]="menuVisible">
+        [shading]="shaderEnabled"
+        [(opened)]="menuOpened">
     
         <app-navigation-menu *dxTemplate="let dataMenu of 'menu'">
         </app-navigation-menu>
