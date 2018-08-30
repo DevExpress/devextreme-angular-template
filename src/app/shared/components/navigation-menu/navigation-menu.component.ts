@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
     `]
 })
 export class NavigationMenuComponent {
-    @Output() selectedItemsChanged = new EventEmitter<string>();
+    @Output() selectedItemChanged = new EventEmitter<string>();
 
     menuItems = [{
         text: 'Home',
@@ -38,7 +38,7 @@ export class NavigationMenuComponent {
   constructor(private router: Router) { }
 
   onItemSelectionChanged(event) {
-      this.selectedItemsChanged.emit(event.itemData.text);
+      this.selectedItemChanged.emit(event.itemData.text);
       this.router.navigate([event.itemData.path]);
   }
 }

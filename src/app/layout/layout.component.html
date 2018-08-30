@@ -8,7 +8,8 @@
         [shading]="shaderEnabled"
         [(opened)]="menuOpened">
     
-        <app-navigation-menu *dxTemplate="let dataMenu of 'panel'">
+        <app-navigation-menu *dxTemplate="let dataMenu of 'panel'" 
+            (selectedItemChanged)="navigationChanged($event)">
         </app-navigation-menu>
         
         <ng-content></ng-content>
