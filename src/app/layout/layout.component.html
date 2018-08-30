@@ -8,9 +8,9 @@
         [shading]="shaderEnabled"
         [(opened)]="menuOpened">
     
-        <app-navigation-menu *dxTemplate="let dataMenu of 'menu'">
+        <app-navigation-menu *dxTemplate="let dataMenu of 'panel'">
         </app-navigation-menu>
         
-        <ng-content *dxTemplate="let dataMenu of 'content'"></ng-content>
+        <ng-content></ng-content>
     </dx-drawer>
 </div>
