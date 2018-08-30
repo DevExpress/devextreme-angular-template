@@ -31,7 +31,8 @@
             "styles": [
               { "input": "src/styles.scss" },
               "./node_modules/devextreme/dist/css/dx.common.css",
-              "./node_modules/devextreme/dist/css/dx.material.blue.light.css"
+              "./src/css/dx.material.orange.light.css",
+              "./src/css/dx.material.custom-scheme.css"
             ],
             "scripts": []
           },
