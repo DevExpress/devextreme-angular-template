@@ -1,5 +1,8 @@
 <div class="container">
-    <app-header class="header" (menuToggle)="menuOpened = !menuOpened;"></app-header>
+    <app-header 
+        class="header dx-additional-color-scheme-dark" 
+        (menuToggle)="menuOpened = !menuOpened;">
+    </app-header>
     <dx-drawer
         class="content"
         [openedStateMode]="menuMode"
@@ -8,7 +11,9 @@
         [shading]="shaderEnabled"
         [(opened)]="menuOpened">
     
-        <app-navigation-menu *dxTemplate="let dataMenu of 'panel'" 
+        <app-navigation-menu 
+            class="dx-additional-color-scheme-dark"
+            *dxTemplate="let dataMenu of 'panel'" 
             (selectedItemChanged)="navigationChanged($event)">
         </app-navigation-menu>
         

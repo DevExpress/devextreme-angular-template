@@ -1,37 +1,37 @@
-<div class="dx-additional-color-scheme-dark">
-    <dx-toolbar>
-        <dxi-item 
-            location="before"
-            widget="dxButton"
-            [options]="{
-                icon: 'menu',
-                onClick: toggleMenu
-            }">
-        </dxi-item>
-        <dxi-item 
-            location="after"
-            locateInMenu="auto"
-            widget="dxButton"
-            [visible]="!isUserAuthorized"
-            [options]="{
-                icon: 'user',
-                text:'Login',
-                onClick: onShowLoginPopup
-            }">
-        </dxi-item>
-        <dxi-item 
-            location="after"
-            locateInMenu="auto"
-            [visible]="isUserAuthorized">
-            <div *dxTemplate>
-                <div class="image-container">
-                    <img class="user-image" src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/01.png">
-                </div>
-                {{userLogin}}
+
+<dx-toolbar>
+    <dxi-item 
+        location="before"
+        widget="dxButton"
+        [options]="{
+            icon: 'menu',
+            onClick: toggleMenu
+        }">
+    </dxi-item>
+    <dxi-item 
+        location="after"
+        locateInMenu="auto"
+        widget="dxButton"
+        [visible]="!isUserAuthorized"
+        [options]="{
+            icon: 'user',
+            text:'Login',
+            onClick: onShowLoginPopup
+        }">
+    </dxi-item>
+    <dxi-item 
+        location="after"
+        locateInMenu="auto"
+        [visible]="isUserAuthorized">
+        <div *dxTemplate>
+            <div class="image-container">
+                <img class="user-image" src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/01.png">
             </div>
-        </dxi-item>
-    </dx-toolbar>
-</div>
+            {{userLogin}}
+        </div>
+    </dxi-item>
+</dx-toolbar>
+
 <dx-popup [(visible)]="showLoginPopup" title="Login" height="auto" [width]="300">
     <div *dxTemplate="let data of 'content'">
         <app-login (onLoginClick)="loginClick($event)"></app-login>

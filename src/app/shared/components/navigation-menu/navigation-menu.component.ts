@@ -1,6 +1,5 @@
 import { Component, NgModule, Output, EventEmitter } from '@angular/core';
 import { DxTreeViewModule } from 'devextreme-angular/ui/tree-view';
-import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -43,7 +42,7 @@ export class NavigationMenuComponent {
 }
 
 @NgModule({
-    imports: [ DxTreeViewModule, DxToolbarModule ],
+    imports: [ DxTreeViewModule ],
     declarations: [ NavigationMenuComponent ],
     exports: [ NavigationMenuComponent ]
 })
