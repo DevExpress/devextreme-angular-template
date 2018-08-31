@@ -1,3 +1,4 @@
+
 <dx-toolbar>
     <dxi-item 
         location="before"
@@ -30,6 +31,7 @@
         </div>
     </dxi-item>
 </dx-toolbar>
+
 <dx-popup [(visible)]="showLoginPopup" title="Login" height="auto" [width]="300">
     <div *dxTemplate="let data of 'content'">
         <app-login (onLoginClick)="loginClick($event)"></app-login>

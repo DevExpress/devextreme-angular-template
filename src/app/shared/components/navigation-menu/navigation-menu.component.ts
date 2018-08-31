@@ -1,6 +1,5 @@
 import { Component, NgModule, Output, EventEmitter } from '@angular/core';
 import { DxTreeViewModule } from 'devextreme-angular/ui/tree-view';
-import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { NavigationService, Navigation } from '../../../services/navigation/navigation.service';
 import { Router } from '@angular/router';
 
@@ -10,14 +9,13 @@ import { Router } from '@angular/router';
     styles: [`
         :host {
             display: block;
-            background-color: lightgray;
             height: 100%;
         }
     `],
     providers: [NavigationService]
 })
 export class NavigationMenuComponent {
-    @Output() selectedItemsChanged = new EventEmitter<string>();
+    @Output() selectedItemChanged = new EventEmitter<string>();
 
     menuItems: Navigation[];
 
@@ -26,13 +24,13 @@ export class NavigationMenuComponent {
   }
 
   onItemSelectionChanged(event) {
-      this.selectedItemsChanged.emit(event.itemData.text);
+      this.selectedItemChanged.emit(event.itemData.text);
       this.router.navigate([event.itemData.path]);
   }
 }
 
 @NgModule({
-    imports: [ DxTreeViewModule, DxToolbarModule ],
+    imports: [ DxTreeViewModule ],
     declarations: [ NavigationMenuComponent ],
     exports: [ NavigationMenuComponent ]
 })

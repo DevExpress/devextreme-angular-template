@@ -31,6 +31,16 @@ export class AppLayoutComponent implements OnInit {
                 this.shaderEnabled = isLarge ? false : true;
         });
     }
+
+    get hideMenuAfterNavigation() {
+        return this.menuMode === 'overlap';
+    }
+
+    navigationChanged(e) {
+        if (this.hideMenuAfterNavigation) {
+            this.menuOpened = false;
+        }
+    }
 }
 
 @NgModule({
