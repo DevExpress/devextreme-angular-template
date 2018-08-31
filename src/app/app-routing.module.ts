@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ProfileComponent, ProfileModule } from './pages/profile/profile.component';
-import { SettingsComponent, SettingsModule } from './pages/settings/settings.component';
-import { AboutComponent, AboutModule } from './pages/about/about.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { AboutComponent } from './pages/about/about.component'
 
 const routes: Routes = [{
     path: '',
@@ -26,12 +26,9 @@ const routes: Routes = [{
 
 @NgModule({
     imports: [
-        RouterModule,
-        RouterModule.forRoot(routes),
-        SettingsModule,
-        ProfileModule,
-        AboutModule
+        RouterModule.forRoot(routes)
     ],
-    exports: [ RouterModule ]
+    exports: [ RouterModule ],
+    declarations: [AboutComponent, SettingsComponent, ProfileComponent]
 })
 export class PagesRoutingModule {}

@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     templateUrl: 'about.template.html'
@@ -7,9 +7,3 @@ import { Component, NgModule } from '@angular/core';
 export class AboutComponent {
     constructor() {}
 }
-
-@NgModule({
-    imports: [],
-    declarations: [AboutComponent]
-})
-export class AboutModule { }

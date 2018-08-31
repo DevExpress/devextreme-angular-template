@@ -1,5 +1,6 @@
 import { Component, NgModule, Output, EventEmitter } from '@angular/core';
 import { DxTreeViewModule } from 'devextreme-angular/ui/tree-view';
+import { NavigationService, Navigation } from '../../../services/navigation/navigation.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,30 +11,17 @@ import { Router } from '@angular/router';
             display: block;
             height: 100%;
         }
-    `]
+    `],
+    providers: [NavigationService]
 })
 export class NavigationMenuComponent {
     @Output() selectedItemChanged = new EventEmitter<string>();
 
-    menuItems = [{
-        text: 'Home',
-        expanded: true,
-        icon: 'home',
-        items: [{
-            text: 'Profile',
-            path: 'profile'
-        }, {
-            text: 'Settings',
-            path: 'settings'
-        }]
-    }, {
-        text: 'About',
-        icon: 'info',
-        path: 'about'
-    }
-  ];
+    menuItems: Navigation[];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, navigationService: NavigationService) {
+      this.menuItems = navigationService.getNavigationData();
+  }
 
   onItemSelectionChanged(event) {
       this.selectedItemChanged.emit(event.itemData.text);

@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     templateUrl: 'profile.template.html'
@@ -7,9 +7,3 @@ import { Component, NgModule } from '@angular/core';
 export class ProfileComponent {
     constructor() {}
 }
-
-@NgModule({
-    imports: [],
-    declarations: [ProfileComponent]
-})
-export class ProfileModule { }
