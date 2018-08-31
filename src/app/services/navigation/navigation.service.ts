@@ -1,6 +1,14 @@
 import { Injectable } from '@angular/core';
 
-let navigationData = [
+export class Navigation {
+  text: string;
+  expanded?: boolean;
+  icon?: string;
+  path?: string;
+  items?: any;
+}
+
+let navigationData: Navigation[] = [
   {
     "text": "Home",
     "expanded": true,
