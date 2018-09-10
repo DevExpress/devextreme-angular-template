@@ -7,7 +7,7 @@ import { AboutComponent } from './pages/about/about.component'
 
 export const routes: Routes = [{
     path: '',
-    data: { title : 'Home', icon: 'home' },
+    data: { title : 'Home' },
     children: [{
       path: 'profile',
       component: ProfileComponent,
