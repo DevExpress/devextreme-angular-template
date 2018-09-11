@@ -8,6 +8,7 @@ import { AboutComponent } from './pages/about/about.component'
 
 export const routes: Routes = [{
     path: 'home',
+    component: HomeComponent,
     data: { title: 'Home', icon: 'home' },
     children: [
         {
