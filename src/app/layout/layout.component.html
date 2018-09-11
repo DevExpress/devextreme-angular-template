@@ -1,6 +1,6 @@
 <div class="container">
-    <app-header 
-        class="header dx-additional-color-scheme-dark" 
+    <app-header
+        class="header dx-additional-color-scheme-dark"
         (menuToggle)="menuOpened = !menuOpened;">
     </app-header>
     <dx-drawer
@@ -10,13 +10,13 @@
         [minWidth]="minMenuWidth"
         [shading]="shaderEnabled"
         [(opened)]="menuOpened">
-    
-        <app-navigation-menu 
+
+        <app-navigation-menu
             class="dx-additional-color-scheme-dark"
-            *dxTemplate="let dataMenu of 'panel'" 
+            *dxTemplate="let dataMenu of 'panel'"
             (selectedItemChanged)="navigationChanged($event)">
         </app-navigation-menu>
-        
+
         <ng-content></ng-content>
     </dx-drawer>
 </div>
