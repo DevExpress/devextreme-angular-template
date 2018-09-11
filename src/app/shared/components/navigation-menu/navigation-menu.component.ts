@@ -1,7 +1,7 @@
-import { Component, NgModule, Output, EventEmitter } from '@angular/core';
-import { DxTreeViewModule } from 'devextreme-angular/ui/tree-view';
+import { Component, NgModule, Output, EventEmitter, ViewChild } from '@angular/core';
+import { DxTreeViewModule, DxTreeViewComponent } from 'devextreme-angular/ui/tree-view';
 import { navigation } from '../../../app-navigation';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
     selector: 'app-navigation-menu',
@@ -14,17 +14,26 @@ import { Router } from '@angular/router';
     `]
 })
 export class NavigationMenuComponent {
+    @ViewChild(DxTreeViewComponent)
+    menu: DxTreeViewComponent;
+
     @Output() selectedItemChanged = new EventEmitter<string>();
     menuItems: any;
 
     constructor(private router: Router) {
         this.menuItems = navigation;
+
+        router.events.subscribe(val => {
+            if (val instanceof NavigationEnd) {
+                this.menu.instance.selectItem(val.url);
+            }
+        });
     }
 
-  onItemSelectionChanged(event) {
-      this.selectedItemChanged.emit(event.itemData.text);
-      this.router.navigate([event.itemData.path]);
-  }
+    onItemSelectionChanged(event) {
+        this.selectedItemChanged.emit(event.itemData.text);
+        this.router.navigate([event.itemData.path]);
+    }
 }
 
 @NgModule({
