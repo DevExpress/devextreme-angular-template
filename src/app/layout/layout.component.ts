@@ -21,15 +21,20 @@ export class AppLayoutComponent implements OnInit {
     ngOnInit() {
         this.breakpointObserver
             .observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large])
-            .subscribe(() => {
-                const isXSmall = this.breakpointObserver.isMatched(Breakpoints.XSmall);
-                const isLarge = this.breakpointObserver.isMatched(Breakpoints.Large);
+            .subscribe(() => this.updateDrawer());
 
-                this.menuMode = isLarge ? 'shrink' : 'overlap';
-                this.menuRevealMode = isXSmall ? 'slide' : 'expand';
-                this.minMenuWidth = isXSmall ? 0 : 50;
-                this.shaderEnabled = isLarge ? false : true;
-        });
+        this.updateDrawer();
+    }
+
+    updateDrawer() {
+        const isXSmall = this.breakpointObserver.isMatched(Breakpoints.XSmall);
+        const isLarge = this.breakpointObserver.isMatched(Breakpoints.Large);
+        const isXLarge = this.breakpointObserver.isMatched(Breakpoints.XLarge);
+
+        this.menuMode = isLarge || isXLarge ? 'shrink' : 'overlap';
+        this.menuRevealMode = isXSmall ? 'slide' : 'expand';
+        this.minMenuWidth = isXSmall ? 0 : 50;
+        this.shaderEnabled = !isLarge && !isXLarge;
     }
 
     get hideMenuAfterNavigation() {
