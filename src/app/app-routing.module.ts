@@ -7,23 +7,23 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { AboutComponent } from './pages/about/about.component'
 
 export const routes: Routes = [{
-  path: 'home',
-  data: { title: 'Home' },
-  children: [
-    {
-      path: 'profile',
-      component: ProfileComponent,
-      data: { title: 'Profile' }
-    }, {
-      path: 'settings',
-      component: SettingsComponent,
-      data: { title: 'Settings' }
+    path: 'home',
+    data: { title: 'Home', icon: 'home' },
+    children: [
+        {
+            path: 'profile',
+            component: ProfileComponent,
+            data: { title: 'Profile' }
+        }, {
+            path: 'settings',
+            component: SettingsComponent,
+            data: { title: 'Settings' }
+        }
+    ]}, {
+        path: 'about',
+        component: AboutComponent,
+        data: { title: 'About', icon: 'info' }
     }
-  ]}, {
-    path: 'about',
-    component: AboutComponent,
-    data: { title: 'About', icon: 'info' }
-  }
 ];
 
 @NgModule({
