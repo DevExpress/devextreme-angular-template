@@ -31,8 +31,11 @@ export class NavigationMenuComponent {
     }
 
     onItemSelectionChanged(event) {
-        this.selectedItemChanged.emit(event.itemData.text);
-        this.router.navigate([event.itemData.path]);
+        const path = event.itemData.path;
+        if(path) {
+            this.selectedItemChanged.emit(event.itemData.text);
+            this.router.navigate([path]);
+        }
     }
 }
 
