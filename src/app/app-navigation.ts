@@ -11,8 +11,8 @@ export const navigation = [
             text: 'Profile',
             path: '/profile'
         }, {
-            text: 'Settings',
-            path: '/settings'
+            text: 'Display Data',
+            path: '/display-data'
         }]
     }
 ];
