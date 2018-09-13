@@ -14,7 +14,7 @@ export class AppLayoutComponent implements OnInit {
     menuOpened = false;
     menuMode = 'shrink';
     menuRevealMode = 'expand';
-    minMenuWidth = 0;
+    minMenuSize = 0;
     shaderEnabled = false;
 
     constructor(private breakpointObserver: BreakpointObserver) { }
@@ -34,7 +34,7 @@ export class AppLayoutComponent implements OnInit {
 
         this.menuMode = isLarge || isXLarge ? 'shrink' : 'overlap';
         this.menuRevealMode = isXSmall ? 'slide' : 'expand';
-        this.minMenuWidth = isXSmall ? 0 : 60;
+        this.minMenuSize = isXSmall ? 0 : 60;
         this.shaderEnabled = !isLarge && !isXLarge;
     }
 
