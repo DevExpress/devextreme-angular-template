@@ -1,5 +1,5 @@
 {
-  "name": "side-navigation-layout",
+  "name": "devextreme-angular-template",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -13,20 +13,20 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.0",
+    "@angular/cdk": "6.0.0",
     "@angular/common": "^6.0.0",
     "@angular/compiler": "^6.0.0",
     "@angular/core": "^6.0.0",
-    "@angular/cdk": "6.0.0",
     "@angular/flex-layout": "6.0.0-beta.15",
     "@angular/forms": "^6.0.0",
     "@angular/http": "^6.0.0",
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
+    "@types/jszip": "^3.1.3",
     "core-js": "^2.5.4",
     "devextreme": "18.2-unstable",
     "devextreme-angular": "18.2-unstable",
-    "@types/jszip": "^3.1.3",
     "jszip": "^3.1.5",
     "rxjs": "^6.1.0",
     "zone.js": "^0.8.24"

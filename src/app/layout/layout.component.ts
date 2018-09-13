@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { HeaderModule } from '../shared/components';
 import { NavigationMenuModule } from '../shared/components';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
+import { DxScrollViewModule } from 'devextreme-angular/ui/scroll-view';
 
 @Component({
     selector: 'app-layout',
@@ -33,7 +34,7 @@ export class AppLayoutComponent implements OnInit {
 
         this.menuMode = isLarge || isXLarge ? 'shrink' : 'overlap';
         this.menuRevealMode = isXSmall ? 'slide' : 'expand';
-        this.minMenuWidth = isXSmall ? 0 : 50;
+        this.minMenuWidth = isXSmall ? 0 : 60;
         this.shaderEnabled = !isLarge && !isXLarge;
     }
 
@@ -49,7 +50,7 @@ export class AppLayoutComponent implements OnInit {
 }
 
 @NgModule({
-    imports: [ HeaderModule, NavigationMenuModule, DxDrawerModule ],
+    imports: [ HeaderModule, NavigationMenuModule, DxDrawerModule, DxScrollViewModule ],
     exports: [ AppLayoutComponent ],
     declarations: [ AppLayoutComponent ]
 })
