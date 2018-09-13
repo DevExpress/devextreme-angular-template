@@ -10,6 +10,11 @@
         }">
     </dxi-item>
     <dxi-item
+        location="before"
+        *ngIf="title"
+        [text]="title">
+    </dxi-item>
+    <dxi-item
         location="after"
         locateInMenu="auto"
         widget="dxButton"

@@ -14,6 +14,9 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 export class HeaderComponent {
     @Output() menuToggle = new EventEmitter<boolean>();
 
+    @Input()
+    title: string;
+
     showLoginPopup = false;
     userLogin: any = null;
     isUserAuthorized = false;
