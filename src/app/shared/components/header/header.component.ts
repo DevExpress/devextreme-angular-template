@@ -8,18 +8,7 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 @Component({
     selector: 'app-header',
     templateUrl: 'header.component.html',
-    styles: [`
-        .image-container {
-            float: left;
-            overflow: hidden;
-            border-radius: 50%;
-            margin-right: 10px;
-            height: 20px;
-        }
-        .user-image {
-            width: 20px;
-        }
-    `]
+    styleUrls: ['./header.component.scss']
 })
 
 export class HeaderComponent {

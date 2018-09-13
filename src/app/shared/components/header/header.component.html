@@ -1,14 +1,15 @@
 
 <dx-toolbar>
-    <dxi-item 
+    <dxi-item
         location="before"
         widget="dxButton"
         [options]="{
             icon: 'menu',
-            onClick: toggleMenu
+            onClick: toggleMenu,
+            elementAttr: { class: 'dx-menu-button' }
         }">
     </dxi-item>
-    <dxi-item 
+    <dxi-item
         location="after"
         locateInMenu="auto"
         widget="dxButton"

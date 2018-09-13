@@ -2,13 +2,38 @@
     flex-direction: column;
     display: flex;
     height: 100%;
+    background-color: #F2F2F2;
 }
 
 .header {
     flex: 0 0 auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .content {
     height: auto;
     flex: 1;
+
+    ::ng-deep h2 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    ::ng-deep h2, ::ng-deep .content-block, ::ng-deep .footer {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    ::ng-deep .dx-card {
+        padding: 20px;
+    }
+
+    ::ng-deep .footer {
+        flex: 0 0 auto;
+        color: rgba(51, 51, 51, 0.7);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 24px;
+    }    
 }

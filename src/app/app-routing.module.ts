@@ -3,21 +3,22 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import { AboutComponent } from './pages/about/about.component'
+import { HomeComponent } from './pages/home/home.component'
 
-export const routes: Routes = [{
+export const routes: Routes = [
+    {
         path: '',
-        redirectTo: 'profile',
+        redirectTo: 'home',
         pathMatch: 'full'
+    }, {
+        path: 'home',
+        component: HomeComponent
     }, {
         path: 'profile',
         component: ProfileComponent
     }, {
         path: 'settings',
         component: SettingsComponent
-    }, {
-        path: 'about',
-        component: AboutComponent
     }
 ];
 
@@ -26,6 +27,6 @@ export const routes: Routes = [{
         RouterModule.forRoot(routes)
     ],
     exports: [ RouterModule ],
-    declarations: [AboutComponent, SettingsComponent, ProfileComponent]
+    declarations: [HomeComponent, SettingsComponent, ProfileComponent]
 })
 export class PagesRoutingModule {}
