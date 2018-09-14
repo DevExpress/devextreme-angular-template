@@ -1,0 +1,31 @@
+:host {
+    display: block;
+    height: 100%;
+
+    .dx-treeview {
+        white-space: nowrap;
+    }
+}
+
+::ng-deep .dx-treeview {
+    .dx-treeview-node {
+        padding-left: 0px;
+    }
+
+    .dx-treeview-item-content {
+        padding-left: 8px;
+    }
+
+    .dx-treeview-toggle-item-visibility {
+        right: 0;
+        left: auto;
+    }
+}
+
+::ng-deep .treeview-compact {
+    .dx-treeview-item-content {
+        span {
+            visibility: hidden;
+        }
+    }
+}

@@ -13,6 +13,7 @@
         [(opened)]="menuOpened">
 
         <app-navigation-menu
+            [compactMode]="!menuOpened"
             class="dx-additional-color-scheme-dark"
             *dxTemplate="let dataMenu of 'panel'"
             (selectedItemChanged)="navigationChanged($event)">
