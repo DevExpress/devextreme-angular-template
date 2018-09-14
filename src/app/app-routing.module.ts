@@ -2,8 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ProfileComponent } from './pages/profile/profile.component';
-import { SettingsComponent } from './pages/settings/settings.component';
+import { DisplayDataComponent } from './pages/display-data/display-data.component';
 import { HomeComponent } from './pages/home/home.component'
+
+import {
+    DxDataGridModule,
+    DxFormModule
+} from 'devextreme-angular';
 
 export const routes: Routes = [
     {
@@ -17,16 +22,18 @@ export const routes: Routes = [
         path: 'profile',
         component: ProfileComponent
     }, {
-        path: 'settings',
-        component: SettingsComponent
+        path: 'display-data',
+        component: DisplayDataComponent
     }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        DxDataGridModule,
+        DxFormModule
     ],
     exports: [ RouterModule ],
-    declarations: [HomeComponent, SettingsComponent, ProfileComponent]
+    declarations: [HomeComponent, DisplayDataComponent, ProfileComponent]
 })
 export class PagesRoutingModule {}

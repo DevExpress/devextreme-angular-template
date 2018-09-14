@@ -1,0 +1,15 @@
+.form-avatar {
+    float: left;
+    height: 120px;
+    width: 120px;
+    margin-right: 20px;
+    border: 1px solid #dddddd;
+    background-image: url('https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dx-card:not(:first-child) {
+    margin-top: 20px;
+}
