@@ -44,9 +44,6 @@ export class NavigationMenuComponent {
         if (path) {
             this.selectedItemChanged.emit(event.itemData.text);
             this.router.navigate([path]);
-        } else {
-            const treeView = this.menu.instance;
-            event.node.expanded ? treeView.collapseItem(event.itemData) : treeView.expandItem(event.itemData);
         }
     }
 }
