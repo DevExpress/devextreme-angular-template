@@ -1,6 +1,7 @@
 :host {
     display: block;
     height: 100%;
+    min-width: 250px;
 
     .dx-treeview {
         white-space: nowrap;
@@ -13,19 +14,30 @@
     }
 
     .dx-treeview-item-content {
-        padding-left: 8px;
+        padding-left: 10px;
     }
 
     .dx-treeview-toggle-item-visibility {
-        right: 0;
+        right: 10px;
         left: auto;
+    }
+
+    .dx-treeview-node[aria-level='1'] {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        .dx-treeview-item-content span {
+            padding-left: 12px;
+        }
+    }
+
+    .dx-treeview-node[aria-level='2'] .dx-treeview-item-content {
+        font-weight: 300;
+        padding-left: 38px;
     }
 }
 
 ::ng-deep .treeview-compact {
-    .dx-treeview-item-content {
-        span {
-            visibility: hidden;
-        }
+    .dx-treeview-item-content span {
+        visibility: hidden;
     }
 }
+
