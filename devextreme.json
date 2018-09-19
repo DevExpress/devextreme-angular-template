@@ -1,0 +1,24 @@
+{
+	"applicationEngine": "angular",
+	"themes": {
+        "name": "base",
+        "inputFile": "metadata.base.json",
+        "theme": "material",
+        "color-scheme": "orange.light",
+        "output-file": "./src/themes/theme.base.css",
+        "variables": {
+            "output-file": "./src/themes/variables.base.scss"
+        },
+        "swatches": [
+            {
+                "name": "additional",
+                "inputFile": "metadata.additional.json",
+                "color-scheme": "orange.dark",
+                "output-file": "./src/themes/theme.additional.css",
+                "variables": {
+                    "output-file": "./src/themes/variables.additional.scss"
+                }
+            }
+        ]
+	}
+}

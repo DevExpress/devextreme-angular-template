@@ -1,0 +1,14 @@
+{
+    "version": "18.1.6",
+    "date": "9/18/2018",
+    "themeId": "24",
+    "hue": null,
+    "items": [
+        { "key":"@base-text-color","value":"rgba(0, 0, 0, 0.87)" },
+        { "key":"@base-bg","value":"#ffffff" },
+        { "key":"@base-border-color","value":"#e0e0e0" },
+        { "key":"@base-border-radius","value":"4px" },
+        { "key":"@base-accent","value":"#ff5722" }
+    ]
+}
+    

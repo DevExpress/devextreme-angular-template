@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-themes": "devextreme build-theme --base-theme=material.orange.light --input-file=./src/themes/metadata.base.json --output-file=./src/themes/theme.base.css --output-color-scheme=base && devextreme build-theme --base-theme=material.orange.dark --input-file=./src/themes/metadata.additional.json --output-file=./src/themes/theme.additional.css --output-color-scheme=additional --make-swatch && devextreme export-theme-vars --base-theme=material.orange.light --input-file=./src/themes/metadata.base.json --output-file=./src/themes/variables.base.scss --base && devextreme export-theme-vars --base-theme=material.orange.dark --input-file=./src/themes/metadata.additional.json --output-file=./src/themes/variables.additional.scss --make-swatch --base"
   },
   "private": true,
   "dependencies": {
