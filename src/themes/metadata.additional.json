@@ -3,11 +3,9 @@
     "date": "9/18/2018",
     "themeId": "24",
     "hue": null,
-    "items": [
-        { "key":"@base-text-color","value":"#ffffff" },
-        { "key":"@base-bg","value":"#363640" },
-        { "key":"@base-border-color","value":"#515159" },
-        { "key":"@base-border-radius","value":"4px" },
-        { "key":"@base-accent","value":"#ff5722" }
-    ]
+    "items": [],
+    "base-theme": "material.orange.dark",
+    "output-color-scheme": "additional",
+    "make-swatch": true,
+    "base": true
 }
