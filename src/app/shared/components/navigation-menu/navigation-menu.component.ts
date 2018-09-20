@@ -2,9 +2,6 @@ import { Component, NgModule, Output, Input, EventEmitter, ViewChild } from '@an
 import { CommonModule } from '@angular/common';
 import { DxTreeViewModule, DxTreeViewComponent } from 'devextreme-angular/ui/tree-view';
 
-import { navigation } from '../../../app-navigation';
-import { Router, NavigationEnd } from '@angular/router';
-
 @Component({
     selector: 'app-navigation-menu',
     templateUrl: './navigation-menu.component.html',
@@ -14,8 +11,18 @@ export class NavigationMenuComponent {
     @ViewChild(DxTreeViewComponent)
     menu: DxTreeViewComponent;
 
-    @Output() selectedItemChanged = new EventEmitter<string>();
-    menuItems: any;
+    @Output()
+    selectedItemChanged = new EventEmitter<string>();
+
+    @Input()
+    items: any[];
+
+    @Input()
+    set selectedItem(value: String) {
+        if (this.menu.instance) {
+            this.menu.instance.selectItem(value);
+        }
+    }
 
     private _compactMode = false;
     @Input()
@@ -29,22 +36,10 @@ export class NavigationMenuComponent {
         }
     }
 
-    constructor(private router: Router) {
-        this.menuItems = navigation;
-
-        router.events.subscribe(val => {
-            if (val instanceof NavigationEnd && this.menu.instance) {
-                this.menu.instance.selectItem(val.url);
-            }
-        });
-    }
+    constructor() { }
 
     onItemSelectionChanged(event) {
-        this.selectedItemChanged.emit(event.itemData.text);
-        const path = event.itemData.path;
-        if (path && !this.compactMode) {
-            this.router.navigate([path]);
-        }
+        this.selectedItemChanged.emit(event);
     }
 }
 
