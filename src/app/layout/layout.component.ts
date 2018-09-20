@@ -42,9 +42,17 @@ export class AppLayoutComponent implements OnInit {
         return this.menuMode === 'overlap';
     }
 
+    get showMenuAfterClick() {
+        return !this.menuOpened;
+    }
+
     navigationChanged(e) {
         if (this.hideMenuAfterNavigation) {
             this.menuOpened = false;
+        }
+
+        if (this.showMenuAfterClick) {
+            this.menuOpened = true;
         }
     }
 }

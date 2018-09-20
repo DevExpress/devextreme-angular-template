@@ -40,9 +40,9 @@ export class NavigationMenuComponent {
     }
 
     onItemSelectionChanged(event) {
+        this.selectedItemChanged.emit(event.itemData.text);
         const path = event.itemData.path;
-        if (path) {
-            this.selectedItemChanged.emit(event.itemData.text);
+        if (path && !this.compactMode) {
             this.router.navigate([path]);
         }
     }
