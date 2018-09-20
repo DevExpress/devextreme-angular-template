@@ -1,3 +1,5 @@
+@import "../../../../themes/variables.additional.scss";
+
 :host {
     display: block;
     height: 100%;
@@ -23,7 +25,7 @@
     }
 
     .dx-treeview-node[aria-level='1'] {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        border-bottom: 1px solid $base-border-color;
         .dx-treeview-item-content span {
             padding-left: 12px;
         }
