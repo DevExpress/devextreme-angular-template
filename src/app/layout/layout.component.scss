@@ -1,8 +1,10 @@
+@import "../../themes/variables.base.scss";
+
 .container {
     flex-direction: column;
     display: flex;
     height: 100%;
-    background-color: #F2F2F2;
+    background-color: darken($base-bg, 5.00);
 }
 
 .header {
@@ -30,7 +32,7 @@
 
     ::ng-deep .footer {
         flex: 0 0 auto;
-        color: rgba(51, 51, 51, 0.7);
+        color: rgba($base-text-color, alpha($base-text-color) * 0.7);
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         margin-top: 20px;
         padding-top: 20px;

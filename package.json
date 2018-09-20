@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-themes": "devextreme build-theme --input-file=./src/themes/metadata.base.json --output-file=./src/themes/theme.base.css && devextreme build-theme --input-file=./src/themes/metadata.additional.json --output-file=./src/themes/theme.additional.css && devextreme export-theme-vars --input-file=./src/themes/metadata.base.json --output-file=./src/themes/variables.base.scss && devextreme export-theme-vars --input-file=./src/themes/metadata.additional.json --output-file=./src/themes/variables.additional.scss"
   },
   "private": true,
   "dependencies": {
