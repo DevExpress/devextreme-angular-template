@@ -13,6 +13,10 @@
 ::ng-deep .dx-treeview {
     .dx-treeview-node {
         padding-left: 0px;
+
+        &.dx-state-selected > .dx-treeview-item {
+            background-color: $base-accent;
+        }
     }
 
     .dx-treeview-item-content {
