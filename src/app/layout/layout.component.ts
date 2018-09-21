@@ -67,7 +67,9 @@ export class AppLayoutComponent implements OnInit {
         if (this.hideMenuAfterNavigation) {
             this.menuOpened = false;
         }
+    }
 
+    navigationClick() {
         if (this.showMenuAfterClick) {
             this.menuOpened = true;
         }
