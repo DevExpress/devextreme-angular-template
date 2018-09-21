@@ -17,7 +17,7 @@ export class AppLayoutComponent implements OnInit {
     menuItems = navigation;
     selectedRoute = '';
 
-    menuOpened = false;
+    menuOpened;
     menuMode = 'shrink';
     menuRevealMode = 'expand';
     minMenuSize = 0;
@@ -26,6 +26,8 @@ export class AppLayoutComponent implements OnInit {
     constructor(private breakpointObserver: BreakpointObserver, private router: Router) { }
 
     ngOnInit() {
+        this.menuOpened = this.isLargeScreen;
+
         this.router.events.subscribe(val => {
             if (val instanceof NavigationEnd) {
                 this.selectedRoute = val.urlAfterRedirects;
@@ -41,13 +43,18 @@ export class AppLayoutComponent implements OnInit {
 
     updateDrawer() {
         const isXSmall = this.breakpointObserver.isMatched(Breakpoints.XSmall);
+
+        this.menuMode = this.isLargeScreen ? 'shrink' : 'overlap';
+        this.menuRevealMode = isXSmall ? 'slide' : 'expand';
+        this.minMenuSize = isXSmall ? 0 : 60;
+        this.shaderEnabled = !this.isLargeScreen;
+    }
+
+    get isLargeScreen() {
         const isLarge = this.breakpointObserver.isMatched(Breakpoints.Large);
         const isXLarge = this.breakpointObserver.isMatched(Breakpoints.XLarge);
 
-        this.menuMode = isLarge || isXLarge ? 'shrink' : 'overlap';
-        this.menuRevealMode = isXSmall ? 'slide' : 'expand';
-        this.minMenuSize = isXSmall ? 0 : 60;
-        this.shaderEnabled = !isLarge && !isXLarge;
+        return isLarge || isXLarge;
     }
 
     get hideMenuAfterNavigation() {
