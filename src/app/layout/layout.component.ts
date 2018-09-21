@@ -28,7 +28,7 @@ export class AppLayoutComponent implements OnInit {
     ngOnInit() {
         this.router.events.subscribe(val => {
             if (val instanceof NavigationEnd) {
-                this.selectedRoute = val.url;
+                this.selectedRoute = val.urlAfterRedirects;
             }
         });
 
@@ -62,10 +62,10 @@ export class AppLayoutComponent implements OnInit {
         const path = event.itemData.path;
         if (path && this.menuOpened) {
             this.router.navigate([path]);
-        }
 
-        if (this.hideMenuAfterNavigation) {
-            this.menuOpened = false;
+            if (this.hideMenuAfterNavigation) {
+                this.menuOpened = false;
+            }
         }
     }
 
