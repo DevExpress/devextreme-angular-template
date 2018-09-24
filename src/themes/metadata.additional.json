@@ -4,8 +4,8 @@
     "themeId": "24",
     "hue": null,
     "items": [],
-    "base-theme": "material.orange.dark",
-    "output-color-scheme": "additional",
-    "make-swatch": true,
+    "baseTheme": "material.orange.dark",
+    "outputColorScheme": "additional",
+    "makeSwatch": true,
     "base": true
 }
