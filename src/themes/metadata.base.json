@@ -4,7 +4,7 @@
     "themeId": "24",
     "hue": null,
     "items": [],
-    "base-theme": "material.orange.light",
-    "output-color-scheme": "base",
+    "baseTheme": "material.orange.light",
+    "outputColorScheme": "base",
     "base": true
 }
