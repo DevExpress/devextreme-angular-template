@@ -67,12 +67,21 @@ export class AppLayoutComponent implements OnInit {
 
     navigationChanged(event) {
         const path = event.itemData.path;
+        const pointerEvent = event.event;
+
         if (path && this.menuOpened) {
-            this.router.navigate([path]);
+            if (event.node.selected) {
+                pointerEvent.preventDefault();
+            } else {
+                this.router.navigate([path]);
+            }
 
             if (this.hideMenuAfterNavigation) {
                 this.menuOpened = false;
+                pointerEvent.stopPropagation();
             }
+        } else {
+            pointerEvent.preventDefault();
         }
     }
 
