@@ -2,7 +2,6 @@
 
 <dx-tree-view
     expandEvent="click"
-    [ngClass]="{ 'treeview-compact': compactMode }"
     [items]="items"
     (onItemClick)="onItemSelectionChanged($event)"
     [selectByClick]="true"
