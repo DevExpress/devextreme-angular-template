@@ -13,8 +13,8 @@
 }
 
 .content {
-    height: auto;
     flex: 1;
+    min-height: 0;
 
     ::ng-deep h2 {
         margin-top: 20px;
