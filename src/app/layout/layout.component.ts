@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NavigationMenuModule } from '../shared/components';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule } from 'devextreme-angular/ui/scroll-view';
+import { CommonModule } from "@angular/common";
 
 import { navigation } from '../app-navigation';
 import { Router, NavigationEnd } from '@angular/router';
@@ -58,6 +59,15 @@ export class AppLayoutComponent implements OnInit {
         return isLarge || isXLarge;
     }
 
+    get sizeClasses() {
+        return {
+            'screen-x-small': this.breakpointObserver.isMatched(Breakpoints.XSmall),
+            'screen-small': this.breakpointObserver.isMatched(Breakpoints.Small),
+            'screen-medium': this.breakpointObserver.isMatched(Breakpoints.Medium),
+            'screen-large': this.isLargeScreen,
+        };
+    }
+
     get hideMenuAfterNavigation() {
         return this.menuMode === 'overlap';
     }
@@ -94,7 +104,7 @@ export class AppLayoutComponent implements OnInit {
 }
 
 @NgModule({
-    imports: [ NavigationMenuModule, DxDrawerModule, DxScrollViewModule ],
+    imports: [ NavigationMenuModule, DxDrawerModule, DxScrollViewModule, CommonModule ],
     exports: [ AppLayoutComponent ],
     declarations: [ AppLayoutComponent ]
 })

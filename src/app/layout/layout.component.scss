@@ -30,3 +30,16 @@
         padding: 20px;
     }
 }
+
+.screen-large .content ::ng-deep .dx-card {
+    padding: 40px;
+}
+
+.screen-x-small {
+    .content {
+        ::ng-deep h2, ::ng-deep .content-block, .footer {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+}

@@ -1,8 +1,8 @@
-<div class="container dx-theme-material-typography">
+<div class="container dx-theme-material-typography" [ngClass]="sizeClasses">
     <div class="header">
         <ng-content select="app-header"></ng-content>
     </div>
-    
+
     <dx-drawer
         class="content"
         [closeOnOutsideClick]="shaderEnabled"
