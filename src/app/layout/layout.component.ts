@@ -3,7 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NavigationMenuModule } from '../shared/components';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule } from 'devextreme-angular/ui/scroll-view';
-import { CommonModule } from "@angular/common";
+import { CommonModule } from '@angular/common';
 
 import { navigation } from '../app-navigation';
 import { Router, NavigationEnd } from '@angular/router';
