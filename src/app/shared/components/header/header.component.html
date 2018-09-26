@@ -23,25 +23,38 @@
             [options]="{
                 icon: 'user',
                 text:'Login',
-                onClick: onShowLoginPopup
+                onClick: onShowLoginPopup,
+                elementAttr: { class: 'authorization' }
             }">
         </dxi-item>
-        <dxi-item 
+        <dxi-item
             location="after"
             locateInMenu="auto"
             [visible]="isUserAuthorized">
             <div *dxTemplate>
-                <div class="image-container">
-                    <img class="user-image" src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png">
+                <div class="authorization">
+                    <dx-menu
+                        (onItemClick)="logoutClick($event)"
+                        [items]="[{
+                            icon: 'user',
+                            text: userLogin,
+                            items: [{
+                                text: 'Logout'
+                            }]
+                        }]">
+                    </dx-menu>
                 </div>
-                {{userLogin}}
             </div>
         </dxi-item>
     </dx-toolbar>
 
-    <dx-popup [(visible)]="showLoginPopup" title="Authorization" height="auto" [width]="300">
+    <dx-popup
+        [(visible)]="showLoginPopup"
+        title="Authorization"
+        height="auto"
+        [width]="300">
         <div *dxTemplate="let data of 'content'">
-            <app-login (onLoginClick)="loginClick($event)"></app-login>
+            <app-login (userAuthorized)="loginClick($event)"></app-login>
         </div>
     </dx-popup>
 </header>

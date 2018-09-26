@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     password = '';
 
     @Output()
-    public loginClick: EventEmitter<any> = new EventEmitter<any>();
+    public userAuthorized: EventEmitter<any> = new EventEmitter<any>();
 
     constructor() { }
 
@@ -27,9 +27,9 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        this.loginClick.next({
-            'password': this.password,
-            'login': this.login
+        this.userAuthorized.next({
+            password: this.password,
+            login: this.login
         });
     }
 }

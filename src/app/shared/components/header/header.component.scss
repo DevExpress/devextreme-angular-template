@@ -8,13 +8,33 @@
     height: 20px;
 }
 
-.user-image {
-    width: 20px;
+::ng-deep .authorization {
+    margin-right: 40px;
 }
 
 ::ng-deep .dx-menu-button {
     margin: 0 12px;
+}
+
+::ng-deep .dx-menu-button,  ::ng-deep .dx-menu {
     .dx-icon {
         color: $base-accent !important;
     }
+}
+
+::ng-deep .dx-menu .dx-menu-item.dx-menu-item-has-text.dx-menu-item-has-icon .dx-icon {
+    margin-right: 6px;
+}
+
+::ng-deep .dx-menu-base .dx-menu-item .dx-menu-item-content .dx-menu-item-text {
+    font-weight: 400;
+}
+
+::ng-deep .dx-context-menu .dx-menu-items-container {
+    width: 128px;
+    text-align: center;
+}
+
+::ng-deep .dx-menu-base .dx-menu-item-wrapper {
+    width: 128px;
 }
