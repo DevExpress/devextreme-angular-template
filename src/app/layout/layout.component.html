@@ -1,9 +1,8 @@
 <div class="container dx-theme-material-typography" [ngClass]="sizeClasses">
-    <app-header
-        class="header"
-        (menuToggle)="menuOpened = !menuOpened;"
-        title="DevExtreme Angular Template">
-    </app-header>
+    <div class="header">
+        <ng-content select="app-header"></ng-content>
+    </div>
+
     <dx-drawer
         class="content"
         [closeOnOutsideClick]="shaderEnabled"
@@ -25,7 +24,10 @@
 
         <dx-scroll-view>
             <ng-content></ng-content>
-            <ng-content select=".footer"></ng-content>
+
+            <div class="footer">
+                <ng-content select="app-footer"></ng-content>
+            </div>
         </dx-scroll-view>
     </dx-drawer>
 </div>

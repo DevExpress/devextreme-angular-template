@@ -13,15 +13,15 @@
 }
 
 .content {
-    height: auto;
     flex: 1;
+    min-height: 0;
 
     ::ng-deep h2 {
         margin-top: 20px;
         margin-bottom: 20px;
     }
 
-    ::ng-deep h2, ::ng-deep .content-block, ::ng-deep .footer {
+    ::ng-deep h2, ::ng-deep .content-block, .footer {
         margin-left: 40px;
         margin-right: 40px;
     }
@@ -29,15 +29,6 @@
     ::ng-deep .dx-card {
         padding: 20px;
     }
-
-    ::ng-deep .footer {
-        flex: 0 0 auto;
-        color: rgba($base-text-color, alpha($base-text-color) * 0.7);
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
-        padding-top: 20px;
-        padding-bottom: 24px;
-    }    
 }
 
 .screen-large .content ::ng-deep .dx-card {

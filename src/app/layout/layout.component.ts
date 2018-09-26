@@ -1,6 +1,5 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { HeaderModule } from '../shared/components';
 import { NavigationMenuModule } from '../shared/components';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule } from 'devextreme-angular/ui/scroll-view';
@@ -18,7 +17,9 @@ export class AppLayoutComponent implements OnInit {
     menuItems = navigation;
     selectedRoute = '';
 
+    @Input()
     menuOpened;
+
     menuMode = 'shrink';
     menuRevealMode = 'expand';
     minMenuSize = 0;
@@ -103,7 +104,7 @@ export class AppLayoutComponent implements OnInit {
 }
 
 @NgModule({
-    imports: [ HeaderModule, NavigationMenuModule, DxDrawerModule, DxScrollViewModule, CommonModule ],
+    imports: [ NavigationMenuModule, DxDrawerModule, DxScrollViewModule, CommonModule ],
     exports: [ AppLayoutComponent ],
     declarations: [ AppLayoutComponent ]
 })

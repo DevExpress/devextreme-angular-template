@@ -23,6 +23,6 @@ export class DisplayDataComponent {
                 'Product_Current_Inventory'
             ],
             filter: ['Product_Current_Inventory', '>', 0]
-        }
+        };
     }
 }
