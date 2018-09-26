@@ -37,7 +37,7 @@
 
 .screen-x-small {
     .content {
-        ::ng-deep h2, ::ng-deep .content-block, ::ng-deep .footer {
+        ::ng-deep h2, ::ng-deep .content-block, .footer {
             margin-left: 20px;
             margin-right: 20px;
         }
