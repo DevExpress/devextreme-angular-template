@@ -19,7 +19,7 @@ export class HeaderComponent {
     title: string;
 
     showLoginPopup = false;
-    userLogin = 'John Smith';
+    userLogin = 'Sandra Johnson';
     isUserAuthorized = true;
 
     constructor() {}

@@ -33,15 +33,17 @@
             [visible]="isUserAuthorized">
             <div *dxTemplate>
                 <div class="authorization">
-                    <dx-menu
-                        (onItemClick)="logoutClick($event)"
-                        [items]="[{
-                            icon: 'user',
-                            text: userLogin,
-                            items: [{
-                                text: 'Logout'
-                            }]
-                        }]">
+                    <dx-menu (onItemClick)="logoutClick($event)">
+                        <dxi-item>
+                            <div *dxTemplate>
+                                <div class="image-container">
+                                    <img class="user-image" src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png">
+                                </div>
+                                <div class="user-name">{{userLogin}}</div>
+                            </div>
+                            <dxi-item icon="edit" text="Edit"></dxi-item>
+                            <dxi-item icon="runner" text="Logout"></dxi-item>
+                        </dxi-item>
                     </dx-menu>
                 </div>
             </div>
