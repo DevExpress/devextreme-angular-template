@@ -5,12 +5,7 @@
     overflow: hidden;
     border-radius: 50%;
     margin-right: 10px;
-    background-color: #fff;
-    height: 25px;
-}
-
-.user-image {
-    width: 25px;
+    height: 20px;
 }
 
 ::ng-deep .authorization {
@@ -27,7 +22,19 @@
     }
 }
 
+::ng-deep .dx-menu .dx-menu-item.dx-menu-item-has-text.dx-menu-item-has-icon .dx-icon {
+    margin-right: 6px;
+}
+
+::ng-deep .dx-menu-base .dx-menu-item .dx-menu-item-content .dx-menu-item-text {
+    font-weight: 400;
+}
+
 ::ng-deep .dx-context-menu .dx-menu-items-container {
-    width: 161px;
+    width: 128px;
     text-align: center;
+}
+
+::ng-deep .dx-menu-base .dx-menu-item-wrapper {
+    width: 128px;
 }

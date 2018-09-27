@@ -1,6 +1,7 @@
 import { Component, NgModule, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { LoginModule } from '../login/login.component';
 import { DxMenuModule } from 'devextreme-angular/ui/menu';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { DxPopupModule } from 'devextreme-angular/ui/popup';
@@ -17,10 +18,30 @@ export class HeaderComponent {
     @Input()
     title: string;
 
+    showLoginPopup = false;
+    userLogin = 'John Smith';
+    isUserAuthorized = true;
+
     constructor() {}
 
     toggleMenu = () => {
         this.menuToggle.emit();
+    }
+
+    onShowLoginPopup = () => {
+        this.showLoginPopup = true;
+    }
+
+    loginClick(args) {
+        this.userLogin = args.login;
+        this.showLoginPopup = false;
+        this.isUserAuthorized = true;
+    }
+
+    logoutClick(args) {
+        if (args.itemData.text === 'Logout') {
+            this.isUserAuthorized = false;
+        }
     }
 }
 
@@ -29,7 +50,8 @@ export class HeaderComponent {
         CommonModule,
         DxPopupModule,
         DxMenuModule,
-        DxToolbarModule
+        DxToolbarModule,
+        LoginModule
     ],
     declarations: [ HeaderComponent ],
     exports: [ HeaderComponent ]

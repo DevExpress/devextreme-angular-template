@@ -17,21 +17,44 @@
         </dxi-item>
         <dxi-item
             location="after"
-            locateInMenu="auto">
+            locateInMenu="auto"
+            widget="dxButton"
+            [visible]="!isUserAuthorized"
+            [options]="{
+                icon: 'user',
+                text:'Login',
+                onClick: onShowLoginPopup,
+                elementAttr: { class: 'authorization' }
+            }">
+        </dxi-item>
+        <dxi-item
+            location="after"
+            locateInMenu="auto"
+            [visible]="isUserAuthorized">
             <div *dxTemplate>
-                <dx-menu class="authorization" (onItemClick)="logoutClick($event)">
-                        <dxi-item>
-                            <div *dxTemplate>
-                                <div class="image-container">
-                                    <img class="user-image" src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png">
-                                </div>
-                                <span>Sandra Johnson</span>
-                            </div>
-                            <dxi-item text="Edit"></dxi-item>
-                            <dxi-item text="Logout"></dxi-item>
-                        </dxi-item>
-                </dx-menu>
+                <div class="authorization">
+                    <dx-menu
+                        (onItemClick)="logoutClick($event)"
+                        [items]="[{
+                            icon: 'user',
+                            text: userLogin,
+                            items: [{
+                                text: 'Logout'
+                            }]
+                        }]">
+                    </dx-menu>
+                </div>
             </div>
         </dxi-item>
     </dx-toolbar>
+
+    <dx-popup
+        [(visible)]="showLoginPopup"
+        title="Authorization"
+        height="auto"
+        [width]="300">
+        <div *dxTemplate="let data of 'content'">
+            <app-login (userAuthorized)="loginClick($event)"></app-login>
+        </div>
+    </dx-popup>
 </header>
