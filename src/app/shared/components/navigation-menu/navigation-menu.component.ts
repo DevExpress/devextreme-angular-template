@@ -43,10 +43,8 @@ export class NavigationMenuComponent {
         const leafNodeClass = 'dx-treeview-node-is-leaf';
         const element: HTMLElement = event.element;
 
-        const nodes = [].slice.call(element.querySelectorAll(`.${nodeClass}`));
-        nodes.filter(node => {
-            return !node.classList.contains(leafNodeClass);
-        }).forEach(node => {
+        const rootNodes = element.querySelectorAll(`.${nodeClass}:not(.${leafNodeClass}`);
+        Array.from(rootNodes).forEach(node => {
             node.classList.remove(selectedClass);
         });
 
