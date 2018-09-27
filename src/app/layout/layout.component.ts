@@ -50,6 +50,7 @@ export class AppLayoutComponent implements OnInit {
         this.menuRevealMode = isXSmall ? 'slide' : 'expand';
         this.minMenuSize = isXSmall ? 0 : 60;
         this.shaderEnabled = !this.isLargeScreen;
+        console.log(this.shaderEnabled);
     }
 
     get isLargeScreen() {
