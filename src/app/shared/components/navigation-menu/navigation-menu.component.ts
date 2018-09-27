@@ -37,7 +37,30 @@ export class NavigationMenuComponent {
 
     constructor() { }
 
-    onItemSelectionChanged(event) {
+    updateSelection(event) {
+        const nodeClass = 'dx-treeview-node';
+        const selectedClass = 'dx-state-selected';
+        const leafNodeClass = 'dx-treeview-node-is-leaf';
+        const element: HTMLElement = event.element;
+
+        const nodes = [].slice.call(element.querySelectorAll(`.${nodeClass}`));
+        nodes.filter(node => {
+            return !node.classList.contains(leafNodeClass);
+        }).forEach(node => {
+            node.classList.remove(selectedClass);
+        });
+
+        let selectedNode = element.querySelector(`.${nodeClass}.${selectedClass}`);
+        while (selectedNode && selectedNode.parentElement) {
+            if (selectedNode.classList.contains(nodeClass)) {
+                selectedNode.classList.add(selectedClass);
+            }
+
+            selectedNode = selectedNode.parentElement;
+        }
+    }
+
+    onItemClick(event) {
         this.selectedItemChanged.emit(event);
     }
 }

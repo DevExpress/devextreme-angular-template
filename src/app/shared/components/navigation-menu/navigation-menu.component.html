@@ -3,7 +3,9 @@
 <dx-tree-view
     expandEvent="click"
     [items]="items"
-    (onItemClick)="onItemSelectionChanged($event)"
+    (onItemClick)="onItemClick($event)"
+    (onContentReady)="updateSelection($event)"
+    (onSelectionChanged)="updateSelection($event)"
     [selectByClick]="true"
     selectionMode="single"
     keyExpr="path">

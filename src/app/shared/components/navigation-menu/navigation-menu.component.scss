@@ -14,8 +14,12 @@
     .dx-treeview-node {
         padding-left: 0px;
 
-        &.dx-state-selected > .dx-treeview-item {
-            background-color: $base-accent;
+        &.dx-state-selected .dx-treeview-item {
+            background: transparent;
+        }
+
+        &.dx-state-selected > .dx-treeview-item * {
+            color: $base-accent !important;
         }
     }
 
