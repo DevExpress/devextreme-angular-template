@@ -1,0 +1,56 @@
+@import "../../../../themes/variables.base.scss";
+
+.image-container {
+    overflow: hidden;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-left: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.user-image {
+    width: 30px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+::ng-deep .dx-toolbar-menu-section {
+    .user-info {
+        padding: 10px 5px 10px 5px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+.user-name {
+    font-size: 14px;
+    color: #333;
+    margin-left: 15px;
+}
+
+::ng-deep .user-panel {
+    .dx-list-item {
+        .dx-icon {
+            vertical-align: middle;
+            color: rgba(0, 0, 0, 0.87);
+            margin-right: 17px;
+        }
+    }
+}
+
+
+::ng-deep .dx-context-menu {
+    &.user-menu {
+        .dx-submenu {
+            .dx-menu-items-container {
+                .dx-icon {
+                    margin-right: 17px;
+                }
+            }
+        }
+    }
+}

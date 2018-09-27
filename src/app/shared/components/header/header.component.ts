@@ -2,7 +2,8 @@ import { Component, NgModule, Input, Output, EventEmitter } from '@angular/core'
 import { CommonModule } from '@angular/common';
 
 import { LoginModule } from '../login/login.component';
-import { DxMenuModule } from 'devextreme-angular/ui/menu';
+import { UserPanelModule } from '../user-panel/user-panel.component';
+import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { DxPopupModule } from 'devextreme-angular/ui/popup';
 
@@ -19,8 +20,14 @@ export class HeaderComponent {
     title: string;
 
     showLoginPopup = false;
-    userLogin = 'Sandra Johnson';
     isUserAuthorized = true;
+    userMenu = [{
+        text: 'Profile',
+        icon: 'user'
+    }, {
+        text: 'Logout',
+        icon: 'runner'
+    }];
 
     constructor() {}
 
@@ -33,15 +40,12 @@ export class HeaderComponent {
     }
 
     loginClick(args) {
-        this.userLogin = args.login;
         this.showLoginPopup = false;
         this.isUserAuthorized = true;
     }
 
-    logoutClick(args) {
-        if (args.itemData.text === 'Logout') {
-            this.isUserAuthorized = false;
-        }
+    logoutClick() {
+        this.isUserAuthorized = false;
     }
 }
 
@@ -49,7 +53,8 @@ export class HeaderComponent {
     imports: [
         CommonModule,
         DxPopupModule,
-        DxMenuModule,
+        DxButtonModule,
+        UserPanelModule,
         DxToolbarModule,
         LoginModule
     ],

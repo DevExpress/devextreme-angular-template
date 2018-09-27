@@ -1,0 +1,27 @@
+<div class="user-panel">
+    <div class="user-info">
+        <div class="image-container">
+            <img class="user-image" src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png">
+        </div>
+        <div class="user-name">Sandra Johnson</div>
+    </div>
+    <dx-context-menu
+        *ngIf="!isAdaptive"
+        cssClass="user-menu"
+        (onItemClick)="itemMenuClick($event)"
+        [items]="menu"
+        target=".user-button"
+        showEvent="dxclick"
+        [position]="{ my: 'top center', at: 'bottom center' }">
+    </dx-context-menu>
+    <dx-list
+        *ngIf="isAdaptive"
+        (onItemClick)="itemMenuClick($event)"
+        [items]="menu"
+        [width]=170>
+        <div *dxTemplate="let data of 'item'">
+            <i [ngClass]="['dx-icon', 'dx-icon-' + data.icon]"></i>
+            <span>{{data.text}}</span>
+        </div>
+    </dx-list>
+</div>

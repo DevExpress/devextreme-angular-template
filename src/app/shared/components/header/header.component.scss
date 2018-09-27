@@ -1,42 +1,18 @@
 @import "../../../../themes/variables.base.scss";
 
-.image-container {
-    float: left;
-    overflow: hidden;
-    border-radius: 50%;
-    margin-right: 10px;
-    background-color: #fff;
-    height: 30px;
-}
-
-.user-image {
-    width: 30px;
-}
-
 ::ng-deep .authorization {
     margin-right: 40px;
 }
 
 ::ng-deep .dx-menu-button {
     margin: 0 12px;
-}
-
-::ng-deep .dx-menu-button,  ::ng-deep .dx-menu {
     .dx-icon {
         color: $base-accent !important;
     }
 }
 
-.user-name {
-    font-size: 14px;
-    color: #333;
-    margin-top: 3px;
-}
-
-::ng-deep .dx-context-menu .dx-menu-items-container {
-    width: 173px;
-}
-
-::ng-deep .dx-menu-base .dx-menu-item-wrapper {
-    width: 173px;
+::ng-deep .dx-menu-base {
+    .dx-menu-item-wrapper {
+        width: 173px;
+    }
 }

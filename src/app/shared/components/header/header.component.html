@@ -1,4 +1,3 @@
-
 <header>
     <dx-toolbar>
         <dxi-item
@@ -30,24 +29,23 @@
         <dxi-item
             location="after"
             locateInMenu="auto"
-            [visible]="isUserAuthorized">
-            <div *dxTemplate>
-                <div class="authorization">
-                    <dx-menu (onItemClick)="logoutClick($event)">
-                        <dxi-item>
-                            <div *dxTemplate>
-                                <div class="image-container">
-                                    <img class="user-image" src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png">
-                                </div>
-                                <div class="user-name">{{userLogin}}</div>
-                            </div>
-                            <dxi-item icon="edit" text="Edit"></dxi-item>
-                            <dxi-item icon="runner" text="Logout"></dxi-item>
-                        </dxi-item>
-                    </dx-menu>
-                </div>
+            (onClick)="contextMenu()"
+            [visible]="isUserAuthorized"
+            menuItemTemplate="menuItem">
+            <div *dxTemplate="let data of 'item'">
+                <dx-button
+                    class="user-button authorization dx-button-flat"
+                    width="170px"
+                    height="40px">
+                    <div *dxTemplate="let data of 'content'">
+                        <user-panel [menu]="userMenu" [isAdaptive]="false" (userLogout)="logoutClick()"></user-panel>
+                    </div>
+                </dx-button>
             </div>
         </dxi-item>
+        <div *dxTemplate="let data of 'menuItem'">
+            <user-panel [menu]="userMenu" [isAdaptive]="true" (userLogout)="logoutClick()"></user-panel>
+        </div>
     </dx-toolbar>
 
     <dx-popup

@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
             password: this.password,
             login: this.login
         });
+
+        args.validationGroup.reset();
     }
 }
 
