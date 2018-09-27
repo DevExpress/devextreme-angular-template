@@ -21,7 +21,7 @@ export class HeaderComponent {
 
     showLoginPopup = false;
     isUserAuthorized = true;
-    userMenu = [{
+    userMenuItems = [{
         text: 'Profile',
         icon: 'user'
     }, {
@@ -39,12 +39,12 @@ export class HeaderComponent {
         this.showLoginPopup = true;
     }
 
-    loginClick(args) {
+    onLoginClick(args) {
         this.showLoginPopup = false;
         this.isUserAuthorized = true;
     }
 
-    logoutClick() {
+    onLogoutClick() {
         this.isUserAuthorized = false;
     }
 }

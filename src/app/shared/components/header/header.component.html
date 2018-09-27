@@ -36,15 +36,15 @@
                 <dx-button
                     class="user-button authorization dx-button-flat"
                     width="170px"
-                    height="40px">
+                    height="100%">
                     <div *dxTemplate="let data of 'content'">
-                        <user-panel [menu]="userMenu" [isAdaptive]="false" (userLogout)="logoutClick()"></user-panel>
+                        <user-panel [menuItems]="userMenuItems" menuMode="context" (logoutUser)="onLogoutClick()"></user-panel>
                     </div>
                 </dx-button>
             </div>
         </dxi-item>
         <div *dxTemplate="let data of 'menuItem'">
-            <user-panel [menu]="userMenu" [isAdaptive]="true" (userLogout)="logoutClick()"></user-panel>
+            <user-panel [menuItems]="userMenuItems" menuMode="list" (logoutUser)="onLogoutClick()"></user-panel>
         </div>
     </dx-toolbar>
 
@@ -54,7 +54,7 @@
         height="auto"
         [width]="300">
         <div *dxTemplate="let data of 'content'">
-            <app-login (userAuthorized)="loginClick($event)"></app-login>
+            <app-login (userAuthorized)="onLoginClick($event)"></app-login>
         </div>
     </dx-popup>
 </header>

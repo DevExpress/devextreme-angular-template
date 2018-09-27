@@ -13,20 +13,20 @@ import { DxContextMenuModule } from 'devextreme-angular/ui/context-menu';
 
 export class UserPanelComponent {
     @Input()
-    menu: any;
+    menuItems: any;
 
     @Input()
-    isAdaptive: boolean;
+    menuMode: string;
 
     @Output()
-    userLogout: EventEmitter<boolean> = new EventEmitter<boolean>();
+    logoutUser: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     constructor(private router: Router) {
     }
 
     itemMenuClick(args) {
         if (args.itemData.text === 'Logout') {
-            this.userLogout.next(true);
+            this.logoutUser.next(true);
         }
         if (args.itemData.text === 'Profile') {
             this.router.navigate(['/profile']);
