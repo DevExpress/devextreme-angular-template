@@ -44,7 +44,7 @@ export class HeaderComponent {
         this.isUserAuthorized = true;
     }
 
-    onLogoutClick() {
+    logoutUser() {
         this.isUserAuthorized = false;
     }
 }

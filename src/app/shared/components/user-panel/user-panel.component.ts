@@ -19,14 +19,14 @@ export class UserPanelComponent {
     menuMode: string;
 
     @Output()
-    logoutUser: EventEmitter<boolean> = new EventEmitter<boolean>();
+    onLogoutClick: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     constructor(private router: Router) {
     }
 
     itemMenuClick(args) {
         if (args.itemData.text === 'Logout') {
-            this.logoutUser.next(true);
+            this.onLogoutClick.next(true);
         }
         if (args.itemData.text === 'Profile') {
             this.router.navigate(['/profile']);
