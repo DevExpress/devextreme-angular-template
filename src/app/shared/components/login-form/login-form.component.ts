@@ -8,10 +8,10 @@ import { DxValidationGroupModule } from 'devextreme-angular/ui/validation-group'
 
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html'
+    selector: 'login-form',
+    templateUrl: './login-form.component.html'
 })
-export class LoginComponent implements OnInit {
+export class LoginFormComponent implements OnInit {
     login = '';
     password = '';
 
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         DxValidatorModule,
         DxValidationGroupModule
     ],
-    declarations: [ LoginComponent ],
-    exports: [ LoginComponent ]
+    declarations: [ LoginFormComponent ],
+    exports: [ LoginFormComponent ]
 })
-export class LoginModule { }
+export class LoginFormModule { }

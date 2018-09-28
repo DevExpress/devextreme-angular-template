@@ -1,7 +1,8 @@
 import { Component, NgModule, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
-import { LoginModule } from '../login/login.component';
+import { LoginFormModule } from '../login-form/login-form.component';
 import { UserPanelModule } from '../user-panel/user-panel.component';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
@@ -23,13 +24,15 @@ export class HeaderComponent {
     isUserAuthorized = true;
     userMenuItems = [{
         text: 'Profile',
-        icon: 'user'
+        icon: 'user',
+        action: 'route'
     }, {
         text: 'Logout',
-        icon: 'runner'
+        icon: 'runner',
+        action: 'logout'
     }];
 
-    constructor() {}
+    constructor(private router: Router) {}
 
     toggleMenu = () => {
         this.menuToggle.emit();
@@ -44,8 +47,14 @@ export class HeaderComponent {
         this.isUserAuthorized = true;
     }
 
-    logoutUser() {
-        this.isUserAuthorized = false;
+    onUserMenuItemClick(action) {
+        if (action === 'logout') {
+            this.isUserAuthorized = false;
+        }
+        if (action === 'route') {
+            this.router.navigate(['/profile']);
+        }
+
     }
 }
 
@@ -56,7 +65,7 @@ export class HeaderComponent {
         DxButtonModule,
         UserPanelModule,
         DxToolbarModule,
-        LoginModule
+        LoginFormModule
     ],
     declarations: [ HeaderComponent ],
     exports: [ HeaderComponent ]

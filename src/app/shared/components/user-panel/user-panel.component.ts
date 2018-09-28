@@ -1,6 +1,5 @@
 import { Component, NgModule, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 
 import { DxListModule } from 'devextreme-angular/ui/list';
 import { DxContextMenuModule } from 'devextreme-angular/ui/context-menu';
@@ -19,18 +18,13 @@ export class UserPanelComponent {
     menuMode: string;
 
     @Output()
-    onLogoutClick: EventEmitter<boolean> = new EventEmitter<boolean>();
+    onItemClick: EventEmitter<any> = new EventEmitter<any>();
 
-    constructor(private router: Router) {
+    constructor() {
     }
 
     itemMenuClick(args) {
-        if (args.itemData.text === 'Logout') {
-            this.onLogoutClick.next(true);
-        }
-        if (args.itemData.text === 'Profile') {
-            this.router.navigate(['/profile']);
-        }
+        this.onItemClick.next(args.itemData.action);
     }
 }
 
