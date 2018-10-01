@@ -24,7 +24,7 @@ export class UserPanelComponent {
     }
 
     itemMenuClick(args) {
-        this.itemClick.next(args.itemData.action);
+        this.itemClick.next(args.itemData);
     }
 }
 

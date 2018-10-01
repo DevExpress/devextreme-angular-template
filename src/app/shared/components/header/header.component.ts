@@ -24,12 +24,10 @@ export class HeaderComponent {
     isUserAuthorized = true;
     userMenuItems = [{
         text: 'Profile',
-        icon: 'user',
-        action: 'route'
+        icon: 'user'
     }, {
         text: 'Logout',
-        icon: 'runner',
-        action: 'logout'
+        icon: 'runner'
     }];
 
     constructor(private router: Router) {}
@@ -47,14 +45,12 @@ export class HeaderComponent {
         this.isUserAuthorized = true;
     }
 
-    onUserMenuItemClick(action) {
-        if (action === 'logout') {
+    onUserMenuItemClick(item) {
+        if (item === this.userMenuItems[1]) {
             this.isUserAuthorized = false;
-        }
-        if (action === 'route') {
+        } else if (item === this.userMenuItems[0]) {
             this.router.navigate(['/profile']);
         }
-
     }
 }
 
