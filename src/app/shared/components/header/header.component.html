@@ -38,13 +38,13 @@
                     width="170px"
                     height="100%">
                     <div *dxTemplate="let data of 'content'">
-                        <user-panel [menuItems]="userMenuItems" menuMode="context" (onItemClick)="onUserMenuItemClick($event)"></user-panel>
+                        <app-user-panel [menuItems]="userMenuItems" menuMode="context" (onItemClick)="onUserMenuItemClick($event)"></app-user-panel>
                     </div>
                 </dx-button>
             </div>
         </dxi-item>
         <div *dxTemplate="let data of 'menuItem'">
-            <user-panel [menuItems]="userMenuItems" menuMode="list" (onItemClick)="onUserMenuItemClick($event)"></user-panel>
+            <app-user-panel [menuItems]="userMenuItems" menuMode="list" (itemClick)="onUserMenuItemClick($event)"></app-user-panel>
         </div>
     </dx-toolbar>
 
@@ -54,7 +54,7 @@
         height="auto"
         [width]="300">
         <div *dxTemplate="let data of 'content'">
-            <login-form (userAuthorized)="onLoginClick($event)"></login-form>
+            <app-login-form (userAuthorized)="onLoginClick($event)"></app-login-form>
         </div>
     </dx-popup>
 </header>
