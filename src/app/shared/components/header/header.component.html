@@ -38,7 +38,7 @@
                     width="170px"
                     height="100%">
                     <div *dxTemplate="let data of 'content'">
-                        <app-user-panel [menuItems]="userMenuItems" menuMode="context" (onItemClick)="onUserMenuItemClick($event)"></app-user-panel>
+                        <app-user-panel [menuItems]="userMenuItems" menuMode="context" (itemClick)="onUserMenuItemClick($event)"></app-user-panel>
                     </div>
                 </dx-button>
             </div>
