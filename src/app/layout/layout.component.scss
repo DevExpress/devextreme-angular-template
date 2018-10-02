@@ -13,7 +13,21 @@
     z-index: 1;
 }
 
+::ng-deep .dx-scrollable-content {
+    height: 100%;
+}
+
+::ng-deep .dx-scrollview-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 .content {
+    flex-grow: 1;
+}
+
+.drawer {
     flex: 1;
     min-height: 0;
 
@@ -32,7 +46,7 @@
     }
 }
 
-.screen-large .content ::ng-deep .dx-card {
+.screen-large .drawer ::ng-deep .dx-card {
     padding: 40px;
 }
 

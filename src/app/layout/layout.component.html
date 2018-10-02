@@ -4,7 +4,7 @@
     </div>
 
     <dx-drawer
-        class="content"
+        class="drawer"
         [closeOnOutsideClick]="shaderEnabled"
         [openedStateMode]="menuMode"
         [revealMode]="menuRevealMode"
@@ -23,7 +23,10 @@
         </app-navigation-menu>
 
         <dx-scroll-view>
-            <ng-content></ng-content>
+            <div class="content">
+                <ng-content></ng-content>
+            </div>
+            
 
             <div class="footer">
                 <ng-content select="app-footer"></ng-content>
