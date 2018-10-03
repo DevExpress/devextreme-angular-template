@@ -30,7 +30,7 @@ You have the following options to start:
 
  Use flag `--empty` to prevent creation of sample views.
 
- **Note: this command creates an Angular application using the default settings and SASS styles. (`ng new app-name --style=sass`)**
+ This command creates an Angular application using the default settings and SASS styles (`ng new app-name --style=sass`).
 
 - Add DevExtreme layout to an existing Angular application using the DevExtreme CLI
 
