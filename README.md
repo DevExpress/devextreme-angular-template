@@ -10,15 +10,15 @@ You have the following options to start:
 
 - Use this DevExtreme Angular application template
 
- - Clone the repository  
+    - Clone the repository  
 
             git clone https://github.com/DevExpress/devextreme-angular-template/
 
- - Navigate to the project folder
+    - Navigate to the project folder
 
             cd devextreme-angular-template
 
- - Install dependencies
+    - Install dependencies
 
             npm install
 
