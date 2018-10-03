@@ -8,6 +8,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 You have the following options to start:
 
+- Use this DevExtreme Angular application template
+
+ - Clone the repository  
+
+            git clone https://github.com/DevExpress/devextreme-angular-template/
+
+ - Navigate to the project folder
+
+            cd devextreme-angular-template
+
+ - Install dependencies
+
+            npm install
+
+ This option does not require install devextreme-cli, but you can not change application settings including the name.
+
 - Create a new Angular application with DevExtreme layout using the DevExtreme CLI
 
         npx devextreme-cli new angular-app app-name
