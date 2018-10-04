@@ -45,3 +45,8 @@
     }
 }
 
+:host-context(.dx-theme-generic) ::ng-deep.dx-treeview .dx-treeview-item .dx-icon {
+    width: 26px;
+    height: 26px;
+    padding: 4px;
+}
