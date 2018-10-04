@@ -4,70 +4,62 @@ This project contains a template of an Angular application based on DevExtreme w
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0-rc.4.
 
-## Getting Started
+## Get Started
 
-You have the following options to start:
+Clon this repository to get started with DevExtreme Angular Template:
 
-- Use this DevExtreme Angular application template
+        git clone https://github.com/DevExpress/devextreme-angular-template/
+        cd devextreme-angular-template
+        npm install
+        npm run start
 
-    - Clone the repository  
+You can also generate a DevExtreme Angular application using the [DevExtreme CLI]().
 
-            git clone https://github.com/DevExpress/devextreme-angular-template/
+## Add a View
 
-    - Navigate to the project folder
+Use following command to add a view to a DevExtreme Angular application based on the current template.
 
-            cd devextreme-angular-template
+    npx devextreme add view ViewName [--icon=IconName]
 
-    - Install dependencies
+You can choose the icon name from the [icon library](https://js.devexpress.com/Documentation/Guide/Themes/Icon_Library/).
 
-            npm install
+This command also supports the `module`, `project`, `spec`, `inlineStyle`, and `prefix` options described in the [ng generate component](https://github.com/angular/angular-cli/wiki/generate-component) description.
 
- This option does not require install devextreme-cli, but you can not change application settings including the name.
+## Customize Themes
 
-- Create a new Angular application with DevExtreme layout using the DevExtreme CLI
+### Use a Predefined Theme
 
-        npx devextreme-cli new angular-app app-name
+The DevExtreme Angular Template uses different themes for menu and content. Pass the required theme name to the base-theme option in the metadata.base.json and metadata.additional.json files located in the src\themes folder to modify content and menu themes respectively. You can find the available predefined themes in the node_modules\devextreme\dist\css\ folder (after you run `npm install`).
 
- Use flag `--empty` to prevent creation of sample views.
+    {
+        // ...,
+        "baseTheme": "carmine",
+        // ...
+    }
 
- This command creates an Angular application using the default settings and SASS styles (`ng new app-name --style=sass`).
+Run `npx devextreme build` to rebuild themes.
 
-- Add DevExtreme layout to an existing Angular application using the DevExtreme CLI
+### Create a Custom Theme
 
-        npx devextreme-cli add angular-template
+Use DevExtreme Theme Builder to create a custom theme based on predefined themes. For this, import src\themes\metadata.base.json or src\themes\metadata.additional.json to Theme Builder, modify the theme and export the result to the initial file.
 
- In this case, DevExtreme CLI does not modify existing app.component files. It creates new files with a unique name (app1.component). You should manually specify which components should be bootstrapped in app.module.ts.
+Run `npx devextreme build` to rebuild themes.
 
- If app.component files do not contain custom code, you can use the `--override-app-component=true` option to override these files. The `--empty` flag prevents sample views creation.
+### Apply the Additional Theme to A Custom Element
 
-- Add DevExtreme layout to an existing Angular application using DevExtreme Schematics
+Add the `dx-swatch-additional` class to a DOM node to apply the additional theme to this node.
 
- **Note: DevExtreme Schematics require @angular/cli or @angular-devkit/schematics-cli to be installed.**
+    <div class="dx-swatch-additional">
+        <!-- Your content here -->
+    </div>
 
-        ng g devextreme-angular: add app-template
+### Apply Theme Colors to Custom Elements
 
- See the [DevExtreme Schematics README](https://github.com/devexpress/DevExtreme-schematics#devextreme-schematics) for more information.
+You can use SASS variables defined in variables.base.scss and variables.additional.scss to apply theme color to custom elements.
 
-## Development Server
+    // Your scss file
+    @import "../../../themes/variables.base.scss";
 
-Run `ng serve` to run a development server. The application is available on `http://localhost:4200/`. It is automatically reloaded once you change source files.
-
-## Code Scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module` to generate another Angular application element.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts are stored in the dist/ directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-Use `ng help` or check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md) to get more help on Angular CLI.
+    .my-element {
+        background-color: $base-accent;
+    }
