@@ -1,6 +1,7 @@
 <header>
     <dx-toolbar>
         <dxi-item
+            *ngIf="menuToggleEnabled"
             location="before"
             widget="dxButton"
             [options]="{

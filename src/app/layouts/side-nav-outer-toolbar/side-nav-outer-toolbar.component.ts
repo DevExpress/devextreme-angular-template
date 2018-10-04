@@ -1,24 +1,28 @@
 import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { NavigationMenuModule } from '../shared/components';
+import { NavigationMenuModule } from '../../shared/components';
+import { HeaderModule } from '../../shared/components';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule } from 'devextreme-angular/ui/scroll-view';
 import { CommonModule } from '@angular/common';
 
-import { navigation } from '../app-navigation';
+import { navigation } from '../../app-navigation';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-    selector: 'app-layout',
-    templateUrl: './layout.component.html',
-    styleUrls: ['./layout.component.scss']
+    selector: 'app-side-nav-outer-toolbar',
+    templateUrl: './side-nav-outer-toolbar.component.html',
+    styleUrls: ['./side-nav-outer-toolbar.component.scss']
 })
-export class AppLayoutComponent implements OnInit {
+export class SideNavOuterToolbarComponent implements OnInit {
     menuItems = navigation;
     selectedRoute = '';
 
     @Input()
-    menuOpened;
+    menuOpened: boolean;
+
+    @Input()
+    title: string;
 
     menuMode = 'shrink';
     menuRevealMode = 'expand';
@@ -104,8 +108,8 @@ export class AppLayoutComponent implements OnInit {
 }
 
 @NgModule({
-    imports: [ NavigationMenuModule, DxDrawerModule, DxScrollViewModule, CommonModule ],
-    exports: [ AppLayoutComponent ],
-    declarations: [ AppLayoutComponent ]
+    imports: [ NavigationMenuModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule ],
+    exports: [ SideNavOuterToolbarComponent ],
+    declarations: [ SideNavOuterToolbarComponent ]
 })
-export class AppLayoutModule { }
+export class SideNavOuterToolbarModule { }

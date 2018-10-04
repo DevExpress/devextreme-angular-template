@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { PagesRoutingModule } from './app-routing.module';
-import { AppLayoutModule } from './layout/layout.component';
+import { SideNavOuterToolbarModule } from './layouts/side-nav-outer-toolbar/side-nav-outer-toolbar.component';
+import { SideNavInnerToolbarModule } from './layouts/side-nav-inner-toolbar/side-nav-inner-toolbar.component';
 
-import { HeaderModule } from './shared/components/header/header.component';
 import { FooterModule } from './shared/components/footer/footer.component';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { FooterModule } from './shared/components/footer/footer.component';
         AppComponent
     ],
     imports: [
-        HeaderModule,
         FooterModule,
-        AppLayoutModule,
+        SideNavOuterToolbarModule,
+        SideNavInnerToolbarModule,
         BrowserModule,
         PagesRoutingModule
     ],

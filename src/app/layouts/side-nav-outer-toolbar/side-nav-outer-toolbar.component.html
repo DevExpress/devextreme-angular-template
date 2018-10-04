@@ -1,6 +1,10 @@
-<div class="container dx-theme-material-typography" [ngClass]="sizeClasses">
-    <div class="header">
-        <ng-content select="app-header"></ng-content>
+<div class="layout dx-theme-material-typography" [ngClass]="sizeClasses">
+    <div id="header">
+        <app-header
+            [menuToggleEnabled]="true"
+            (menuToggle)="menuOpened = !menuOpened;"
+            [title]="title">
+        </app-header>
     </div>
 
     <dx-drawer
@@ -26,7 +30,6 @@
             <div class="content">
                 <ng-content></ng-content>
             </div>
-            
 
             <div class="footer">
                 <ng-content select="app-footer"></ng-content>

@@ -1,9 +1,4 @@
-<app-layout #layout>
-    <app-header
-        (menuToggle)="layout.menuOpened = !layout.menuOpened;"
-        title="DevExtreme Angular Template">
-    </app-header>
-
+<app-side-nav-outer-toolbar title="DevExtreme Angular Template">
     <router-outlet></router-outlet>
 
     <app-footer>
@@ -11,4 +6,4 @@
         <br/>
         All trademarks or registered trademarks are property of their respective owners.
     </app-footer>
-</app-layout>
+</app-side-nav-outer-toolbar>

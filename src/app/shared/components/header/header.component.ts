@@ -15,7 +15,11 @@ import { DxPopupModule } from 'devextreme-angular/ui/popup';
 })
 
 export class HeaderComponent {
-    @Output() menuToggle = new EventEmitter<boolean>();
+    @Output()
+    menuToggle = new EventEmitter<boolean>();
+
+    @Input()
+    menuToggleEnabled = false;
 
     @Input()
     title: string;
