@@ -1,7 +1,15 @@
 @import "../../../../themes/generated/variables.base.scss";
 
+:host {
+    display: block;
+}
+
 ::ng-deep .authorization {
     margin-right: 40px;
+}
+
+:host-context(.screen-x-small) ::ng-deep .authorization {
+    margin-right: 20px;
 }
 
 ::ng-deep .dx-menu-button {
@@ -11,5 +19,15 @@
 ::ng-deep .dx-menu-base {
     .dx-menu-item-wrapper {
         width: 173px;
+    }
+}
+
+:host-context(.dx-theme-generic) {
+    .dx-toolbar {
+        padding: 10px 0;
+    }
+
+    .user-button>.dx-button-content {
+        padding: 3px;
     }
 }

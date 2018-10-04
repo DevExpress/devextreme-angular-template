@@ -21,7 +21,7 @@
         [items]="menuItems"
         [width]=170>
         <div *dxTemplate="let data of 'item'">
-            <i [ngClass]="['dx-icon', 'dx-icon-' + data.icon]"></i>
+            <i [ngClass]="['dx-icon', 'dx-icon-' + data.itemIcon]"></i>
             <span>{{data.text}}</span>
         </div>
     </dx-list>
