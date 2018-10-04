@@ -2,7 +2,7 @@
 
 The DevExtreme Angular Template is an application with several views and a hierarchical menu. You can modify, add, and delete views, configure the menu, and change themes.
 
-The DevExtreme Angular Template is based on [DevExtreme widgets](https://js.devexpress.com/) with [Angular integration](https://github.com/devexpress/DevExtreme-angular) and generated with [Angular CLI](https://github.com/angular/angular-cli).
+The DevExtreme Angular Template is based on [DevExtreme Angular components](https://github.com/devexpress/DevExtreme-angular) and generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Getting Started
 
