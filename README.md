@@ -11,7 +11,7 @@ Clone the following repository to get started with DevExtreme Angular Template:
     git clone https://github.com/DevExpress/devextreme-angular-template/
     cd devextreme-angular-template
     npm install
-    ng serve
+    npm run start
 
 You can also use the [Angular or DevExtreme CLI](https://github.com/devexpress/DevExtreme-angular#quick-start) to generate a DevExtreme Angular application.
 
