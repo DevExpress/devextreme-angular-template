@@ -11,9 +11,9 @@ import { navigation } from '../../app-navigation';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-    selector: 'app-side-nav-outer-toolbar',
-    templateUrl: './side-nav-outer-toolbar.component.html',
-    styleUrls: ['./side-nav-outer-toolbar.component.scss']
+    selector: 'app-side-nav-inner-toolbar',
+    templateUrl: './side-nav-inner-toolbar.component.html',
+    styleUrls: ['./side-nav-inner-toolbar.component.scss']
 })
 export class SideNavInnerToolbarComponent implements OnInit {
     menuItems = navigation;
