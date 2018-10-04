@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Get Started
 
-Clon this repository to get started with DevExtreme Angular Template:
+Clone this repository to get started with DevExtreme Angular Template:
 
         git clone https://github.com/DevExpress/devextreme-angular-template/
         cd devextreme-angular-template
