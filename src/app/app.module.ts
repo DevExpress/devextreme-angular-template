@@ -4,8 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { PagesRoutingModule } from './app-routing.module';
-import { SideNavOuterToolbarModule } from './layouts/side-nav-outer-toolbar/side-nav-outer-toolbar.component';
-import { SideNavInnerToolbarModule } from './layouts/side-nav-inner-toolbar/side-nav-inner-toolbar.component';
+import {
+    SideNavOuterToolbarModule,
+    SideNavInnerToolbarModule
+} from './layouts';
 
 import { FooterModule } from './shared/components/footer/footer.component';
 
