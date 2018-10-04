@@ -57,6 +57,11 @@ export class SideNavInnerToolbarComponent implements OnInit {
         this.shaderEnabled = !this.isLargeScreen;
     }
 
+    toggleMenu = (e) => {
+        this.menuOpened = !this.menuOpened;
+        e.event.stopPropagation();
+    }
+
     get isLargeScreen() {
         const isLarge = this.breakpointObserver.isMatched(Breakpoints.Large);
         const isXLarge = this.breakpointObserver.isMatched(Breakpoints.XLarge);
