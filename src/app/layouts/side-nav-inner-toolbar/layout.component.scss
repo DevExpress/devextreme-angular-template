@@ -1,16 +1,32 @@
-@import "../../themes/generated/variables.base.scss";
+@import "../../../themes/generated/variables.base.scss";
+
+.layout {
+    height: 100%;
+    background-color: darken($base-bg, 5.00);
+}
 
 .container {
     flex-direction: column;
     display: flex;
     height: 100%;
-    background-color: darken($base-bg, 5.00);
 }
 
 .header {
     flex: 0 0 auto;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    z-index: 1;
+}
+
+#navigation-header {
+    background-color: $base-accent;
+
+    ::ng-deep .dx-icon {
+        color: $base-bg;
+    }
+}
+
+.scroll-view {
+    flex: 1;
+    min-height: 0;
 }
 
 ::ng-deep .dx-scrollable-content {
@@ -28,9 +44,6 @@
 }
 
 .drawer {
-    flex: 1;
-    min-height: 0;
-
     ::ng-deep h2 {
         margin-top: 20px;
         margin-bottom: 20px;

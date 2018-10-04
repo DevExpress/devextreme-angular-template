@@ -4,9 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { PagesRoutingModule } from './app-routing.module';
-import { AppLayoutModule } from './layout/layout.component';
+import { AppLayoutModule } from './layouts/side-nav-outer-toolbar/layout.component';
 
-import { HeaderModule } from './shared/components/header/header.component';
 import { FooterModule } from './shared/components/footer/footer.component';
 
 @NgModule({
@@ -14,7 +13,6 @@ import { FooterModule } from './shared/components/footer/footer.component';
         AppComponent
     ],
     imports: [
-        HeaderModule,
         FooterModule,
         AppLayoutModule,
         BrowserModule,
