@@ -3,7 +3,6 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { NavigationMenuModule } from '../../shared/components';
 import { HeaderModule } from '../../shared/components';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
-import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxScrollViewModule } from 'devextreme-angular/ui/scroll-view';
 import { CommonModule } from '@angular/common';
 
@@ -109,7 +108,7 @@ export class AppLayoutComponent implements OnInit {
 }
 
 @NgModule({
-    imports: [ NavigationMenuModule, DxButtonModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule ],
+    imports: [ NavigationMenuModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule ],
     exports: [ AppLayoutComponent ],
     declarations: [ AppLayoutComponent ]
 })
