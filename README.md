@@ -1,8 +1,8 @@
 # devextreme-angular-template
 
-The DevExtreme Angular Template is an application with several views and a hierarchical menu that you can use as a start point for your project. You can modify, add, and delete views, configure the menu, and change themes. Read below for more information.
+The DevExtreme Angular Template is an application with several views and a hierarchical menu that you can use as a start point for your project. You can modify, add, and delete views, configure the menu, and change themes.
 
-DevExtreme Angular Template is based on [DevExtreme widgets](https://js.devexpress.com/) with [Angular integration](https://github.com/devexpress/DevExtreme-angular) and generated with [Angular CLI](https://github.com/angular/angular-cli).
+The DevExtreme Angular Template is based on [DevExtreme widgets](https://js.devexpress.com/) with [Angular integration](https://github.com/devexpress/DevExtreme-angular) and generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ You can also use the [Angular or DevExtreme CLI](https://github.com/devexpress/D
 
 ## Add a View
 
-Use following command to add a view to a DevExtreme Angular application based on the current template.
+Use the following command to add a view to a DevExtreme Angular application based on the current template.
 
     npx devextreme add view view-name [--icon=IconName]
 
@@ -29,7 +29,7 @@ This command also supports the `module`, `project`, `spec`, `inlineStyle`, and `
 
 ### Use a Predefined Theme
 
-The DevExtreme Angular Template uses different themes for its content and menu. Pass the theme name to the base-theme option in the metadata.base.json and metadata.additional.json files in the src\themes folder to modify the content and menu themes respectively. See [Predefined Themes](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/) for more information.
+The DevExtreme Angular Template uses different themes for its content and menu. Pass the theme's name to the base-theme option in the metadata.base.json and metadata.additional.json files in the src\themes folder to modify the content and menu themes respectively. See [Predefined Themes](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/) for more information.
 
     {
         // ...,
