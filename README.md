@@ -19,7 +19,7 @@ You can also generate a DevExtreme Angular application using the [Angular or Dev
 
 Use following command to add a view to a DevExtreme Angular application based on the current template.
 
-    npx devextreme add view ViewName [--icon=IconName]
+    npx devextreme add view view-name [--icon=IconName]
 
 You can choose the icon name from the [icon library](https://js.devexpress.com/Documentation/Guide/Themes/Icon_Library/).
 
@@ -29,7 +29,7 @@ This command also supports the `module`, `project`, `spec`, `inlineStyle`, and `
 
 ### Use a Predefined Theme
 
-The DevExtreme Angular Template uses different themes for menu and content. Pass the required theme name to the base-theme option in the metadata.base.json and metadata.additional.json files located in the src\themes folder to modify content and menu themes respectively. See [Predefined Themes](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/) for more information.
+DevExtreme Angular Template uses different themes for menu and content. Pass the required theme name to the base-theme option in the metadata.base.json and metadata.additional.json files located in the src\themes folder to modify content and menu themes respectively. See [Predefined Themes](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/) for more information.
 
     {
         // ...,
@@ -63,3 +63,12 @@ You can use SCSS variables defined in variables.base.scss and variables.addition
     .my-element {
         background-color: $base-accent;
     }
+
+## Switch Layout
+
+DevExtreme Angular Template uses a layout with side navigation menu and an outer toolbar. You can use a similar layout with an inner toolbar. For this, substitute the `app-side-nav-outer-toolbar` tag with `app-side-nav-inner-toolbar` in the app.component.html file.
+
+    <app-side-nav-inner-toolbar title="DevExtreme Angular Template">
+        <!-- Layout content here -->
+    </app-side-nav-inner-toolbar>
+
