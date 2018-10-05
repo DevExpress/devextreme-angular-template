@@ -1,12 +1,18 @@
 {
-  "$schema": "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "devextreme-angular-template": {
       "root": "",
+      "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -17,22 +23,14 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              {
-                "glob": "favicon.ico",
-                "input": "src",
-                "output": "/"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "/assets"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
-              { "input": "src/styles.scss" },
-              "./node_modules/devextreme/dist/css/dx.common.css",
+              "node_modules/devextreme/dist/css/dx.common.css",
               "./src/themes/generated/theme.additional.css",
-              "./src/themes/generated/theme.base.css"
+              "./src/themes/generated/theme.base.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -81,22 +79,12 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              {
-                "input": "styles.scss"
-              }
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
-              {
-                "glob": "favicon.ico",
-                "input": "src/",
-                "output": "/"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "/assets"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ]
           }
         },
@@ -123,6 +111,11 @@
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "devextreme-angular-template:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "devextreme-angular-template:serve:production"
+            }
           }
         },
         "lint": {
@@ -136,5 +129,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "devextreme-angular-template"
 }

@@ -4,12 +4,12 @@
     display: block;
 }
 
-::ng-deep .authorization {
-    margin-right: 40px;
+:host ::ng-deep .dx-toolbar-after {
+    padding-right: 40px;
 }
 
-:host-context(.screen-x-small) ::ng-deep .authorization {
-    margin-right: 20px;
+:host-context(.screen-x-small) ::ng-deep .dx-toolbar-after {
+    padding-right: 20px;
 }
 
 ::ng-deep .dx-menu-button {

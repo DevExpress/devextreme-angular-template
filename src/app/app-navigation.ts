@@ -3,8 +3,7 @@ export const navigation = [
         text: 'Home',
         path: '/home',
         icon: 'home'
-    },
-    {
+    }, {
         text: 'Examples',
         icon: 'folder',
         items: [{
@@ -14,5 +13,4 @@ export const navigation = [
             text: 'Display Data',
             path: '/display-data'
         }]
-    }
-];
+    }];
