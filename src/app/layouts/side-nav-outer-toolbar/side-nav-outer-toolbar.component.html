@@ -16,7 +16,7 @@
         [shading]="shaderEnabled"
         [(opened)]="menuOpened">
 
-        <app-navigation-menu
+        <app-side-navigation-menu
             [items]="menuItems"
             [compactMode]="!menuOpened"
             [selectedItem]="selectedRoute"
@@ -24,7 +24,7 @@
             *dxTemplate="let dataMenu of 'panel'"
             (selectedItemChanged)="navigationChanged($event)"
             (click)="navigationClick()">
-        </app-navigation-menu>
+        </app-side-navigation-menu>
 
         <dx-scroll-view>
             <div class="content">

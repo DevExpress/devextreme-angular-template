@@ -17,4 +17,3 @@ export class FooterComponent {
     exports: [ FooterComponent ]
 })
 export class FooterModule { }
-

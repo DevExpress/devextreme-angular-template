@@ -1,6 +1,6 @@
 import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { NavigationMenuModule } from '../../shared/components';
+import { SideNavigationMenuModule } from '../../shared/components';
 import { HeaderModule } from '../../shared/components';
 import { DxDrawerModule } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule } from 'devextreme-angular/ui/scroll-view';
@@ -108,7 +108,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
 }
 
 @NgModule({
-    imports: [ NavigationMenuModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule ],
+    imports: [ SideNavigationMenuModule, DxDrawerModule, HeaderModule, DxScrollViewModule, CommonModule ],
     exports: [ SideNavOuterToolbarComponent ],
     declarations: [ SideNavOuterToolbarComponent ]
 })

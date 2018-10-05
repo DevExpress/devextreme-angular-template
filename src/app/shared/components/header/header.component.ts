@@ -52,8 +52,6 @@ export class HeaderComponent {
     onUserMenuItemClick(item) {
         if (item === this.userMenuItems[1]) {
             this.isUserAuthorized = false;
-        } else if (item === this.userMenuItems[0]) {
-            this.router.navigate(['/profile']);
         }
     }
 }

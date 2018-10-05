@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: 'home.template.html',
+    templateUrl: 'home.component.html',
     styleUrls: [ './home.component.scss' ]
 })
 
