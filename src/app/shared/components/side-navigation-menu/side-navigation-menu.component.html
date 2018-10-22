@@ -3,6 +3,7 @@
 <dx-tree-view
     expandEvent="click"
     [items]="items"
+    (onInitialized)="onMenuInitialized($event)"
     (onItemClick)="onItemClick($event)"
     (onContentReady)="updateSelection($event)"
     (onSelectionChanged)="updateSelection($event)"
