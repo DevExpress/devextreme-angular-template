@@ -61,6 +61,10 @@ export class SideNavigationMenuComponent {
     onItemClick(event) {
         this.selectedItemChanged.emit(event);
     }
+
+    onMenuInitialized(event) {
+        event.component.option('deferRendering', false);
+    }
 }
 
 @NgModule({
