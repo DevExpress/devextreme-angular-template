@@ -37,7 +37,7 @@ export class SideNavInnerToolbarComponent implements OnInit {
 
         this.router.events.subscribe(val => {
             if (val instanceof NavigationEnd) {
-                this.selectedRoute = val.urlAfterRedirects;
+                this.selectedRoute = val.urlAfterRedirects.split('?')[0];
             }
         });
 
