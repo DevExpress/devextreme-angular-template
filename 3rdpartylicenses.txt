@@ -1,4 +1,4 @@
-devextreme@18.2.1-pre-18289
+devextreme@18.2.2-pre-18292
 SEE LICENSE IN README.md
 SEE LICENSE IN README.md
 
