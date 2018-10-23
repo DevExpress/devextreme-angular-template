@@ -34,9 +34,10 @@
             menuItemTemplate="menuItem">
             <div *dxTemplate="let data of 'item'">
                 <dx-button
-                    class="user-button authorization dx-button-flat"
+                    class="user-button authorization"
                     width="170px"
-                    height="100%">
+                    height="100%"
+                    stylingMode="text">
                     <div *dxTemplate="let data of 'content'">
                         <app-user-panel [menuItems]="userMenuItems" menuMode="context" (itemClick)="onUserMenuItemClick($event)"></app-user-panel>
                     </div>
