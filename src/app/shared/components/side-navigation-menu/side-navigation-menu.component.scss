@@ -11,20 +11,29 @@
 }
 
 ::ng-deep .dx-treeview {
-    .dx-treeview-node {
-        padding-left: 0px;
+    .dx-treeview-node-container {
+        .dx-treeview-node {
+            padding: 0 0;
 
-        &.dx-state-selected .dx-treeview-item {
-            background: transparent;
+            &.dx-state-selected .dx-treeview-item {
+                background: transparent;
+            }
+
+            &.dx-state-selected > .dx-treeview-item * {
+                color: $base-accent;
+            }
         }
+    }
 
-        &.dx-state-selected > .dx-treeview-item * {
-            color: $base-accent;
+    .dx-rtl {
+        .dx-treeview-toggle-item-visibility {
+            left: 10px;
+            right: auto;
         }
     }
 
     .dx-treeview-item-content {
-        padding-left: 10px;
+        padding: 0 10px;
     }
 
     .dx-treeview-toggle-item-visibility {
@@ -35,13 +44,13 @@
     .dx-treeview-node[aria-level='1'] {
         border-bottom: 1px solid $base-border-color;
         .dx-treeview-item-content span {
-            padding-left: 13px;
+            padding: 0 13px;
         }
     }
 
     .dx-treeview-node[aria-level='2'] .dx-treeview-item-content {
         font-weight: 300;
-        padding-left: 38px;
+        padding: 0 38px;
     }
 }
 
