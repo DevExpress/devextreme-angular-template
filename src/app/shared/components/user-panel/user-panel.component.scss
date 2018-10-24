@@ -5,7 +5,7 @@
     border-radius: 50%;
     height: 30px;
     width: 30px;
-    margin-left: 4px;
+    margin: 0 6px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 }
@@ -21,7 +21,7 @@
 
 ::ng-deep .dx-toolbar-menu-section {
     .user-info {
-        padding: 10px 5px 10px 5px;
+        padding: 10px 5px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 }
@@ -29,25 +29,44 @@
 .user-name {
     font-size: 14px;
     color: $base-text-color;
-    margin-left: 15px;
+    margin: 0 9px;
 }
 
 ::ng-deep .user-panel {
+    .dx-rtl {
+        .dx-list-item {
+            .dx-icon {
+                margin-right: 0;
+                margin-left: 16px;
+            }
+        }
+    }
     .dx-list-item {
         .dx-icon {
             vertical-align: middle;
             color: rgba(0, 0, 0, 0.87);
-            margin-right: 17px;
+            margin-right: 16px;
         }
     }
 }
 
 ::ng-deep .dx-context-menu {
+    &.dx-rtl {
+        &.user-menu {
+            .dx-submenu {
+                .dx-menu-items-container {
+                    .dx-icon {
+                        margin-left: 16px;
+                    }
+                }
+            }
+        }
+    }
     &.user-menu {
         .dx-submenu {
             .dx-menu-items-container {
                 .dx-icon {
-                    margin-right: 17px;
+                    margin-right: 16px;
                 }
             }
         }
