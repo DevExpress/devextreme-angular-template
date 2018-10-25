@@ -35,7 +35,7 @@ This command also supports the `module`, `project`, `spec`, `inlineStyle`, and `
 
 The DevExtreme Angular Template uses different themes for its content and menu. Pass the theme's name to the base-theme option in the *metadata.base.json* and *metadata.additional.json* files in the *src\themes* folder to modify the content and menu themes respectively. See [Predefined Themes](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/) for more information.
 
-```json
+```javascript
 {
     // ...,
     "baseTheme": "material.blue.light",
