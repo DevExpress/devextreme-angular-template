@@ -83,3 +83,11 @@ The DevExtreme Angular Template uses a layout with a side navigation menu and ou
     <!-- Layout content here -->
 </app-side-nav-inner-toolbar>
 ```
+
+## License
+
+Familiarize yourself with the
+[DevExtreme License](https://js.devexpress.com/Licensing/).
+[Free trial is available!](http://js.devexpress.com/Buy/)
+
+**DevExtreme Angular Template is released as a MIT-licensed (free and open-source) add-on to DevExtreme.**
