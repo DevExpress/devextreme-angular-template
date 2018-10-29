@@ -28,10 +28,10 @@ export class HeaderComponent {
     isUserAuthorized = true;
     userMenuItems = [{
         text: 'Profile',
-        itemIcon: 'user'
+        icon: 'user'
     }, {
         text: 'Logout',
-        itemIcon: 'runner'
+        icon: 'runner'
     }];
 
     constructor(private router: Router) {}

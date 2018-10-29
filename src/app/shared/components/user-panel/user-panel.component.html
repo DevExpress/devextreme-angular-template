@@ -18,11 +18,6 @@
         class="dx-toolbar-menu-action"
         *ngIf="menuMode === 'list'"
         (onItemClick)="itemMenuClick($event)"
-        [items]="menuItems"
-        [width]=170>
-        <div *dxTemplate="let data of 'item'">
-            <i [ngClass]="['dx-icon', 'dx-icon-' + data.itemIcon]"></i>
-            <span>{{data.text}}</span>
-        </div>
+        [items]="menuItems">
     </dx-list>
 </div>
