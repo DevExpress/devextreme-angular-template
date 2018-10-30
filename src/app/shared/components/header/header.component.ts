@@ -1,6 +1,5 @@
 import { Component, NgModule, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
 
 import { LoginFormModule } from '../login-form/login-form.component';
 import { UserPanelModule } from '../user-panel/user-panel.component';
@@ -34,7 +33,7 @@ export class HeaderComponent {
         icon: 'runner'
     }];
 
-    constructor(private router: Router) {}
+    constructor() { }
 
     toggleMenu = () => {
         this.menuToggle.emit();
