@@ -63,17 +63,19 @@
     ::ng-deep .dx-card {
         padding: 20px;
     }
+}
 
-    ::ng-deep .dx-card.wide-card {
+.screen-large .drawer ::ng-deep .dx-card {
+    padding: 40px;
+}
+
+:host, .screen-large {
+    .drawer ::ng-deep .dx-card.wide-card, .drawer ::ng-deep .dx-card.wide-card {
         padding: 0;
         border-radius: 0;
         margin-left: 0;
         margin-right: 0;
     }
-}
-
-.screen-large .drawer ::ng-deep .dx-card {
-    padding: 40px;
 }
 
 .screen-x-small {
