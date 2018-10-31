@@ -67,7 +67,7 @@ You can use SCSS variables defined in *variables.base.scss* and *variables.addit
 
 ```scss
 // Your scss file
-@import "../../../themes/variables.base.scss";
+@import "../../../themes/generated/variables.base.scss";
 
 .my-element {
     background-color: $base-accent;
