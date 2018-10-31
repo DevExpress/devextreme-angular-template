@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -24,7 +23,7 @@ const routes: Routes = [
     }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule, BrowserModule],
+  imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule],
   exports: [RouterModule],
   declarations: [HomeComponent, ProfileComponent, DisplayDataComponent]
 })
