@@ -1,40 +1,69 @@
 <h2>Display Data</h2>
 
-<dx-data-grid id="gridContainer"
+<dx-data-grid class="dx-card wide-card"
     [dataSource]="dataSource"
-    [showBorders]="true">
+    [showBorders]="false"
+    [focusedRowEnabled]="true"
+    [focusedRowIndex]="0"
+    [columnAutoWidth]="true"
+    [columnHidingEnabled]="true">
+
     <dxo-paging [pageSize]="10"></dxo-paging>
-    <dxo-pager
-        [showPageSizeSelector]="true"
-        [allowedPageSizes]="[10, 25]"
-    ></dxo-pager>
+    <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+
     <dxi-column
-        dataField="Product_ID"
-    ></dxi-column>
+        dataField="Task_ID"
+        [width]="90"
+        [hidingPriority]="2">
+    </dxi-column>
     <dxi-column
-        dataField="Product_Name"
-        [width]="250"
-    ></dxi-column>
+        dataField="Task_Subject"
+        [width]="190"
+        caption="Subject"
+        [hidingPriority]="8">
+    </dxi-column>
     <dxi-column
-        dataField="Product_Cost"
-        caption="Cost"
-        dataType="number"
-        format="currency"
-    ></dxi-column>
+        dataField="Task_Status"
+        caption="Status"
+        [hidingPriority]="6">
+    </dxi-column>
     <dxi-column
-        dataField="Product_Sale_Price"
-        caption="Sale Price"
-        dataType="number"
-        format="currency"
-    ></dxi-column>
+        dataField="Task_Priority"
+        caption="Priority"
+        [hidingPriority]="5">
+        <dxo-lookup
+            [dataSource]="priority"
+            valueExpr="value" 
+            displayExpr="name">
+        </dxo-lookup>
+    </dxi-column>
     <dxi-column
-        dataField="Product_Retail_Price"
-        caption="Retail Price"
-        dataType="number"
-        format="currency"
-    ></dxi-column>
+        dataField="ResponsibleEmployee.Employee_Full_Name"
+        caption="Assigned To"
+        [allowSorting]="false"
+        [hidingPriority]="7">
+    </dxi-column>
     <dxi-column
-        dataField="Product_Current_Inventory"
-        caption="Inventory"
-    ></dxi-column>
+        dataField="Task_Start_Date"
+        caption="Start Date"
+        dataType="date"
+        [hidingPriority]="3">
+    </dxi-column>
+    <dxi-column
+        dataField="Task_Due_Date"
+        caption="Due Date"
+        dataType="date"
+        [hidingPriority]="4">
+    </dxi-column>
+    <dxi-column
+        dataField="Task_Priority"
+        caption="Priority"
+        [hidingPriority]="1">
+    </dxi-column>
+    <dxi-column
+        dataField="Task_Completion"
+        caption="Completion"
+        [hidingPriority]="0">
+    </dxi-column>
 </dx-data-grid>

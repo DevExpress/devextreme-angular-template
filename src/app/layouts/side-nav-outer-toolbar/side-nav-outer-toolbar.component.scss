@@ -18,11 +18,11 @@
     }
 }
 
-::ng-deep .dx-scrollable-content {
+:host ::ng-deep .dx-scrollable-content {
     height: 100%;
 }
 
-::ng-deep .dx-scrollview-content {
+:host ::ng-deep .dx-scrollview-content {
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -49,6 +49,13 @@
 
     ::ng-deep .dx-card {
         padding: 20px;
+    }
+
+    ::ng-deep .dx-card.wide-card {
+        padding: 0;
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
