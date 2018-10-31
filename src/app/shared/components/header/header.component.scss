@@ -10,15 +10,15 @@
     }
 }
 
-:host-context(.screen-x-small) ::ng-deep .dx-toolbar-after {
+:host :host-context(.screen-x-small) ::ng-deep .dx-toolbar-items-container .dx-toolbar-after {
     padding: 0 20px;
 }
 
-::ng-deep .dx-menu-button {
+::ng-deep .menu-button {
     margin: 0 12px;
 }
 
-::ng-deep .dx-menu-base {
+:host ::ng-deep .dx-menu-base {
     .dx-menu-item-wrapper {
         width: 173px;
     }

@@ -7,22 +7,32 @@ import 'devextreme/data/odata/store';
 
 export class DisplayDataComponent {
     dataSource: any;
+    priority: any[];
 
     constructor() {
         this.dataSource = {
             store: {
                 type: 'odata',
-                url: 'https://js.devexpress.com/Demos/DevAV/odata/Products'
+                key: 'Task_ID',
+                url: 'https://js.devexpress.com/Demos/DevAV/odata/Tasks'
             },
+            expand: 'ResponsibleEmployee',
             select: [
-                'Product_ID',
-                'Product_Name',
-                'Product_Cost',
-                'Product_Sale_Price',
-                'Product_Retail_Price',
-                'Product_Current_Inventory'
-            ],
-            filter: ['Product_Current_Inventory', '>', 0]
+                'Task_ID',
+                'Task_Subject',
+                'Task_Start_Date',
+                'Task_Due_Date',
+                'Task_Status',
+                'Task_Priority',
+                'Task_Completion',
+                'ResponsibleEmployee/Employee_Full_Name'
+            ]
         };
+        this.priority = [ 
+            { name: 'High', value: 4 }, 
+            { name: 'Urgent', value: 3 }, 
+            { name: 'Normal', value: 2 }, 
+            { name: 'Low', value: 1 }
+        ];
     }
 }
