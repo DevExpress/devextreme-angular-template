@@ -10,10 +10,6 @@
     height: 100%;
 }
 
-#header {
-    flex: 0 0 auto;
-}
-
 #navigation-header {
     @import "../../../themes/generated/variables.additional.scss";
     background-color: $base-accent;

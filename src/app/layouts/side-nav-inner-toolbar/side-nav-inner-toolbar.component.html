@@ -34,12 +34,10 @@
         </app-side-navigation-menu>
 
         <div class="container">
-            <div id="header">
-                <app-header
-                    [menuToggleEnabled]="minMenuSize === 0"
-                    (menuToggle)="menuOpened = !menuOpened;">
-                </app-header>
-            </div>
+            <app-header
+                [menuToggleEnabled]="minMenuSize === 0"
+                (menuToggle)="menuOpened = !menuOpened;">
+            </app-header>
 
             <dx-scroll-view class="scroll-view">
                 <div class="content">

@@ -7,9 +7,8 @@
     background-color: darken($base-bg, 5.00);
 }
 
-#header {
-    flex: 0 0 auto;
-    z-index: 1;
+app-header {
+    z-index: 2000;
 }
 
 :host ::ng-deep .dx-scrollable-content {
