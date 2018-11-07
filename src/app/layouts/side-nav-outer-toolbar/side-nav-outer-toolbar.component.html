@@ -1,11 +1,9 @@
 <div class="layout" [ngClass]="sizeClasses">
-    <div id="header">
-        <app-header
-            [menuToggleEnabled]="true"
-            (menuToggle)="menuOpened = !menuOpened;"
-            [title]="title">
-        </app-header>
-    </div>
+    <app-header
+        [menuToggleEnabled]="true"
+        (menuToggle)="menuOpened = !menuOpened;"
+        [title]="title">
+    </app-header>
 
     <dx-drawer
         class="drawer"
