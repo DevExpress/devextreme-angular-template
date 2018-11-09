@@ -28,10 +28,10 @@ export class DisplayDataComponent {
                 'ResponsibleEmployee/Employee_Full_Name'
             ]
         };
-        this.priority = [ 
-            { name: 'High', value: 4 }, 
-            { name: 'Urgent', value: 3 }, 
-            { name: 'Normal', value: 2 }, 
+        this.priority = [
+            { name: 'High', value: 4 },
+            { name: 'Urgent', value: 3 },
+            { name: 'Normal', value: 2 },
             { name: 'Low', value: 1 }
         ];
     }
