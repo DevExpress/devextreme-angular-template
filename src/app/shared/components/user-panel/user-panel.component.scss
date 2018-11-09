@@ -71,4 +71,18 @@
             }
         }
     }
+    .dx-menu-item {
+        .dx-menu-item-content {
+            padding: 3px 16px 4px;
+        }
+    }
+}
+
+::ng-deep .dx-theme-generic {
+    .dx-menu-item-content {
+        .dx-menu-item-text {
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+    }
 }
