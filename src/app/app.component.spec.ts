@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'devextreme-angular-template'`, () => {
+  it(`should have as title 'DevExtreme-App'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('devextreme-angular-template');
+    expect(app.title).toEqual('DevExtreme-App');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to devextreme-angular-template!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to DevExtreme-App!');
   });
 });

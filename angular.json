@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "devextreme-angular-template": {
+    "DevExtreme-App": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/devextreme-angular-template",
+            "outputPath": "dist/DevExtreme-App",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,8 +28,8 @@
             ],
             "styles": [
               "node_modules/devextreme/dist/css/dx.common.css",
-              "./src/themes/generated/theme.additional.css",
-              "./src/themes/generated/theme.base.css",
+              "src/themes/generated/theme.additional.css",
+              "src/themes/generated/theme.base.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -50,25 +50,32 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "devextreme-angular-template:build"
+            "browserTarget": "DevExtreme-App:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "devextreme-angular-template:build:production"
+              "browserTarget": "DevExtreme-App:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "devextreme-angular-template:build"
+            "browserTarget": "DevExtreme-App:build"
           }
         },
         "test": {
@@ -102,19 +109,20 @@
         }
       }
     },
-    "devextreme-angular-template-e2e": {
+    "DevExtreme-App-e2e": {
       "root": "e2e/",
       "projectType": "application",
+      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "devextreme-angular-template:serve"
+            "devServerTarget": "DevExtreme-App:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "devextreme-angular-template:serve:production"
+              "devServerTarget": "DevExtreme-App:serve:production"
             }
           }
         },
@@ -130,5 +138,5 @@
       }
     }
   },
-  "defaultProject": "devextreme-angular-template"
+  "defaultProject": "DevExtreme-App"
 }
