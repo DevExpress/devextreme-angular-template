@@ -1,12 +1,14 @@
 # devextreme-angular-template
 
-The DevExtreme Angular Template is an application with several views and a hierarchical menu (see the [live preview](https://devexpress.github.io/devextreme-angular-template)). You can modify, add, and delete views, configure the menu, and change themes.
+With the DevExtreme Angular Template you can quickly create an application with several views and a hierarchical menu (see the [live preview](https://devexpress.github.io/devextreme-angular-template)).
+
+You can use [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) commands to modify, add, and delete views, configure the menu, and change themes.
 
 The DevExtreme Angular Template is based on [DevExtreme Angular components](https://github.com/devexpress/DevExtreme-angular) and generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 * [Getting started](#getting-started)
-* [Switch Layout](#switch-layout)
 * [Add DevExtreme Angular Template to an Existing Application](#add-template-to-existing-app)
+* [Switch the Layout](#switch-layout)
 * [Add a View](#add-view)
 * [Configure Navigation Items](#configure-nav-items)
 * [Customize Application Appearance](#customize-application-appearance)
@@ -18,7 +20,7 @@ The DevExtreme Angular Template is based on [DevExtreme Angular components](http
 
 ## <a name="getting-started"></a>Getting Started
 
-Use the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli)'s `new angular-app` to create a DevExtreme Angular application that includes several sample views and a navigation menu:
+Use the DevExtreme CLI's `new angular-app` command to create a DevExtreme Angular application that includes several sample views and a navigation menu:
 
 ```bash
 npx devextreme-cli new angular-app app-name
@@ -47,16 +49,6 @@ npm install
 npm run start
 ```
 
-## <a name="switch-layout"></a>Switch Layout
-
-You can change the layout in an existing application. For this, substitute the `app-side-nav-outer-toolbar` tag with `app-side-nav-inner-toolbar` in the *app.component.html* file.
-
-```html
-<app-side-nav-inner-toolbar title="DevExtreme Angular Template">
-    <!-- Layout content here -->
-</app-side-nav-inner-toolbar>
-```
-
 ## <a name="add-template-to-existing-app"></a>Add DevExtreme Angular Template to an Existing Application
 
 If you have an existing angular application, use the `add-app-template` command to add a DevExtreme Angular Template to this application.
@@ -82,6 +74,16 @@ npx devextreme-cli add angular-template --override-app-component=true
 This command also supports the `--layout` and `--empty` options that are described in the [Getting Started](#getting-started) section.
 
 For command options, read the [add-app-template](https://github.com/DevExpress/devextreme-schematics/tree/master/src/add-app-template#add-app-template) schematic description.
+
+## <a name="switch-layout"></a>Switch the Layout
+
+You can change the layout in an existing application. For this, substitute the `app-side-nav-outer-toolbar` tag with `app-side-nav-inner-toolbar` in the *app.component.html* file.
+
+```html
+<app-side-nav-inner-toolbar title="DevExtreme Angular Template">
+    <!-- Layout content here -->
+</app-side-nav-inner-toolbar>
+```
 
 ## <a name="add-view"></a>Add a View
 
