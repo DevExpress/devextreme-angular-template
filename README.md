@@ -18,7 +18,7 @@ The DevExtreme Angular Template is based on [DevExtreme Angular components](http
 
 ## <a name="getting-started"></a>Getting Started
 
-Use the DevExtreme CLI's `new angular-app` to create a DevExtreme Angular application that includes several sample views and a navigation menu:
+Use the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli)'s `new angular-app` to create a DevExtreme Angular application that includes several sample views and a navigation menu:
 
 ```bash
 npx devextreme-cli new angular-app app-name
