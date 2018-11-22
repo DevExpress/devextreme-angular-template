@@ -39,7 +39,7 @@ npx devextreme-cli new angular-app app-name --layout=app-side-nav-inner-toolbar
 Use the `--empty` flag to generate an application without views and navigation items.
 
 ```bash
-npx devextreme-cli new angular-app app-name --empty=true
+npx devextreme-cli new angular-app app-name --empty
 ```
 
 You can also clone the current repository to play around with DevExtreme Angular Template. 
@@ -67,15 +67,15 @@ import { AppComponent } from './app1.component';
 // ...
 ```
 
-You can also use the `--override-app-component=true` option to override the existing app component.
+You can also use the `--resolve-conflicts=override` option to override the existing app component.
 
 ```bash
-npx devextreme-cli add angular-template --override-app-component=true
+npx devextreme-cli add angular-template --resolve-conflicts=override
 ```
 
 This command also supports the `--layout` and `--empty` options that are described in the [Getting Started](#getting-started) section.
 
-For command options, read the [add-app-template](https://github.com/DevExpress/devextreme-schematics/tree/master/src/add-app-template#add-app-template) schematic description.
+For more information, see [DevExtreme CLI README](https://github.com/devexpress/DevExtreme-cli#add-devextreme-to-an-existing-application).
 
 ## <a name="switch-layout"></a>Switch the Layout
 
