@@ -59,7 +59,7 @@ If you have an existing angular application, use the `add-app-template` command 
 npx devextreme-cli add-app-template
 ```
 
-If the application contains the *app.component* files, this command creates a component with a unique name (*app1.component*). You should manually embed the new component content in the existing component, or specify which component should be bootstrapped in the *app.module.ts* file.
+This command does not override existing files. It creates new files with another name. For example, *app1.component*. You should manually embed the new content in the existing files, or modify *app.module.ts* to bootstrap the created component.
 
 ```TypeScript
 // ...
@@ -67,7 +67,9 @@ import { AppComponent } from './app1.component';
 // ...
 ```
 
-You can also use the `--resolve-conflicts=override` option to override the existing app component.
+You can also use the `--resolve-conflicts=override` option to override the existing files.
+
+**Note: In this case, changes you previously applied to the application files can be lost.**
 
 ```bash
 npx devextreme-cli add angular-template --resolve-conflicts=override
