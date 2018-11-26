@@ -30,11 +30,17 @@ cd app-name
 npm run start
 ```
 
-The application includes a side navigation menu and an outer toolbar. You can set the `--layout` option to `app-side-nav-inner-toolbar` to use the layout with an inner toolbar.
+The application includes a side navigation menu and an outer toolbar.
+
+![Outer Toolbar Layout](/images/Outer-Toolbar-Layout.png)
+
+You can set the `--layout` option to `app-side-nav-inner-toolbar` to use the layout with an inner toolbar.
 
 ```bash
 npx devextreme-cli new angular-app app-name --layout=app-side-nav-inner-toolbar
 ```
+
+![Inner Toolbar Layout](/images/Inner-Toolbar-Layout.png)
 
 Use the `--empty` flag to generate an application without views and navigation items.
 
