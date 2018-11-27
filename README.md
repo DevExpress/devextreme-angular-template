@@ -109,6 +109,8 @@ This command also supports the `module`, `project`, `spec`, `inlineStyle`, and `
 
 The `add view` command also creates a root navigation item for the view.
 
+Explore our [Widget Gallery](https://js.devexpress.com/Demos/WidgetsGallery/) for examples of working with DevExtreme widgets in Angular.
+
 ## <a name="configure-nav-items"></a>Configure Navigation Items
 
 Use the *src\app\app-navigation.ts* file to configure navigation items. Each configuration item can have the following fields:
