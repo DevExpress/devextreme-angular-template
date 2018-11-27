@@ -18,8 +18,8 @@ export class SideNavOuterToolbarComponent implements OnInit {
     menuItems = navigation;
     selectedRoute = '';
 
-    @Input()
     menuOpened: boolean;
+    temporaryMenuOpened = false;
 
     @Input()
     title: string;
@@ -73,7 +73,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
     }
 
     get hideMenuAfterNavigation() {
-        return this.menuMode === 'overlap';
+        return this.menuMode === 'overlap' || this.temporaryMenuOpened;
     }
 
     get showMenuAfterClick() {
@@ -92,6 +92,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
             }
 
             if (this.hideMenuAfterNavigation) {
+                this.temporaryMenuOpened = false;
                 this.menuOpened = false;
                 pointerEvent.stopPropagation();
             }
@@ -102,6 +103,7 @@ export class SideNavOuterToolbarComponent implements OnInit {
 
     navigationClick() {
         if (this.showMenuAfterClick) {
+            this.temporaryMenuOpened = true;
             this.menuOpened = true;
         }
     }
