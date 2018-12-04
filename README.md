@@ -1,6 +1,6 @@
 # devextreme-angular-template
 
-With the DevExtreme Angular Template you can quickly create an application with several views and a hierarchical menu (see the [live preview](https://devexpress.github.io/devextreme-angular-template)).
+The DevExtreme Angular Template allows you to create an application with several views and a hierarchical menu (see the [live preview](https://devexpress.github.io/devextreme-angular-template)).
 
 ![](/images/DevExtreme-Angular-Template.png)
 
@@ -48,7 +48,7 @@ Use the `--empty` flag to generate an application without views and navigation i
 npx devextreme-cli new angular-app app-name --empty
 ```
 
-You can also clone the current repository to play around with DevExtreme Angular Template. 
+You can also clone the current repository to configure the DevExtreme Angular Template. 
 
 ```bash
 git clone https://github.com/DevExpress/devextreme-angular-template/
@@ -59,13 +59,13 @@ npm run start
 
 ## <a name="add-template-to-existing-app"></a>Add DevExtreme Angular Template to an Existing Application
 
-If you have an existing angular application, use the `add-app-template` command to add a DevExtreme Angular Template to this application.
+If you have an existing angular application, use the `add-app-template` command to add a DevExtreme Angular Template.
 
 ```bash
 npx devextreme-cli add-app-template
 ```
 
-This command does not override existing files. It creates new files with another name. For example, *app1.component*. You should manually embed the new content in the existing files, or modify *app.module.ts* to bootstrap the created component.
+This command creates new files (for example, *app1.component*) and does not override existing files. You should embed the new content in the existing files, or modify the *app.module.ts* to bootstrap the component.
 
 ```TypeScript
 // ...
@@ -73,9 +73,9 @@ import { AppComponent } from './app1.component';
 // ...
 ```
 
-You can also use the `--resolve-conflicts=override` option to override the existing files.
+You can use the `--resolve-conflicts=override` option to override existing files.
 
-**Note: In this case, changes you previously applied to the application files can be lost.**
+**Note that in this case, the changes you applied to the application files can be lost.**
 
 ```bash
 npx devextreme-cli add angular-template --resolve-conflicts=override
@@ -83,7 +83,7 @@ npx devextreme-cli add angular-template --resolve-conflicts=override
 
 This command also supports the `--layout` and `--empty` options that are described in the [Getting Started](#getting-started) section.
 
-For more information, see [DevExtreme CLI README](https://github.com/devexpress/DevExtreme-cli#add-devextreme-to-an-existing-application).
+See [DevExtreme CLI README](https://github.com/devexpress/DevExtreme-cli#add-devextreme-to-an-existing-application) for more information.
 
 ## <a name="switch-layout"></a>Switch the Layout
 
@@ -97,7 +97,7 @@ You can change the layout in an existing application. For this, substitute the `
 
 ## <a name="add-view"></a>Add a View
 
-Use the following command to add a view to a DevExtreme Angular application based on the current template.
+Use the following command to add a view to a DevExtreme Angular application based on the current template:
 
 ```bash
 npx devextreme add view view-name [--icon=IconName]
@@ -109,7 +109,7 @@ This command also supports the `module`, `project`, `spec`, `inlineStyle`, and `
 
 The `add view` command also creates a root navigation item for the view.
 
-Explore our [Widget Gallery](https://js.devexpress.com/Demos/WidgetsGallery/) for examples of working with DevExtreme widgets in Angular.
+Refer to the [Widget Gallery](https://js.devexpress.com/Demos/WidgetsGallery/) for examples of using DevExtreme widgets in Angular.
 
 ## <a name="configure-nav-items"></a>Configure Navigation Items
 
@@ -135,7 +135,7 @@ Use the *src\app\app-navigation.ts* file to configure navigation items. Each con
 
 ### <a name="change-theme"></a>Change Theme
 
-The DevExtreme Angular Template uses different themes for its content and menu. Pass the theme's name to the base-theme option in the *metadata.base.json* and *metadata.additional.json* files in the *src\themes* folder to modify the content and menu themes respectively. See [Predefined Themes](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/) for more information.
+The DevExtreme Angular Template uses different themes for its content and menu. Pass the theme's name to the base-theme option in the *metadata.base.json* and *metadata.additional.json* files in the *src\themes* folder to modify the content and menu themes. See [Predefined Themes](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/) for more information.
 
 ```javascript
 {
@@ -149,7 +149,7 @@ Run `npm run build` to rebuild themes.
 
 ### <a name="create-custom-theme"></a>Create a Custom Theme
 
-You can use the DevExtreme Theme Builder to create a custom theme based on predefined themes. For this, import *src\themes\metadata.base.json* or *src\themes\metadata.additional.json* to the [Theme Builder](https://js.devexpress.com/Documentation/Guide/Themes/Theme_Builder/), modify the theme and export the result to the initial file.
+You can use the DevExtreme Theme Builder to create a custom theme based on predefined themes. For this, import *src\themes\metadata.base.json* or *src\themes\metadata.additional.json* into the [Theme Builder](https://js.devexpress.com/Documentation/Guide/Themes/Theme_Builder/), modify the theme, and export the result to the initial file.
 
 Run `npm run build` to rebuild themes.
 
