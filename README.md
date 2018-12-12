@@ -2,7 +2,7 @@
 
 The DevExtreme Angular Template allows you to create an application with several views and a hierarchical menu (see the [live preview](https://devexpress.github.io/devextreme-angular-template)).
 
-![](/images/DevExtreme-Angular-Template.png)
+![](https://js.devexpress.com/Content/ImagesExternal/DevExtreme-Angular-Template.png)
 
 You can use [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) commands to modify, add, and delete views, configure the menu, and change themes.
 
@@ -32,7 +32,7 @@ npm run start
 
 The application includes a side navigation menu and an outer toolbar.
 
-![Outer Toolbar Layout](/images/Outer-Toolbar-Layout.png)
+![Outer Toolbar Layout](https://js.devexpress.com/Content/ImagesExternal/Outer-Toolbar-Layout.png)
 
 You can set the `--layout` option to `app-side-nav-inner-toolbar` to use the layout with an inner toolbar.
 
@@ -40,7 +40,7 @@ You can set the `--layout` option to `app-side-nav-inner-toolbar` to use the lay
 npx devextreme-cli new angular-app app-name --layout=app-side-nav-inner-toolbar
 ```
 
-![Inner Toolbar Layout](/images/Inner-Toolbar-Layout.png)
+![Inner Toolbar Layout](https://js.devexpress.com/Content/ImagesExternal/Inner-Toolbar-Layout.png)
 
 Use the `--empty` flag to generate an application without views and navigation items.
 
