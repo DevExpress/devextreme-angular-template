@@ -87,12 +87,12 @@ See [DevExtreme CLI README](https://github.com/devexpress/DevExtreme-cli#add-dev
 
 ## <a name="switch-layout"></a>Switch the Layout
 
-You can change the layout in an existing application. For this, substitute the `side-nav-outer-toolbar` tag with `side-nav-inner-toolbar` in the *app.component.html* file.
+You can change the layout in an existing application. For this, substitute the `app-side-nav-outer-toolbar` tag with `app-side-nav-inner-toolbar` in the *app.component.html* file.
 
 ```html
-<side-nav-inner-toolbar title="DevExtreme Angular Template">
+<app-side-nav-inner-toolbar title="DevExtreme Angular Template">
     <!-- Layout content here -->
-</side-nav-inner-toolbar>
+</app-side-nav-inner-toolbar>
 ```
 
 ## <a name="add-view"></a>Add a View
