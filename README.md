@@ -34,10 +34,10 @@ The application includes a side navigation menu and an outer toolbar.
 
 ![Outer Toolbar Layout](https://js.devexpress.com/Content/ImagesExternal/Outer-Toolbar-Layout.png)
 
-You can set the `--layout` option to `app-side-nav-inner-toolbar` to use the layout with an inner toolbar.
+You can set the `--layout` option to `side-nav-inner-toolbar` to use the layout with an inner toolbar.
 
 ```bash
-npx devextreme-cli new angular-app app-name --layout=app-side-nav-inner-toolbar
+npx devextreme-cli new angular-app app-name --layout=side-nav-inner-toolbar
 ```
 
 ![Inner Toolbar Layout](https://js.devexpress.com/Content/ImagesExternal/Inner-Toolbar-Layout.png)
@@ -48,7 +48,7 @@ Use the `--empty` flag to generate an application without views and navigation i
 npx devextreme-cli new angular-app app-name --empty
 ```
 
-You can also clone the current repository to configure the DevExtreme Angular Template. 
+You can also clone the current repository to configure the DevExtreme Angular Template.
 
 ```bash
 git clone https://github.com/DevExpress/devextreme-angular-template/
@@ -87,12 +87,12 @@ See [DevExtreme CLI README](https://github.com/devexpress/DevExtreme-cli#add-dev
 
 ## <a name="switch-layout"></a>Switch the Layout
 
-You can change the layout in an existing application. For this, substitute the `app-side-nav-outer-toolbar` tag with `app-side-nav-inner-toolbar` in the *app.component.html* file.
+You can change the layout in an existing application. For this, substitute the `side-nav-outer-toolbar` tag with `side-nav-inner-toolbar` in the *app.component.html* file.
 
 ```html
-<app-side-nav-inner-toolbar title="DevExtreme Angular Template">
+<side-nav-inner-toolbar title="DevExtreme Angular Template">
     <!-- Layout content here -->
-</app-side-nav-inner-toolbar>
+</side-nav-inner-toolbar>
 ```
 
 ## <a name="add-view"></a>Add a View
