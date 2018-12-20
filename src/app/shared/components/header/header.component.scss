@@ -2,16 +2,22 @@
 
 :host {
     display: block;
-}
+    flex: 0 0 auto;
+    z-index: 1;
 
-:host ::ng-deep .dx-toolbar-items-container {
-    .dx-toolbar-after {
-        padding: 0 40px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+    ::ng-deep .dx-toolbar .dx-toolbar-item-content > .menu-button .dx-icon {
+        color: $base-accent;
     }
 }
 
-:host :host-context(.screen-x-small) ::ng-deep .dx-toolbar-items-container .dx-toolbar-after {
-    padding: 0 20px;
+::ng-deep .dx-toolbar .dx-toolbar-items-container .dx-toolbar-after {
+    padding: 0 40px;
+
+    :host-context(.screen-x-small) & {
+        padding: 0 20px;
+    }
 }
 
 ::ng-deep .menu-button {
@@ -31,16 +37,5 @@
 
     .user-button>.dx-button-content {
         padding: 3px;
-    }
-}
-
-:host {
-    flex: 0 0 auto;
-    z-index: 1;
-
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-
-    ::ng-deep .dx-toolbar .dx-toolbar-item-content > .menu-button .dx-icon {
-        color: $base-accent;
     }
 }

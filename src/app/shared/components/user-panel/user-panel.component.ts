@@ -1,4 +1,4 @@
-import { Component, NgModule, Input, Output, EventEmitter } from '@angular/core';
+import { Component, NgModule, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DxListModule } from 'devextreme-angular/ui/list';
@@ -17,15 +17,7 @@ export class UserPanelComponent {
     @Input()
     menuMode: string;
 
-    @Output()
-    itemClick: EventEmitter<any> = new EventEmitter<any>();
-
-    constructor() {
-    }
-
-    itemMenuClick(args) {
-        this.itemClick.next(args.itemData);
-    }
+    constructor() {}
 }
 
 @NgModule({

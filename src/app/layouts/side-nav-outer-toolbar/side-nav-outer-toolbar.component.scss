@@ -1,71 +1,19 @@
-@import "../../../themes/generated/variables.base.scss";
-
-.layout {
+:host {
     flex-direction: column;
     display: flex;
     height: 100%;
-    background-color: darken($base-bg, 5.00);
+    width: 100%;
 }
 
-app-header {
+.layout-header {
     z-index: 1501;
 }
 
-:host ::ng-deep .dx-scrollable-content {
-    height: 100%;
-}
-
-:host ::ng-deep .dx-scrollview-content {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
+.layout-body {
+    flex: 1;
+    min-height: 0;
 }
 
 .content {
     flex-grow: 1;
-    line-height: 1.5
-}
-
-.drawer {
-    flex: 1;
-    min-height: 0;
-
-    ::ng-deep h2 {
-        font-size: 30px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    ::ng-deep h2, ::ng-deep .content-block, .footer {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-
-    ::ng-deep .dx-card {
-        padding: 20px;
-    }
-}
-
-.screen-large .drawer ::ng-deep .dx-card {
-    padding: 40px;
-}
-
-:host, .screen-large {
-    .drawer ::ng-deep .dx-card.wide-card, .drawer ::ng-deep .dx-card.wide-card {
-        padding: 0;
-        border-radius: 0;
-        margin-left: 0;
-        margin-right: 0;
-        border-right: 0;
-        border-left: 0;
-    }
-}
-
-.screen-x-small {
-    .content {
-        ::ng-deep h2, ::ng-deep .content-block, .footer {
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-    }
 }

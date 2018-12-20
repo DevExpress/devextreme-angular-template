@@ -1,11 +1,10 @@
 import { Component, NgModule, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginFormModule } from '../login-form/login-form.component';
+import { AuthService } from '../../services';
 import { UserPanelModule } from '../user-panel/user-panel.component';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
-import { DxPopupModule } from 'devextreme-angular/ui/popup';
 
 @Component({
     selector: 'app-header',
@@ -23,46 +22,30 @@ export class HeaderComponent {
     @Input()
     title: string;
 
-    showLoginPopup = false;
-    isUserAuthorized = true;
     userMenuItems = [{
         text: 'Profile',
         icon: 'user'
     }, {
         text: 'Logout',
-        icon: 'runner'
+        icon: 'runner',
+        onClick: () => {
+            this.authService.logOut();
+        }
     }];
 
-    constructor() { }
+    constructor(private authService: AuthService) { }
 
     toggleMenu = () => {
         this.menuToggle.emit();
-    }
-
-    onShowLoginPopup = () => {
-        this.showLoginPopup = true;
-    }
-
-    onLoginClick(args) {
-        this.showLoginPopup = false;
-        this.isUserAuthorized = true;
-    }
-
-    onUserMenuItemClick(item) {
-        if (item === this.userMenuItems[1]) {
-            this.isUserAuthorized = false;
-        }
     }
 }
 
 @NgModule({
     imports: [
         CommonModule,
-        DxPopupModule,
         DxButtonModule,
         UserPanelModule,
-        DxToolbarModule,
-        LoginFormModule
+        DxToolbarModule
     ],
     declarations: [ HeaderComponent ],
     exports: [ HeaderComponent ]
