@@ -19,19 +19,6 @@
         <dxi-item
             location="after"
             locateInMenu="auto"
-            widget="dxButton"
-            [visible]="!isUserAuthorized"
-            [options]="{
-                icon: 'user',
-                text:'Login',
-                onClick: onShowLoginPopup,
-                elementAttr: { class: 'authorization' }
-            }">
-        </dxi-item>
-        <dxi-item
-            location="after"
-            locateInMenu="auto"
-            [visible]="isUserAuthorized"
             menuItemTemplate="menuItem">
             <div *dxTemplate="let data of 'item'">
                 <dx-button
@@ -40,23 +27,13 @@
                     height="100%"
                     stylingMode="text">
                     <div *dxTemplate="let data of 'content'">
-                        <app-user-panel [menuItems]="userMenuItems" menuMode="context" (itemClick)="onUserMenuItemClick($event)"></app-user-panel>
+                        <app-user-panel [menuItems]="userMenuItems" menuMode="context"></app-user-panel>
                     </div>
                 </dx-button>
             </div>
         </dxi-item>
         <div *dxTemplate="let data of 'menuItem'">
-            <app-user-panel [menuItems]="userMenuItems" menuMode="list" (itemClick)="onUserMenuItemClick($event)"></app-user-panel>
+            <app-user-panel [menuItems]="userMenuItems" menuMode="list"></app-user-panel>
         </div>
     </dx-toolbar>
-
-    <dx-popup
-        [(visible)]="showLoginPopup"
-        title="Authorization"
-        height="auto"
-        [width]="300">
-        <div *dxTemplate="let data of 'content'">
-            <app-login-form (userAuthorized)="onLoginClick($event)"></app-login-form>
-        </div>
-    </dx-popup>
 </header>
