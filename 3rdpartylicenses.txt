@@ -207,6 +207,9 @@ Apache-2.0
  
 
 
+@angular/common
+MIT
+
 devextreme-angular
 MIT
 The MIT License (MIT)
@@ -233,9 +236,6 @@ SOFTWARE.
 
 
 @angular/platform-browser
-MIT
-
-@angular/common
 MIT
 
 tslib
@@ -952,9 +952,6 @@ copy of the Program in return for a fee.
                      END OF TERMS AND CONDITIONS
 
 
-@angular/router
-MIT
-
 @angular/cdk
 MIT
 The MIT License
@@ -979,6 +976,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+
+@angular/router
+MIT
 
 @angular/core
 MIT
