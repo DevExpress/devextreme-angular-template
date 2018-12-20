@@ -1,8 +1,4 @@
 {
-    "version": "18.1.6",
-    "date": "9/18/2018",
-    "themeId": "24",
-    "hue": null,
     "items": [],
     "baseTheme": "material.orange.dark",
     "assetsBasePath": "../../../node_modules/devextreme/dist/css/",

@@ -1,70 +1,53 @@
 import { Component, NgModule, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginFormModule } from '../login-form/login-form.component';
+import { AuthService } from '../../services';
 import { UserPanelModule } from '../user-panel/user-panel.component';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
-import { DxPopupModule } from 'devextreme-angular/ui/popup';
 
 @Component({
-    selector: 'app-header',
-    templateUrl: 'header.component.html',
-    styleUrls: ['./header.component.scss']
+  selector: 'app-header',
+  templateUrl: 'header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 
 export class HeaderComponent {
-    @Output()
-    menuToggle = new EventEmitter<boolean>();
+  @Output()
+  menuToggle = new EventEmitter<boolean>();
 
-    @Input()
-    menuToggleEnabled = false;
+  @Input()
+  menuToggleEnabled = false;
 
-    @Input()
-    title: string;
+  @Input()
+  title: string;
 
-    showLoginPopup = false;
-    isUserAuthorized = true;
-    userMenuItems = [{
-        text: 'Profile',
-        icon: 'user'
-    }, {
-        text: 'Logout',
-        icon: 'runner'
-    }];
-
-    constructor() { }
-
-    toggleMenu = () => {
-        this.menuToggle.emit();
+  userMenuItems = [{
+    text: 'Profile',
+    icon: 'user'
+  }, {
+    text: 'Logout',
+    icon: 'runner',
+    onClick: () => {
+      this.authService.logOut();
     }
+  }];
 
-    onShowLoginPopup = () => {
-        this.showLoginPopup = true;
-    }
+  constructor(private authService: AuthService) { }
 
-    onLoginClick(args) {
-        this.showLoginPopup = false;
-        this.isUserAuthorized = true;
-    }
-
-    onUserMenuItemClick(item) {
-        if (item === this.userMenuItems[1]) {
-            this.isUserAuthorized = false;
-        }
-    }
+  toggleMenu = () => {
+    this.menuToggle.emit();
+  }
 }
 
 @NgModule({
-    imports: [
-        CommonModule,
-        DxPopupModule,
-        DxButtonModule,
-        UserPanelModule,
-        DxToolbarModule,
-        LoginFormModule
-    ],
-    declarations: [ HeaderComponent ],
-    exports: [ HeaderComponent ]
+  imports: [
+    CommonModule,
+    DxButtonModule,
+    UserPanelModule,
+    DxToolbarModule
+  ],
+  declarations: [ HeaderComponent ],
+  exports: [ HeaderComponent ]
 })
 export class HeaderModule { }

@@ -1,46 +1,41 @@
 @import "../../../../themes/generated/variables.base.scss";
 
 :host {
-    display: block;
+  display: block;
+  flex: 0 0 auto;
+  z-index: 1;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  ::ng-deep .dx-toolbar .dx-toolbar-item-content > .menu-button .dx-icon {
+    color: $base-accent;
+  }
 }
 
-:host ::ng-deep .dx-toolbar-items-container {
-    .dx-toolbar-after {
-        padding: 0 40px;
-    }
-}
+::ng-deep .dx-toolbar .dx-toolbar-items-container .dx-toolbar-after {
+  padding: 0 40px;
 
-:host :host-context(.screen-x-small) ::ng-deep .dx-toolbar-items-container .dx-toolbar-after {
+  :host-context(.screen-x-small) & {
     padding: 0 20px;
+  }
 }
 
 ::ng-deep .menu-button {
-    margin: 0 12px;
+  margin: 0 12px;
 }
 
 :host ::ng-deep .dx-menu-base {
-    .dx-menu-item-wrapper {
-        width: 173px;
-    }
+  .dx-menu-item-wrapper {
+    width: 173px;
+  }
 }
 
 :host-context(.dx-theme-generic) {
-    .dx-toolbar {
-        padding: 10px 0;
-    }
+  .dx-toolbar {
+    padding: 10px 0;
+  }
 
-    .user-button>.dx-button-content {
-        padding: 3px;
-    }
-}
-
-:host {
-    flex: 0 0 auto;
-    z-index: 1;
-
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-
-    ::ng-deep .dx-toolbar .dx-toolbar-item-content > .menu-button .dx-icon {
-        color: $base-accent;
-    }
+  .user-button>.dx-button-content {
+    padding: 3px;
+  }
 }

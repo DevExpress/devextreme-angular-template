@@ -1,9 +1,16 @@
-<app-side-nav-outer-toolbar title="DevExtreme App">
-    <router-outlet></router-outlet>
+<ng-container *ngIf="isAutorized(); else notAuthorized">
+    <app-side-nav-outer-toolbar title="{{appInfo.title}}">
+        <router-outlet></router-outlet>
+        <app-footer>
+            Copyright © 2011-2018 Developer Express Inc.
+            <br/>
+            All trademarks or registered trademarks are property of their respective owners.
+        </app-footer>
+    </app-side-nav-outer-toolbar>
+</ng-container>
 
-    <app-footer>
-        Copyright © 2011-2018 Developer Express Inc.
-        <br/>
-        All trademarks or registered trademarks are property of their respective owners.
-    </app-footer>
-</app-side-nav-outer-toolbar>
+<ng-template #notAuthorized>
+    <app-single-card>
+        <router-outlet></router-outlet>
+    </app-single-card>
+</ng-template>
