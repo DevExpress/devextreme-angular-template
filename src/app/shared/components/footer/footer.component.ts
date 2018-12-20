@@ -1,11 +1,11 @@
 import { Component, NgModule } from '@angular/core';
 
 @Component({
-    selector: 'app-footer',
-    template: `
-        <footer><ng-content></ng-content></footer>
-    `,
-    styleUrls: ['./footer.component.scss']
+  selector: 'app-footer',
+  template: `
+    <footer><ng-content></ng-content></footer>
+  `,
+  styleUrls: ['./footer.component.scss']
 })
 
 export class FooterComponent {
@@ -13,7 +13,7 @@ export class FooterComponent {
 }
 
 @NgModule({
-    declarations: [ FooterComponent ],
-    exports: [ FooterComponent ]
+  declarations: [ FooterComponent ],
+  exports: [ FooterComponent ]
 })
 export class FooterModule { }
