@@ -145,7 +145,7 @@ The DevExtreme Angular Template uses different themes for its content and menu. 
 }
 ```
 
-Run `npm run build` to rebuild themes.
+Run `npm run build-themes` to rebuild themes.
 
 ### <a name="create-custom-theme"></a>Create a Custom Theme
 
