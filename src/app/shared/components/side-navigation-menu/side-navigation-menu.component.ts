@@ -43,7 +43,7 @@ export class SideNavigationMenuComponent {
     const leafNodeClass = 'dx-treeview-node-is-leaf';
     const element: HTMLElement = event.element;
 
-    const rootNodes = element.querySelectorAll(`.${nodeClass}:not(.${leafNodeClass}`);
+    const rootNodes = element.querySelectorAll(`.${nodeClass}:not(.${leafNodeClass})`);
     Array.from(rootNodes).forEach(node => {
       node.classList.remove(selectedClass);
     });
