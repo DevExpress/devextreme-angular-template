@@ -59,10 +59,10 @@ npm run start
 
 ## <a name="add-template-to-existing-app"></a>Add DevExtreme Angular Template to an Existing Application
 
-If you have an existing angular application, use the `add-app-template` command to add a DevExtreme Angular Template.
+If you have an existing angular application, use the `add angular-template` command to add a DevExtreme Angular Template.
 
 ```bash
-npx devextreme-cli add-app-template
+npx devextreme-cli add angular-template
 ```
 
 This command creates new files (for example, *app1.component*) and does not override existing files. You should embed the new content in the existing files, or modify the *app.module.ts* to bootstrap the component.
