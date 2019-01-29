@@ -15,20 +15,23 @@
         class="dx-swatch-additional"
         *dxTemplate="let dataMenu of 'panel'"
         (selectedItemChanged)="navigationChanged($event)"
-        (click)="navigationClick()">
+        (openMenu)="navigationClick()">
             <dx-toolbar id="navigation-header">
                 <dxi-item
                     *ngIf="minMenuSize !== 0"
                     location="before"
+                    cssClass="menu-button"
                     widget="dxButton"
                     [options]="{
                         icon: 'menu',
                         stylingMode: 'text',
-                        onClick: toggleMenu,
-                        elementAttr: { class: 'menu-button' }
+                        onClick: toggleMenu
                     }">
                 </dxi-item>
-                <dxi-item location="before" [text]="title">
+                <dxi-item
+                    location="before"
+                    cssClass="header-title"
+                    [text]="title">
                 </dxi-item>
             </dx-toolbar>
     </app-side-navigation-menu>

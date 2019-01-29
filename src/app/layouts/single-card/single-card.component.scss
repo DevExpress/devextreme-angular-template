@@ -7,7 +7,6 @@
 .dx-card {
   width: 330px;
   margin: auto auto;
-  padding: 40px;
 
   :host-context(.screen-x-small) & {
     width: 100%;
@@ -16,5 +15,9 @@
     box-shadow: none;
     margin: 0;
     border: 0;
-  }    
+  }  
+  
+  .content {
+    padding: 40px;
+  }  
 }
