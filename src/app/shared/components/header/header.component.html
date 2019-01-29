@@ -1,18 +1,19 @@
 <header>
-    <dx-toolbar>
+    <dx-toolbar class="header-toolbar">
         <dxi-item
             *ngIf="menuToggleEnabled"
             location="before"
             widget="dxButton"
+            cssClass="menu-button"
             [options]="{
                 icon: 'menu',
                 stylingMode: 'text',
-                onClick: toggleMenu,
-                elementAttr: { class: 'menu-button' }
+                onClick: toggleMenu
             }">
         </dxi-item>
         <dxi-item
             location="before"
+            cssClass="header-title"
             *ngIf="title"
             [text]="title">
         </dxi-item>

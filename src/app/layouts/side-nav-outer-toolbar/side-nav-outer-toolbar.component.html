@@ -22,7 +22,7 @@
         class="dx-swatch-additional"
         *dxTemplate="let dataMenu of 'panel'"
         (selectedItemChanged)="navigationChanged($event)"
-        (click)="navigationClick()">
+        (openMenu)="navigationClick()">
     </app-side-navigation-menu>
 
     <dx-scroll-view class="with-footer">

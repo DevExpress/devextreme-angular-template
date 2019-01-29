@@ -1,5 +1,6 @@
 import { Component, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DxScrollViewModule }  from 'devextreme-angular/ui/scroll-view';
 
 @Component({
   selector: 'app-single-card',
@@ -11,7 +12,7 @@ export class SingleCardComponent {
 }
 
 @NgModule({
-  imports: [ CommonModule ],
+  imports: [ CommonModule, DxScrollViewModule ],
   exports: [ SingleCardComponent ],
   declarations: [ SingleCardComponent ]
 })
