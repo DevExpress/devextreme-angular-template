@@ -31,8 +31,7 @@ npm run start
 ```
 
 The application includes a side navigation menu and an outer toolbar.
-
-![Outer Toolbar Layout](https://js.devexpress.com/Content/ImagesExternal/Outer-Toolbar-Layout.png)
+![Outer Toolbar Layout](https://user-images.githubusercontent.com/2280467/55954182-b71c1000-5c66-11e9-8fcf-80d193a805c2.png)
 
 You can set the `--layout` option to `side-nav-inner-toolbar` to use the layout with an inner toolbar.
 
@@ -40,7 +39,7 @@ You can set the `--layout` option to `side-nav-inner-toolbar` to use the layout 
 npx devextreme-cli new angular-app app-name --layout=side-nav-inner-toolbar
 ```
 
-![Inner Toolbar Layout](https://js.devexpress.com/Content/ImagesExternal/Inner-Toolbar-Layout.png)
+![Inner Toolbar Layout](https://user-images.githubusercontent.com/2280467/55954209-cc913a00-5c66-11e9-8502-c99824b192e1.png)
 
 Use the `--empty` flag to generate an application without views and navigation items.
 
