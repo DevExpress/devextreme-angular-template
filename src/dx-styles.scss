@@ -35,7 +35,8 @@
   border-left: 0;
 }
 
-.full-height-scrollable > div > div >.dx-scrollable-content {
+.full-height-scrollable > .dx-scrollable-wrapper >
+.dx-scrollable-container > .dx-scrollable-content {
   height: 100%;
 
   & > .dx-scrollview-content {
