@@ -4,5 +4,6 @@
     "assetsBasePath": "../../../node_modules/devextreme/dist/css/",
     "outputColorScheme": "additional",
     "makeSwatch": true,
-    "base": true
+    "base": true,
+    "widgets": ["treeview", "navbar"]
 }
