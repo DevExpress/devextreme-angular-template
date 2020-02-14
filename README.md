@@ -2,7 +2,7 @@
 
 The DevExtreme Angular Template allows you to create an application with several views and a hierarchical menu (see the [live preview](https://devexpress.github.io/devextreme-angular-template)).
 
-![](https://user-images.githubusercontent.com/2280467/55783878-138cfd00-5ab8-11e9-8946-cb6c9de96ce1.png)
+![](https://user-images.githubusercontent.com/2280467/74529582-7bfb0500-4f39-11ea-830f-b8583c7a5478.png)
 
 You can use [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) commands to modify, add, and delete views, configure the menu, and change themes.
 
