@@ -56,4 +56,17 @@ html, body {
   }
 }
 
+@media print {
+  header,
+  footer,
+  .dx-drawer-panel-content,
+  .dx-toast-wrapper {
+    display: none !important;
+  }
+
+  .dx-drawer-wrapper {
+    height: fit-content;
+  }
+}
+
 $side-panel-min-width: 60px;
