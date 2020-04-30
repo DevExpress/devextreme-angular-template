@@ -6,7 +6,6 @@ import { DxScrollViewModule, DxScrollViewComponent } from 'devextreme-angular/ui
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 import { CommonModule } from '@angular/common';
 
-import { navigation } from '../../app-navigation';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -16,7 +15,6 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class SideNavInnerToolbarComponent implements OnInit {
   @ViewChild(DxScrollViewComponent, { static: true }) scrollView: DxScrollViewComponent;
-  menuItems = navigation;
   selectedRoute = '';
 
   menuOpened: boolean;
