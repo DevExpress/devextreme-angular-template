@@ -1,5 +1,6 @@
 import { Component, NgModule, Output, Input, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { DxTreeViewModule, DxTreeViewComponent } from 'devextreme-angular/ui/tree-view';
+import { navigation } from '../../../app-navigation';
 
 import * as events from 'devextreme/events';
 
@@ -18,14 +19,24 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
   @Output()
   openMenu = new EventEmitter<any>();
 
-  @Input()
-  items: any[];
-
+  private _selectedItem: String;
   @Input()
   set selectedItem(value: String) {
-    if (this.menu.instance) {
-      this.menu.instance.selectItem(value);
+    this._selectedItem = value;
+    if (!this.menu.instance) {
+      return;
     }
+
+    this.menu.instance.selectItem(value);
+  }
+
+  private _items;
+  get items() {
+    if (!this._items) {
+      this._items = navigation.map((item) => ({ ...item, expanded: !this._compactMode }));
+    }
+
+    return this._items;
   }
 
   private _compactMode = false;
@@ -35,40 +46,22 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
   }
   set compactMode(val) {
     this._compactMode = val;
-    if (val && this.menu.instance) {
+
+    if (!this.menu.instance) {
+      return;
+    }
+
+    if (val) {
       this.menu.instance.collapseAll();
+    } else {
+      this.menu.instance.expandItem(this._selectedItem);
     }
   }
 
   constructor(private elementRef: ElementRef) { }
 
-  updateSelection(event) {
-    const nodeClass = 'dx-treeview-node';
-    const selectedClass = 'dx-state-selected';
-    const leafNodeClass = 'dx-treeview-node-is-leaf';
-    const element: HTMLElement = event.element;
-
-    const rootNodes = element.querySelectorAll(`.${nodeClass}:not(.${leafNodeClass})`);
-    Array.from(rootNodes).forEach(node => {
-      node.classList.remove(selectedClass);
-    });
-
-    let selectedNode = element.querySelector(`.${nodeClass}.${selectedClass}`);
-    while (selectedNode && selectedNode.parentElement) {
-      if (selectedNode.classList.contains(nodeClass)) {
-          selectedNode.classList.add(selectedClass);
-      }
-
-      selectedNode = selectedNode.parentElement;
-    }
-  }
-
   onItemClick(event) {
     this.selectedItemChanged.emit(event);
-  }
-
-  onMenuInitialized(event) {
-    event.component.option('deferRendering', false);
   }
 
   ngAfterViewInit() {
