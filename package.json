@@ -24,7 +24,7 @@
     "@angular/router": "~10.0.9",
     "devextreme": "20.1-stable",
     "devextreme-angular": "20.1-stable",
-    "devextreme-schematics": "^1.2.2",
+    "devextreme-schematics": "^1.2.3",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

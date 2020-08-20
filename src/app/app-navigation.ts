@@ -13,8 +13,8 @@ export const navigation = [
         path: '/profile'
       },
       {
-        text: 'Display Data',
-        path: '/display-data'
+        text: 'Tasks',
+        path: '/tasks'
       }
     ]
   }

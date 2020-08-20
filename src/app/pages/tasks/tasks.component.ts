@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import 'devextreme/data/odata/store';
 
 @Component({
-  templateUrl: 'display-data.component.html'
+  templateUrl: 'tasks.component.html'
 })
 
-export class DisplayDataComponent {
+export class TasksComponent {
   dataSource: any;
   priority: any[];
 

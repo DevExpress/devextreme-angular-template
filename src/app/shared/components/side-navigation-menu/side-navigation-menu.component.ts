@@ -33,7 +33,12 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
   private _items;
   get items() {
     if (!this._items) {
-      this._items = navigation.map((item) => ({ ...item, expanded: !this._compactMode }));
+      this._items = navigation.map((item) => {
+        if(item.path && !(/^\//.test(item.path))){ 
+          item.path = `/${item.path}`;
+        }
+         return { ...item, expanded: !this._compactMode }
+        });
     }
 
     return this._items;

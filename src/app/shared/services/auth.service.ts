@@ -1,44 +1,55 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 
+const defaultPath = '/';
+
 @Injectable()
 export class AuthService {
-  loggedIn = true;
+  private _loggedIn: boolean = true;
+  get loggedIn(): boolean {
+    return this._loggedIn;
+  }
 
-  constructor(private router: Router) {}
+  private _lastAuthenticatedPath: string = defaultPath;
+  set lastAuthenticatedPath(value: string) {
+    this._lastAuthenticatedPath = value;
+  }
 
-  logIn(login: string, passord: string) {
-    this.loggedIn = true;
-    this.router.navigate(['/']);
+  constructor(private router: Router) { }
+
+  logIn(login: string, password: string) {
+    this._loggedIn = true;
+    this.router.navigate([this._lastAuthenticatedPath]);
   }
 
   logOut() {
-    this.loggedIn = false;
+    this._loggedIn = false;
     this.router.navigate(['/login-form']);
-  }
-
-  get isLoggedIn() {
-    return this.loggedIn;
   }
 }
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
-    constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) { }
 
-    canActivate(route: ActivatedRouteSnapshot): boolean {
-        const isLoggedIn = this.authService.isLoggedIn;
-        const isLoginForm = route.routeConfig.path === 'login-form';
+  canActivate(route: ActivatedRouteSnapshot): boolean {
+    const isLoggedIn = this.authService.loggedIn;
+    const isLoginForm = route.routeConfig.path === 'login-form';
 
-        if (isLoggedIn && isLoginForm) {
-            this.router.navigate(['/']);
-            return false;
-        }
-
-        if (!isLoggedIn && !isLoginForm) {
-            this.router.navigate(['/login-form']);
-        }
-
-        return isLoggedIn || isLoginForm;
+    if(isLoggedIn && isLoginForm) {
+      this.authService.lastAuthenticatedPath = defaultPath;
+      this.router.navigate([defaultPath]);
+      return false;
     }
+
+    if(!isLoggedIn && !isLoginForm) {
+      this.router.navigate(['/login-form']);
+    }
+
+    if(isLoggedIn) {
+      this.authService.lastAuthenticatedPath = route.routeConfig.path;
+    }
+
+    return isLoggedIn || isLoginForm;
+  }
 }

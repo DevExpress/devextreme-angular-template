@@ -14,6 +14,6 @@ export class AppComponent  {
   constructor(private authService: AuthService, private screen: ScreenService, public appInfo: AppInfoService) { }
 
   isAutorized() {
-    return this.authService.isLoggedIn;
+    return this.authService.loggedIn;
   }
 }
