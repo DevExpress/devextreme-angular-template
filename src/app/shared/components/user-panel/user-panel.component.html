@@ -1,22 +1,22 @@
 <div class="user-panel">
-    <div class="user-info">
-        <div class="image-container">
-            <div class="user-image"></div>
-        </div>
-        <div class="user-name">sandra@example.com</div>
+  <div class="user-info">
+    <div class="image-container">
+      <div class="user-image"></div>
     </div>
-    <dx-context-menu
-        *ngIf="menuMode === 'context'"
-        [items]="menuItems"
-        target=".user-button"
-        showEvent="dxclick"
-        width="210px"
-        [position]="{ my: 'top center', at: 'bottom center' }"
-        cssClass="user-menu">
-    </dx-context-menu>
-    <dx-list
-        *ngIf="menuMode === 'list'"
-        class="dx-toolbar-menu-action"
-        [items]="menuItems">
-    </dx-list>
+    <div class="user-name">sandra@example.com</div>
+  </div>
+  <dx-context-menu
+    *ngIf="menuMode === 'context'"
+    [items]="menuItems"
+    target=".user-button"
+    showEvent="dxclick"
+    width="210px"
+    [position]="{ my: 'top center', at: 'bottom center' }"
+    cssClass="user-menu">
+  </dx-context-menu>
+  <dx-list
+    *ngIf="menuMode === 'list'"
+    class="dx-toolbar-menu-action"
+    [items]="menuItems">
+  </dx-list>
 </div>

@@ -7,4 +7,8 @@ export class AppInfoService {
   public get title() {
     return 'DevExtreme App';
   }
+
+  public get currentYear() {
+    return new Date().getFullYear();
+  }
 }

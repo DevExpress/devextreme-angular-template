@@ -1,16 +1,16 @@
 <ng-container *ngIf="isAutorized(); else notAuthorized">
-    <app-side-nav-outer-toolbar title="{{appInfo.title}}">
-        <router-outlet></router-outlet>
-        <app-footer>
-            Copyright © 2011-2019 Developer Express Inc.
-            <br/>
-            All trademarks or registered trademarks are property of their respective owners.
-        </app-footer>
-    </app-side-nav-outer-toolbar>
+  <app-side-nav-outer-toolbar title="{{appInfo.title}}">
+    <router-outlet></router-outlet>
+    <app-footer>
+      Copyright © 2011-{{appInfo.currentYear}} {{appInfo.title}} Inc.
+      <br/>
+      All trademarks or registered trademarks are property of their respective owners.
+    </app-footer>
+  </app-side-nav-outer-toolbar>
 </ng-container>
 
 <ng-template #notAuthorized>
-    <app-single-card>
-        <router-outlet></router-outlet>
-    </app-single-card>
+  <app-single-card>
+    <router-outlet></router-outlet>
+  </app-single-card>
 </ng-template>
