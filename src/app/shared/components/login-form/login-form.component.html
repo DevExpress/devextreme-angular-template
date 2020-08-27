@@ -1,4 +1,4 @@
-<dx-validation-group>
+<form (submit)="onFormSubmit($event)">
   <div class="login-header">
     <div class="title">{{appInfo.title}}</div>
     <div>Sign In to your account</div>
@@ -21,7 +21,7 @@
     <dx-check-box [value]="false" text="Remember me"></dx-check-box>
   </div>
   <div class="dx-field">
-    <dx-button type="default" text="Login" (onClick)="onLoginClick($event)" width="100%"></dx-button>
+    <dx-button type="default" text="Login" [useSubmitBehavior]="true" width="100%"></dx-button>
   </div>
   <div class="dx-field">
     <a routerLink="/recovery">Forgot password ?</a>
@@ -29,4 +29,4 @@
   <div class="dx-field">
     <dx-button type="normal" text="Create an account" width="100%"></dx-button>
   </div>
-</dx-validation-group>
+</form>

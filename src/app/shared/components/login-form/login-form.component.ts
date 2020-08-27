@@ -20,14 +20,11 @@ export class LoginFormComponent {
 
   constructor(private authService: AuthService, public appInfo: AppInfoService) { }
 
-  onLoginClick(args) {
-    if (!args.validationGroup.validate().isValid) {
-      return;
-    }
+  onFormSubmit = function (e) {
 
     this.authService.logIn(this.login, this.password);
 
-    args.validationGroup.reset();
+    e.preventDefault();
   }
 }
 @NgModule({
@@ -40,7 +37,7 @@ export class LoginFormComponent {
     DxValidatorModule,
     DxValidationGroupModule
   ],
-  declarations: [ LoginFormComponent ],
-  exports: [ LoginFormComponent ]
+  declarations: [LoginFormComponent],
+  exports: [LoginFormComponent]
 })
 export class LoginFormModule { }
