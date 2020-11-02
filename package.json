@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng serve --prod",
+    "build": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~10.0.9",
     "@angular/platform-browser-dynamic": "~10.0.9",
     "@angular/router": "~10.0.9",
+    "classlist.js": "^1.1.20150312",
     "devextreme": "20.1-stable",
     "devextreme-angular": "20.1-stable",
     "devextreme-schematics": "^1.2.3",
