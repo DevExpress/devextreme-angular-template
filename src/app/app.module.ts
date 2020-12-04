@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule } from './layouts';
 import { FooterModule, LoginFormModule } from './shared/components';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
+import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
     SingleCardModule,
     FooterModule,
     LoginFormModule,
+    UnauthenticatedContentModule,
     AppRoutingModule
   ],
   providers: [AuthService, ScreenService, AppInfoService],

@@ -28,13 +28,13 @@
           height="100%"
           stylingMode="text">
           <div *dxTemplate="let data of 'content'">
-            <app-user-panel [menuItems]="userMenuItems" menuMode="context"></app-user-panel>
+            <app-user-panel [user]="user" [menuItems]="userMenuItems" menuMode="context"></app-user-panel>
           </div>
         </dx-button>
       </div>
     </dxi-item>
     <div *dxTemplate="let data of 'menuItem'">
-      <app-user-panel [menuItems]="userMenuItems" menuMode="list"></app-user-panel>
+      <app-user-panel [user]="user" [menuItems]="userMenuItems" menuMode="list"></app-user-panel>
     </div>
   </dx-toolbar>
 </header>
