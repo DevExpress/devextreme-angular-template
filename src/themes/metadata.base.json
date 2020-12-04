@@ -1,10 +1,5 @@
 {
-  "items": [
-    {
-      "key": "@base-font-family",
-      "value": "'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, sans-serif"
-    }
-  ],
+  "items": [],
   "baseTheme": "material.orange.light",
   "assetsBasePath": "../../../node_modules/devextreme/dist/css/",
   "outputColorScheme": "base",

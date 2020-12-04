@@ -71,14 +71,14 @@
   color: #fff;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-theme-material-typography .dx-swatch-additional input,
 .dx-theme-material-typography .dx-swatch-additional textarea,
 .dx-theme-material-typography.dx-swatch-additional input,
 .dx-theme-material-typography.dx-swatch-additional textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-theme-material-typography .dx-swatch-additional h1,
@@ -1549,12 +1549,12 @@
   color: #fff;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-swatch-additional .dx-widget input,
 .dx-swatch-additional .dx-widget textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-swatch-additional .dx-state-disabled .dx-widget,
@@ -1582,7 +1582,7 @@
   color: #fff;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
   padding: 0;
   display: -webkit-box;
@@ -1592,7 +1592,7 @@
 }
 .dx-swatch-additional .dx-field input,
 .dx-swatch-additional .dx-field textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-swatch-additional .dx-field-label i {
@@ -3146,12 +3146,12 @@
   color: #fff;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-swatch-additional .dx-overlay-wrapper input,
 .dx-swatch-additional .dx-overlay-wrapper textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-swatch-additional .dx-validationsummary-item {

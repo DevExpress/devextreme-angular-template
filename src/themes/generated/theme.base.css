@@ -64,12 +64,12 @@
   color: rgba(0,0,0,.87);
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-theme-material-typography input,
 .dx-theme-material-typography textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-theme-material-typography h1 {
@@ -1533,12 +1533,12 @@
   color: rgba(0,0,0,.87);
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-widget input,
 .dx-widget textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-state-disabled .dx-widget,
@@ -1566,7 +1566,7 @@
   color: rgba(0,0,0,.87);
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
   padding: 0;
   display: -webkit-box;
@@ -1576,7 +1576,7 @@
 }
 .dx-field input,
 .dx-field textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-field-label i {
@@ -3750,12 +3750,12 @@
   color: rgba(0,0,0,.87);
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-overlay-wrapper input,
 .dx-overlay-wrapper textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-validationsummary-item {
@@ -7086,12 +7086,12 @@
   color: rgba(0,0,0,.87);
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-menu-base input,
 .dx-menu-base textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-menu-base.dx-state-focused {
@@ -11486,12 +11486,12 @@
   color: rgba(0,0,0,.87);
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-datagrid-column-chooser input,
 .dx-datagrid-column-chooser textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-datagrid-column-chooser.dx-datagrid-column-chooser-mode-drag .dx-popup-content {
@@ -13915,12 +13915,12 @@ input.dx-hidden {
   color: rgba(0,0,0,.87);
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-treelist-column-chooser input,
 .dx-treelist-column-chooser textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-treelist-column-chooser.dx-treelist-column-chooser-mode-drag .dx-popup-content {
@@ -15712,12 +15712,12 @@ input.dx-hidden {
   color: rgba(0,0,0,.87);
   font-weight: 400;
   font-size: 14px;
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-pivotgrid .dx-ie .dx-pivotgrid-fields-area input,
 .dx-pivotgrid .dx-ie .dx-pivotgrid-fields-area textarea {
-  font-family: "Helvetica Neue","Segoe UI",Helvetica,Verdana,sans-serif;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
   line-height: 1.2857;
 }
 .dx-pivotgridfieldchooser .dx-area .dx-area-icon-filter {
