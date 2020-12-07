@@ -1,13 +1,19 @@
 @import "../../../../themes/generated/variables.base.scss";
 
-.login-header {
-  text-align: center;
-  margin-bottom: 40px;
 
-  .title {
-    color: $base-accent;
-    font-weight: bold;
-    font-size: 30px;
-    margin: 0;
+.login-form {
+  .link {
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  ::ng-deep .form-text {
+    margin: 10px 0;
+    color: rgba($base-text-color, alpha($base-text-color) * 0.7);
   }
 }

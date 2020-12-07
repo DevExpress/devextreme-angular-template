@@ -8,11 +8,11 @@ import { AuthService } from '../../services';
 
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  selector: 'app-create-account-form',
+  templateUrl: './create-account-form.component.html',
+  styleUrls: ['./create-account-form.component.scss']
 })
-export class LoginFormComponent {
+export class CreateAccountFormComponent {
   loading = false;
   formData: any = {};
 
@@ -23,15 +23,18 @@ export class LoginFormComponent {
     const { email, password } = this.formData;
     this.loading = true;
 
-    const result = await this.authService.logIn(email, password);
-    if (!result.isOk) {
-      this.loading = false;
+    const result = await this.authService.createAccount(email, password);
+    this.loading = false;
+
+    if (result.isOk) {
+      this.router.navigate(['/login-form']);
+    } else {
       notify(result.message, 'error', 2000);
     }
   }
 
-  onCreateAccountClick = () => {
-    this.router.navigate(['/create-account']);
+  confirmPassword = (e: { value: string }) => {
+    return e.value === this.formData.password;
   }
 }
 @NgModule({
@@ -41,7 +44,7 @@ export class LoginFormComponent {
     DxFormModule,
     DxLoadIndicatorModule
   ],
-  declarations: [ LoginFormComponent ],
-  exports: [ LoginFormComponent ]
+  declarations: [ CreateAccountFormComponent ],
+  exports: [ CreateAccountFormComponent ]
 })
-export class LoginFormModule { }
+export class CreateAccountFormModule { }
