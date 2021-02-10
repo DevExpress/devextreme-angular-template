@@ -45,8 +45,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'home',
-    canActivate: [ AuthGuardService ]
+    redirectTo: 'home'
   }
 ];
 
