@@ -6,7 +6,7 @@ The DevExtreme Angular Template is an Angular application with a navigation menu
 
 ## Getting Started
 
-For more information about the DevExtreme Angular Template and how to customize it, refer to the following help topic: [Create a DevExtreme Application](https://js.devexpress.com/Documentation/Guide/Angular_Components/Getting_Started/Create_a_DevExtreme_Application/).
+For more information about the DevExtreme Angular Template and how to customize it, refer to the following help topic: [Application Template](https://js.devexpress.com/Documentation/Guide/Angular_Components/Application_Template/).
 
 ## License
 
