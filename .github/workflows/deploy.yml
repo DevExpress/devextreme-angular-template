@@ -27,11 +27,7 @@ jobs:
       run: npm install --no-audit --no-fund
 
     - name: Install Internal Package
-      run: |
-        echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
-        DEVEXTREME_INTERNAL_VERSION=$(npm pkg get dependencies.devextreme --workspaces=false | tr -d '"')
-        npm pack @devexpress/devextreme-internal@$DEVEXTREME_INTERNAL_VERSION --registry https://npm.pkg.github.com
-        npm i devextreme@$(find . -name DevExpress-devextreme-internal-*.tgz)
+      uses: DevExpress/github-actions/install-internal-package@main
 
     - name: Build
       run: npm run build -- --configuration=production --base-href https://devexpress.github.io/devextreme-angular-template/
