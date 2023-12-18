@@ -25,7 +25,11 @@ import { AppRoutingModule } from './app-routing.module';
     UnauthenticatedContentModule,
     AppRoutingModule
   ],
-  providers: [AuthService, ScreenService, AppInfoService],
+  providers: [
+    AuthService,
+    ScreenService,
+    AppInfoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
