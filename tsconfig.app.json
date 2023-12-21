@@ -5,13 +5,12 @@
     "types": [],
     "paths": {
       "jszip": [
-        "node_modules/jszip/dist/jszip.min.js"
+        "./node_modules/jszip/dist/jszip.min.js"
       ]
     }
   },
   "files": [
-    "src/main.ts",
-    "src/polyfills.ts"
+    "src/main.ts"
   ],
   "include": [
     "src/**/*.d.ts"

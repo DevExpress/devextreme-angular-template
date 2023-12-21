@@ -8,7 +8,7 @@ export class ScreenService {
   constructor(private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver
       .observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large])
-      .subscribe(() => this.changed.next());
+      .subscribe(() => this.changed.next(true));
   }
 
   private isLargeScreen() {
@@ -18,7 +18,7 @@ export class ScreenService {
     return isLarge || isXLarge;
   }
 
-  public get sizes() {
+  public get sizes(): Record<string, boolean> {
     return {
       'screen-x-small': this.breakpointObserver.isMatched(Breakpoints.XSmall),
       'screen-small': this.breakpointObserver.isMatched(Breakpoints.Small),

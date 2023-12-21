@@ -2,21 +2,6 @@
   width: 100%;
 }
 
-.container {
-  height: 100%;
-  flex-direction: column;
-  display: flex;
-}
-
-.layout-body {
-  flex: 1;
-  min-height: 0;
-}
-
-.content {
-  flex-grow: 1;
-}
-
 #navigation-header {
   @import "../../../themes/generated/variables.additional.scss";
   background-color: $base-accent;
@@ -29,7 +14,7 @@
   :host-context(.screen-x-small) & {
     padding-left: 20px;
   }
-    
+
   :host-context(.dx-theme-generic) & {
     padding-top: 10px;
     padding-bottom: 10px;

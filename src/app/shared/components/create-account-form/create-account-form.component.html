@@ -41,13 +41,15 @@
     </dxi-item>
 
     <ng-container *dxTemplate="let item of 'createAccountTemplate'">
-      <span class="dx-button-text">
-        <ng-container *ngIf="loading; else notLoading">
-          <dx-load-indicator width="24px" height="24px" [visible]="true"></dx-load-indicator>
-        </ng-container>
-
-        <ng-template #notLoading>Create a new account</ng-template>
-      </span>
+      <div>
+        <span class="dx-button-text">
+          <ng-container *ngIf="loading; else notLoading">
+            <dx-load-indicator width="24px" height="24px" [visible]="true"></dx-load-indicator>
+          </ng-container>
+  
+          <ng-template #notLoading>Create a new account</ng-template>
+        </span>
+      </div>
     </ng-container>
 
   </dx-form>

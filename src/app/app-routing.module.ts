@@ -53,6 +53,10 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent]
+  declarations: [
+    HomeComponent,
+    ProfileComponent,
+    TasksComponent
+  ]
 })
 export class AppRoutingModule { }

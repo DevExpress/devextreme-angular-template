@@ -1,5 +1,5 @@
 import { Component, NgModule, Output, Input, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
-import { DxTreeViewModule, DxTreeViewComponent } from 'devextreme-angular/ui/tree-view';
+import { DxTreeViewModule, DxTreeViewComponent, DxTreeViewTypes } from 'devextreme-angular/ui/tree-view';
 import { navigation } from '../../../app-navigation';
 
 import * as events from 'devextreme/events';
@@ -11,15 +11,15 @@ import * as events from 'devextreme/events';
 })
 export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
   @ViewChild(DxTreeViewComponent, { static: true })
-  menu: DxTreeViewComponent;
+  menu!: DxTreeViewComponent;
 
   @Output()
-  selectedItemChanged = new EventEmitter<string>();
+  selectedItemChanged = new EventEmitter<DxTreeViewTypes.ItemClickEvent>();
 
   @Output()
   openMenu = new EventEmitter<any>();
 
-  private _selectedItem: String;
+  private _selectedItem!: String;
   @Input()
   set selectedItem(value: String) {
     this._selectedItem = value;
@@ -30,11 +30,11 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
     this.menu.instance.selectItem(value);
   }
 
-  private _items;
+  private _items!: Record <string, unknown>[];
   get items() {
     if (!this._items) {
       this._items = navigation.map((item) => {
-        if(item.path && !(/^\//.test(item.path))){ 
+        if(item.path && !(/^\//.test(item.path))){
           item.path = `/${item.path}`;
         }
          return { ...item, expanded: !this._compactMode }
@@ -65,12 +65,12 @@ export class SideNavigationMenuComponent implements AfterViewInit, OnDestroy {
 
   constructor(private elementRef: ElementRef) { }
 
-  onItemClick(event) {
+  onItemClick(event: DxTreeViewTypes.ItemClickEvent) {
     this.selectedItemChanged.emit(event);
   }
 
   ngAfterViewInit() {
-    events.on(this.elementRef.nativeElement, 'dxclick', (e) => {
+    events.on(this.elementRef.nativeElement, 'dxclick', (e: Event) => {
       this.openMenu.next(e);
     });
   }
