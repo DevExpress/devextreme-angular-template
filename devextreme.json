@@ -8,11 +8,26 @@
           "inputFile": "src/themes/metadata.base.json",
           "outputFile": "src/themes/generated/theme.base.css"
         }
-      },      {
+      },
+      {
+        "command": "build-theme",
+        "options": {
+          "inputFile": "src/themes/metadata.base.dark.json",
+          "outputFile": "src/themes/generated/theme.base.dark.css"
+        }
+      },
+      {
         "command": "build-theme",
         "options": {
           "inputFile": "src/themes/metadata.additional.json",
           "outputFile": "src/themes/generated/theme.additional.css"
+        }
+      },
+      {
+        "command": "build-theme",
+        "options": {
+          "inputFile": "src/themes/metadata.additional.dark.json",
+          "outputFile": "src/themes/generated/theme.additional.dark.css"
         }
       },
       {
@@ -25,8 +40,22 @@
       {
         "command": "export-theme-vars",
         "options": {
+          "inputFile": "src/themes/metadata.base.dark.json",
+          "outputFile": "src/themes/generated/variables.base.dark.scss"
+        }
+      },
+      {
+        "command": "export-theme-vars",
+        "options": {
           "inputFile": "src/themes/metadata.additional.json",
           "outputFile": "src/themes/generated/variables.additional.scss"
+        }
+      },
+      {
+        "command": "export-theme-vars",
+        "options": {
+          "inputFile": "src/themes/metadata.additional.dark.json",
+          "outputFile": "src/themes/generated/variables.additional.dark.scss"
         }
       }
     ]

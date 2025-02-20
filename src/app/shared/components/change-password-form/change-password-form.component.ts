@@ -10,7 +10,8 @@ import { AuthService } from '../../services';
 
 @Component({
   selector: 'app-change-passsword-form',
-  templateUrl: './change-password-form.component.html'
+  templateUrl: './change-password-form.component.html',
+  standalone: false
 })
 export class ChangePasswordFormComponent implements OnInit {
   loading = false;

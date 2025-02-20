@@ -34,23 +34,20 @@
       </dxo-button-options>
     </dxi-item>
 
-    <dxi-item>
-      <div class="login-link">
-        Have an account? <a routerLink="/login">Sign In</a>
-      </div>
-    </dxi-item>
-
     <ng-container *dxTemplate="let item of 'createAccountTemplate'">
       <div>
         <span class="dx-button-text">
           <ng-container *ngIf="loading; else notLoading">
             <dx-load-indicator width="24px" height="24px" [visible]="true"></dx-load-indicator>
           </ng-container>
-  
+
           <ng-template #notLoading>Create a new account</ng-template>
         </span>
       </div>
     </ng-container>
 
   </dx-form>
+  <div class="login-link">
+    Have an account? <a routerLink="/login">Sign In</a>
+  </div>
 </form>

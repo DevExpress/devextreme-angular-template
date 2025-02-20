@@ -24,16 +24,6 @@
       </dxo-button-options>
     </dxi-item>
 
-    <dxi-item>
-      <div class="link">
-        <a routerLink="/reset-password">Forgot password?</a>
-      </div>
-    </dxi-item>
-
-    <dxi-item itemType="button">
-      <dxo-button-options text="Create an account" width="100%" [onClick]="onCreateAccountClick"></dxo-button-options>
-    </dxi-item>
-
     <ng-container *dxTemplate="let item of 'signInTemplate'">
       <div>
         <span class="dx-button-text">
@@ -46,4 +36,8 @@
     </ng-container>
 
   </dx-form>
+  <div class="link">
+    <a routerLink="/reset-password">Forgot password?</a>
+  </div>
+  <dx-button stylingMode="outlined" text="Create an account" width="100%"  (click)="onCreateAccountClick()"></dx-button>
 </form>

@@ -4,11 +4,13 @@ import { AuthService, ScreenService, AppInfoService } from './shared/services';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  standalone: false
 })
 export class AppComponent  {
   @HostBinding('class') get getClass() {
-    return Object.keys(this.screen.sizes).filter(cl => this.screen.sizes[cl]).join(' ');
+    const sizeClassName = Object.keys(this.screen.sizes).filter(cl => this.screen.sizes[cl]).join(' ');
+    return `${sizeClassName} app` ;
   }
 
   constructor(private authService: AuthService, private screen: ScreenService, public appInfo: AppInfoService) { }

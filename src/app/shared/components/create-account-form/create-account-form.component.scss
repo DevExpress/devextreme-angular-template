@@ -1,20 +1,19 @@
-@import "../../../../themes/generated/variables.base.scss";
-
 .create-account-form {
   .policy-info {
-    margin: 10px 0;
-    color: rgba($base-text-color, alpha($base-text-color) * 0.7);
-    font-size: 14px;
+    color: var(--base-text-color-alpha-7);
+    font-size: 12px;
     font-style: normal;
 
     a {
-      color: rgba($base-text-color, alpha($base-text-color) * 0.7);
+      color: var(--base-text-color-alpha-7);
     }
   }
 
   .login-link {
-    color: $base-accent;
-    font-size: 16px;
+    color: var(--base-accent);
+    font-size: 12px;
     text-align: center;
+    padding: 6px 0 32px 0;
+    border-bottom: 1px solid var(--border-color);
   }
 }

@@ -1,5 +1,3 @@
-@import "../../../themes/generated/variables.base.scss";
-
 :host {
   width: 100%;
   height: 100%;
@@ -7,10 +5,11 @@
 
 .single-card {
   .dx-card {
-    width: 330px;
+    width: 360px;
     margin: auto auto;
-    padding: 40px;
+    padding: 24px;
     flex-grow: 0;
+    border-radius: 8px;
 
     :host-context(.screen-x-small) & {
       width: 100%;
@@ -23,18 +22,22 @@
     }
 
     .header {
-      margin-bottom: 30px;
+      margin: 24px 0;
 
       .title {
-        color: $base-text-color;
-        line-height: 28px;
+        color: var(--base-text-color);
         font-weight: 500;
         font-size: 24px;
+        text-align: center;
+        line-height: 24px;
       }
 
       .description {
-        color: rgba($base-text-color, alpha($base-text-color) * 0.7);
-        line-height: 18px;
+        color: var(--base-text-color-alpha-7);
+        line-height: 16px;
+        font-size: 12px;
+        margin-top: 32px;
+        text-align: center;
       }
     }
   }

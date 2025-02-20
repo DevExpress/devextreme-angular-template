@@ -1,17 +1,19 @@
 import { Component, OnInit, NgModule, Input, ViewChild } from '@angular/core';
-import { SideNavigationMenuModule, HeaderModule } from '../../shared/components';
-import { ScreenService } from '../../shared/services';
+import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+
 import { DxTreeViewTypes } from 'devextreme-angular/ui/tree-view';
 import { DxDrawerModule, DxDrawerTypes } from 'devextreme-angular/ui/drawer';
 import { DxScrollViewModule, DxScrollViewComponent } from 'devextreme-angular/ui/scroll-view';
-import { CommonModule } from '@angular/common';
 
-import { Router, NavigationEnd } from '@angular/router';
+import { SideNavigationMenuModule, HeaderModule } from '../../shared/components';
+import { ScreenService, ThemeService } from '../../shared/services';
 
 @Component({
   selector: 'app-side-nav-outer-toolbar',
   templateUrl: './side-nav-outer-toolbar.component.html',
-  styleUrls: ['./side-nav-outer-toolbar.component.scss']
+  styleUrls: ['./side-nav-outer-toolbar.component.scss'],
+  standalone: false
 })
 export class SideNavOuterToolbarComponent implements OnInit {
   @ViewChild(DxScrollViewComponent, { static: true }) scrollView!: DxScrollViewComponent;
@@ -27,8 +29,13 @@ export class SideNavOuterToolbarComponent implements OnInit {
   menuRevealMode: DxDrawerTypes.RevealMode = 'expand';
   minMenuSize = 0;
   shaderEnabled = false;
+  swatchClassName = 'dx-swatch-additional';
 
-  constructor(private screen: ScreenService, private router: Router) { }
+  constructor(protected themeService: ThemeService, private screen: ScreenService, private router: Router) {
+    themeService.isDark.subscribe((isDark) => {
+      this.swatchClassName = 'dx-swatch-additional' + (isDark ? '-dark' : '');
+    })
+  }
 
   ngOnInit() {
     this.menuOpened = this.screen.sizes['screen-large'];
