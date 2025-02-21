@@ -8,13 +8,15 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "skipTests": true
+          "skipTests": true,
+          "standalone": false
         },
         "@schematics/angular:class": {
           "skipTests": true
         },
         "@schematics/angular:directive": {
-          "skipTests": true
+          "skipTests": true,
+          "standalone": false
         },
         "@schematics/angular:guard": {
           "skipTests": true
@@ -23,7 +25,8 @@
           "skipTests": true
         },
         "@schematics/angular:pipe": {
-          "skipTests": true
+          "skipTests": true,
+          "standalone": false
         },
         "@schematics/angular:resolver": {
           "skipTests": true
@@ -37,11 +40,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/DevExtreme-app",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -53,9 +56,12 @@
             ],
             "styles": [
               "node_modules/devextreme/dist/css/dx.common.css",
+              "src/themes/generated/theme.base.dark.css",
               "src/themes/generated/theme.base.css",
+              "src/themes/generated/theme.additional.dark.css",
               "src/themes/generated/theme.additional.css",
               "src/dx-styles.scss",
+              "src/variables.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -77,12 +83,9 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -91,10 +94,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "DevExtreme-app:build:production"
+              "buildTarget": "DevExtreme-app:build:production"
             },
             "development": {
-              "browserTarget": "DevExtreme-app:build:development"
+              "buildTarget": "DevExtreme-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,7 +105,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "DevExtreme-app:build"
+            "buildTarget": "DevExtreme-app:build"
           }
         },
         "test": {

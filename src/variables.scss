@@ -1,0 +1,53 @@
+@use 'sass:meta';
+@use 'sass:color';
+@use 'sass:map';
+@use "./themes/generated/variables.base.scss" as variablesBase;
+@use "./themes/generated/variables.base.dark.scss" as variablesBaseDark;
+@use "./themes/generated/variables.additional.scss" as variablesAdditional;
+@use "./themes/generated/variables.additional.dark.scss" as variablesAdditionalDark;
+
+@mixin theme-variables($theme-name) {
+  $theme: meta.module-variables($theme-name);
+  $base-text-color: map.get($theme, 'base-text-color');
+  $base-bg: map.get($theme, 'base-bg');
+
+  --base-text-color:  #{$base-text-color};
+  --base-bg: #{$base-bg};
+  --base-bg-darken-5: #{color.adjust($base-bg, $lightness: -5%)};
+  --base-accent:  #{map.get($theme, 'base-accent')};
+  --base-text-color-alpha-7: #{rgba($base-text-color, color.alpha($base-text-color) * 0.7)};
+}
+
+:root {
+  body {
+    @include theme-variables('variablesBase');
+
+    --footer-border-color: rgba(224, 224, 224, 1);
+    --plus-icon-color: #242424;
+    --devextreme-logo-color: #596C7D;
+    --vue-logo-text-color: #35495E;
+
+    --shadow-color-first: rgba(0, 0, 0, 0.06);
+    --shadow-color-second: rgba(0, 0, 0, 0.12);
+  }
+
+  .dx-swatch-additional {
+    @include theme-variables('variablesAdditional');
+  }
+
+  .dx-swatch-dark {
+    @include theme-variables('variablesBaseDark');;
+
+    --plus-icon-color: #fff;
+    --devextreme-logo-color: #fff;
+    --vue-logo-text-color: #fff;
+
+    --shadow-color-first: rgba(0, 0, 0, 0.12);
+    --shadow-color-second: rgba(0, 0, 0, 0.24);
+    --footer-border-color: rgba(97, 97, 97, 1);
+  }
+
+  .dx-swatch-additional-dark {
+    @include theme-variables('variablesAdditionalDark');
+  }
+}

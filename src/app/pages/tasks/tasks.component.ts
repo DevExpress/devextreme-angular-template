@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import 'devextreme/data/odata/store';
 
 @Component({
-  templateUrl: 'tasks.component.html'
+  templateUrl: 'tasks.component.html',
+  styleUrls: ['tasks.component.scss'],
+  standalone: false
 })
 
 export class TasksComponent {

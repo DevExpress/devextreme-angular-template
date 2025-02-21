@@ -5,7 +5,8 @@ import { Component, NgModule } from '@angular/core';
   template: `
     <footer><ng-content></ng-content></footer>
   `,
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
+  standalone: false
 })
 
 export class FooterComponent {

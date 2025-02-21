@@ -11,7 +11,8 @@ const notificationText = 'We\'ve sent a link to reset your password. Check your 
 @Component({
   selector: 'app-reset-password-form',
   templateUrl: './reset-password-form.component.html',
-  styleUrls: ['./reset-password-form.component.scss']
+  styleUrls: ['./reset-password-form.component.scss'],
+  standalone: false
 })
 export class ResetPasswordFormComponent {
   loading = false;

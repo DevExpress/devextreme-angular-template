@@ -1,34 +1,37 @@
 .logos-container {
-  margin: 20px 0 40px 0;
-  text-align: center;
+  margin: 0 0 40px 0;
+
   svg {
     display: inline-block;
   }
 }
 
 .devextreme-logo {
-  width: 200px;
-  height: 34px;
-  margin-bottom: 13px;
+  width: 255px;
+  height: 60px;
+
+  > path {
+    fill: var(--devextreme-logo-color);
+  }
+
+  .by-devexpress {
+    path {
+      fill: var(--devextreme-logo-color);
+    }
+  }
 }
 
 .angular-logo {
-  width: 220px;
-  height: 62px;
+  width: 247px;
+  height: 60px;
 }
 
 .plus {
-  margin: 15px 10px;
+  margin: 20px;
   width: 22px;
   height: 22px;
-}
 
-:host-context(.screen-x-small) .logos-container {
-  svg {
-    width: 100%;
-    display: block;
-    &.plus {
-      margin: 0;
-    }
+  path {
+    fill:  var(--plus-icon-color);
   }
 }

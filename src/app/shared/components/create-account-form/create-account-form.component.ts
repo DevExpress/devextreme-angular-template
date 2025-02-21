@@ -11,7 +11,8 @@ import { AuthService } from '../../services';
 @Component({
   selector: 'app-create-account-form',
   templateUrl: './create-account-form.component.html',
-  styleUrls: ['./create-account-form.component.scss']
+  styleUrls: ['./create-account-form.component.scss'],
+  standalone: false
 })
 export class CreateAccountFormComponent {
   loading = false;
