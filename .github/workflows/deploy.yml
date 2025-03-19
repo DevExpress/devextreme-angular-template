@@ -30,11 +30,11 @@ jobs:
       uses: DevExpress/github-actions/install-internal-package@main
 
     - name: Build
-      run: npm run build -- --configuration=production --base-href https://devexpress.github.io/devextreme-angular-template/
+      run: npm run build -- --configuration=production --base-href https://devexpress.github.io/devextreme-angular-template/ --extract-licenses=false
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@ba1486788b0490a235422264426c45848eac35c6
       with:
         branch: gh-pages
-        folder: dist/DevExtreme-app
+        folder: dist/DevExtreme-app/browser
         target-folder: .
