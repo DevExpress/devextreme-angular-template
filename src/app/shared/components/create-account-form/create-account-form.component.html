@@ -1,38 +1,38 @@
 <form class="create-account-form" (submit)="onSubmit($event)">
   <dx-form [formData]="formData" [disabled]="loading">
 
-    <dxi-item dataField="email" editorType="dxTextBox"
+    <dxi-form-item dataField="email" editorType="dxTextBox"
       [editorOptions]="{ stylingMode: 'filled', placeholder: 'Email', mode: 'email' }">
-      <dxi-validation-rule type="required" message="Email is required"></dxi-validation-rule>
-      <dxi-validation-rule type="email" message="Email is invalid"></dxi-validation-rule>
-      <dxo-label [visible]="false"></dxo-label>
-    </dxi-item>
+      <dxi-form-validation-rule type="required" message="Email is required"></dxi-form-validation-rule>
+      <dxi-form-validation-rule type="email" message="Email is invalid"></dxi-form-validation-rule>
+      <dxo-form-label [visible]="false"></dxo-form-label>
+    </dxi-form-item>
 
-    <dxi-item dataField="password" editorType="dxTextBox"
+    <dxi-form-item dataField="password" editorType="dxTextBox"
       [editorOptions]="{ stylingMode: 'filled', placeholder: 'Password', mode: 'password' }">
-      <dxi-validation-rule type="required" message="Password is required"></dxi-validation-rule>
-      <dxo-label [visible]="false"></dxo-label>
-    </dxi-item>
+      <dxi-form-validation-rule type="required" message="Password is required"></dxi-form-validation-rule>
+      <dxo-form-label [visible]="false"></dxo-form-label>
+    </dxi-form-item>
 
-    <dxi-item dataField="confirmedPassword" editorType="dxTextBox"
+    <dxi-form-item dataField="confirmedPassword" editorType="dxTextBox"
       [editorOptions]="{ stylingMode: 'filled', placeholder: 'Confirm Password', mode: 'password' }">
-      <dxi-validation-rule type="required" message="Password is required"></dxi-validation-rule>
-      <dxi-validation-rule type="custom" message="Passwords do not match" [validationCallback]="confirmPassword">
-      </dxi-validation-rule>
-      <dxo-label [visible]="false"></dxo-label>
-    </dxi-item>
+      <dxi-form-validation-rule type="required" message="Password is required"></dxi-form-validation-rule>
+      <dxi-form-validation-rule type="custom" message="Passwords do not match" [validationCallback]="confirmPassword">
+      </dxi-form-validation-rule>
+      <dxo-form-label [visible]="false"></dxo-form-label>
+    </dxi-form-item>
 
-    <dxi-item>
+    <dxi-form-item>
       <div class='policy-info'>
         By creating an account, you agree to the <a routerLink="#">Terms of Service</a> and <a routerLink="#">Privacy
           Policy</a>
       </div>
-    </dxi-item>
+    </dxi-form-item>
 
-    <dxi-item itemType="button">
-      <dxo-button-options width="100%" type="default" [useSubmitBehavior]="true" [template]="'createAccountTemplate'">
-      </dxo-button-options>
-    </dxi-item>
+    <dxi-form-item itemType="button">
+      <dxo-form-button-options width="100%" type="default" [useSubmitBehavior]="true" [template]="'createAccountTemplate'">
+      </dxo-form-button-options>
+    </dxi-form-item>
 
     <ng-container *dxTemplate="let item of 'createAccountTemplate'">
       <div>

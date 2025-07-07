@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SingleCardModule } from './layouts';
+import { SingleCardComponent } from './layouts';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +17,12 @@ import { Router } from '@angular/router';
       height: 100%;
     }
   `],
-  standalone: false
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterModule,
+    SingleCardComponent,
+  ]
 })
 export class UnauthenticatedContentComponent {
 
@@ -42,13 +47,3 @@ export class UnauthenticatedContentComponent {
     }
   }
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    SingleCardModule,
-  ],
-  declarations: [UnauthenticatedContentComponent],
-  exports: [UnauthenticatedContentComponent]
-})
-export class UnauthenticatedContentModule { }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { DxFormModule } from 'devextreme-angular/ui/form';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
@@ -12,7 +12,14 @@ import { AuthService } from '../../services';
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],
-  standalone: false
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterModule,
+    DxFormModule,
+    DxButtonModule,
+    DxLoadIndicatorModule,
+  ]
 })
 export class LoginFormComponent {
   loading = false;
@@ -36,15 +43,3 @@ export class LoginFormComponent {
     this.router.navigate(['/create-account']);
   }
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    DxFormModule,
-    DxButtonModule,
-    DxLoadIndicatorModule
-  ],
-  declarations: [ LoginFormComponent ],
-  exports: [ LoginFormComponent ]
-})
-export class LoginFormModule { }

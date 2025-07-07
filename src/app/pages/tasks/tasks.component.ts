@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import 'devextreme/data/odata/store';
+import { DxDataGridModule } from 'devextreme-angular/ui/data-grid';
 
 @Component({
   templateUrl: 'tasks.component.html',
   styleUrls: ['tasks.component.scss'],
-  standalone: false
+  standalone: true,
+  imports: [DxDataGridModule]
 })
 
 export class TasksComponent {

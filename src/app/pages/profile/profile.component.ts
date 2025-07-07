@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { DxFormModule } from 'devextreme-angular/ui/form';
 
 @Component({
   templateUrl: 'profile.component.html',
   styleUrls: [ './profile.component.scss' ],
-  standalone: false
+  standalone: true,
+  imports: [DxFormModule],
 })
 
 export class ProfileComponent {
