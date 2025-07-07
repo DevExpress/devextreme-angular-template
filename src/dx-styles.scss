@@ -64,10 +64,10 @@ html, body {
 
   .responsive-paddings {
     padding: 20px;
+  }
 
-    .screen-large & {
-      padding: 40px;
-    }
+  .screen-large .responsive-paddings {
+    padding: 40px;
   }
 
   .dx-card.wide-card {

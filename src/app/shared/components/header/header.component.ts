@@ -1,18 +1,25 @@
-import { Component, NgModule, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
-import { AuthService, IUser } from '../../services';
-import { UserPanelModule } from '../user-panel/user-panel.component';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 import { DxToolbarModule } from 'devextreme-angular/ui/toolbar';
 
-import { Router } from '@angular/router';
-import {ThemeSwitcherModule} from "../theme-switcher/theme-switcher.component";
+import { AuthService, IUser } from '../../services';
+import { UserPanelComponent } from '../user-panel/user-panel.component';
+import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: 'header.component.html',
   styleUrls: ['./header.component.scss'],
-  standalone: false
+  standalone: true,
+  imports: [
+    CommonModule,
+    DxButtonModule,
+    UserPanelComponent,
+    DxToolbarModule,
+    ThemeSwitcherComponent,
+  ]
 })
 
 export class HeaderComponent implements OnInit {
@@ -52,16 +59,3 @@ export class HeaderComponent implements OnInit {
     this.menuToggle.emit();
   }
 }
-
-@NgModule({
-  imports: [
-    CommonModule,
-    DxButtonModule,
-    UserPanelModule,
-    DxToolbarModule,
-    ThemeSwitcherModule,
-  ],
-  declarations: [ HeaderComponent ],
-  exports: [ HeaderComponent ]
-})
-export class HeaderModule { }

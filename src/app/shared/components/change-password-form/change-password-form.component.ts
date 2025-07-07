@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ValidationCallbackData } from 'devextreme-angular/common';
 import { DxFormModule } from 'devextreme-angular/ui/form';
@@ -11,7 +11,13 @@ import { AuthService } from '../../services';
 @Component({
   selector: 'app-change-passsword-form',
   templateUrl: './change-password-form.component.html',
-  standalone: false
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterModule,
+    DxFormModule,
+    DxLoadIndicatorModule,
+  ]
 })
 export class ChangePasswordFormComponent implements OnInit {
   loading = false;
@@ -45,14 +51,3 @@ export class ChangePasswordFormComponent implements OnInit {
     return e.value === this.formData.password;
   }
 }
-@NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    DxFormModule,
-    DxLoadIndicatorModule
-  ],
-  declarations: [ ChangePasswordFormComponent ],
-  exports: [ ChangePasswordFormComponent ]
-})
-export class ChangePasswordFormModule { }

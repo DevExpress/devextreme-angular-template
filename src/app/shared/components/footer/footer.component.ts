@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -6,15 +6,9 @@ import { Component, NgModule } from '@angular/core';
     <footer><ng-content></ng-content></footer>
   `,
   styleUrls: ['./footer.component.scss'],
-  standalone: false
+  standalone: true
 })
 
 export class FooterComponent {
 
 }
-
-@NgModule({
-  declarations: [ FooterComponent ],
-  exports: [ FooterComponent ]
-})
-export class FooterModule { }
