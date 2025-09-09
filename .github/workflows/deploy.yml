@@ -26,6 +26,9 @@ jobs:
     - name: Install dependencies (npm ci)
       run: npm ci --no-audit --no-fund
 
+    - name: Build themes
+      run: npm run build-themes
+
     - name: Install Internal Package
       uses: DevExpress/github-actions/install-internal-package@main
 
