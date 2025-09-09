@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "postinstall": "npm run build-themes",
-    "build-themes": "devextreme build"
+    "build-themes": "devextreme build",
+    "postinstall": "npm run build-themes"
   },
   "private": true,
   "dependencies": {
