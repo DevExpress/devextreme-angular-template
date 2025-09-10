@@ -18,8 +18,8 @@ export class ThemeService {
   currentTheme: Theme = getNextTheme();
 
   constructor(@Inject(DOCUMENT) private document: Document) {
-    if (!this.document.body.className.includes(themeClassNamePrefix)) {
-      this.document.body.classList.add(themeClassNamePrefix + this.currentTheme);
+    if (!this.document.querySelector('.app')?.className.includes(themeClassNamePrefix)) {
+      this.document.querySelector('.app')?.classList.add(themeClassNamePrefix + this.currentTheme);
     }
   }
 
@@ -30,7 +30,7 @@ export class ThemeService {
     const newTheme = getNextTheme(this.currentTheme);
     const isCurrentThemeDark = currentTheme === 'dark';
 
-    this.document.body.classList.replace(
+    this.document.querySelector('.app')?.classList.replace(
       themeClassNamePrefix + currentTheme,
       themeClassNamePrefix + newTheme
     );
@@ -39,8 +39,7 @@ export class ThemeService {
     const additionalClassNamePostfix = isCurrentThemeDark ? '-' + currentTheme : '';
     const additionalClassName = `${additionalClassNamePrefix}${additionalClassNamePostfix}`
 
-    this.document.body
-      .querySelector(`.${additionalClassName}`)?.classList
+    this.document.querySelector('.app')?.querySelector(`.${additionalClassName}`)?.classList
       .replace(additionalClassName, additionalClassNamePrefix + (isCurrentThemeDark ? '' : '-dark'));
 
     this.currentTheme = newTheme;
