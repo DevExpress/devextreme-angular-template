@@ -33,6 +33,7 @@
     "@types/jasmine": "~5.1.0",
     "devextreme-cli": "latest",
     "devextreme-themebuilder": "25.1.3",
+    "sass-embedded": "~1.66.0",
     "jasmine-core": "~5.7.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
