@@ -37,11 +37,11 @@
     <ng-container *dxTemplate="let item of 'createAccountTemplate'">
       <div>
         <span class="dx-button-text">
-          <ng-container *ngIf="loading; else notLoading">
+          @if (loading) {
             <dx-load-indicator width="24px" height="24px" [visible]="true"></dx-load-indicator>
-          </ng-container>
-
-          <ng-template #notLoading>Create a new account</ng-template>
+          } @else {
+            <div>Create a new account</div>
+          }
         </span>
       </div>
     </ng-container>
