@@ -18,7 +18,7 @@
   <app-side-navigation-menu
     [compactMode]="!menuOpened"
     [selectedItem]="selectedRoute"
-    [ngClass]="swatchClassName"
+    [class]="swatchClassName"
     *dxTemplate="let dataMenu of 'panel'"
     (selectedItemChanged)="navigationChanged($event)"
     (openMenu)="navigationClick()">

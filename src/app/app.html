@@ -1,4 +1,4 @@
-<ng-container *ngIf="isAuthenticated(); else unauthenticated">
+@if (isAuthenticated()) {
   <app-side-nav-outer-toolbar title="{{appInfo.title}}">
     <router-outlet></router-outlet>
     <app-footer>
@@ -7,8 +7,6 @@
       All trademarks or registered trademarks are property of their respective owners.
     </app-footer>
   </app-side-nav-outer-toolbar>
-</ng-container>
-
-<ng-template #unauthenticated>
+} @else {
   <app-unauthenticated-content></app-unauthenticated-content>
-</ng-template>
+}

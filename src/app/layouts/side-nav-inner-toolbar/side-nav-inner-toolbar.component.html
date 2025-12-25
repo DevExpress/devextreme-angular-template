@@ -11,13 +11,13 @@
   <app-side-navigation-menu
     [compactMode]="!menuOpened"
     [selectedItem]="selectedRoute"
-    [ngClass]="swatchClassName"
+    [class]="swatchClassName"
     *dxTemplate="let dataMenu of 'panel'"
     (selectedItemChanged)="navigationChanged($event)"
     (openMenu)="navigationClick()">
       <dx-toolbar id="navigation-header">
+        @if (minMenuSize !== 0) {
         <dxi-toolbar-item
-          *ngIf="minMenuSize !== 0"
           location="before"
           cssClass="menu-button"
           widget="dxButton"
@@ -27,6 +27,7 @@
             onClick: toggleMenu
           }">
         </dxi-toolbar-item>
+        }
         <dxi-toolbar-item
           location="before"
           cssClass="header-title"
