@@ -14,58 +14,43 @@
   <dxo-data-grid-filter-row [visible]="true"></dxo-data-grid-filter-row>
 
   <dxi-data-grid-column
-    dataField="Task_ID"
+    dataField="id"
     [width]="90"
-    [hidingPriority]="2">
+    [hidingPriority]="1">
   </dxi-data-grid-column>
   <dxi-data-grid-column
-    dataField="Task_Subject"
+    dataField="text"
     [width]="190"
     caption="Subject"
-    [hidingPriority]="8">
-  </dxi-data-grid-column>
-  <dxi-data-grid-column
-    dataField="Task_Status"
-    caption="Status"
     [hidingPriority]="6">
   </dxi-data-grid-column>
   <dxi-data-grid-column
-    dataField="Task_Priority"
-    caption="Priority"
-    [hidingPriority]="5">
-    <dxo-data-grid-lookup
-      [dataSource]="priority"
-      valueExpr="value"
-      displayExpr="name">
-    </dxo-data-grid-lookup>
+    dataField="status"
+    caption="Status"
+    [hidingPriority]="4">
   </dxi-data-grid-column>
   <dxi-data-grid-column
-    dataField="ResponsibleEmployee.Employee_Full_Name"
+    dataField="owner"
     caption="Assigned To"
     [allowSorting]="false"
-    [hidingPriority]="7">
+    [hidingPriority]="5">
   </dxi-data-grid-column>
   <dxi-data-grid-column
-    dataField="Task_Start_Date"
+    dataField="startDate"
     caption="Start Date"
+    dataType="date"
+    [hidingPriority]="2">
+  </dxi-data-grid-column>
+  <dxi-data-grid-column
+    dataField="dueDate"
+    caption="Due Date"
     dataType="date"
     [hidingPriority]="3">
   </dxi-data-grid-column>
   <dxi-data-grid-column
-    dataField="Task_Due_Date"
-    caption="Due Date"
-    dataType="date"
-    [hidingPriority]="4">
-  </dxi-data-grid-column>
-  <dxi-data-grid-column
-    dataField="Task_Priority"
+    dataField="priority"
     caption="Priority"
     name="Priority"
-    [hidingPriority]="1">
-  </dxi-data-grid-column>
-  <dxi-data-grid-column
-    dataField="Task_Completion"
-    caption="Completion"
     [hidingPriority]="0">
   </dxi-data-grid-column>
 </dx-data-grid>
