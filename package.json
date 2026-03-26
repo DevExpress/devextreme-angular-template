@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cdk": "^21.2.2",
+    "@angular/cdk": "^21.2.4",
     "@angular/common": "^21.2.4",
     "@angular/compiler": "^21.2.4",
     "@angular/core": "^21.2.4",
@@ -27,12 +27,15 @@
     "zone.js": "~0.16.0"
   },
   "devDependencies": {
-    "@angular/build": "^21.2.2",
-    "@angular/cli": "^21.2.2",
+    "@angular/build": "^21.2.4",
+    "@angular/cli": "^21.2.4",
     "@angular/compiler-cli": "^21.2.4",
     "devextreme-cli": "latest",
     "devextreme-themebuilder": "^25.2.5",
     "sass-embedded": "1.66.0",
     "typescript": "~5.9.2"
+  },
+  "overrides": {
+    "picomatch": "^4.0.4"
   }
 }
