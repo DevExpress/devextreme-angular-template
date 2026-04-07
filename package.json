@@ -36,6 +36,7 @@
     "typescript": "~5.9.2"
   },
   "overrides": {
-    "picomatch": "^4.0.4"
+    "picomatch": "^4.0.4",
+    "vite@<7.3.2": "7.3.2"
   }
 }
