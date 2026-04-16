@@ -12,25 +12,23 @@ jobs:
     - name: Get sources
       uses: actions/checkout@v4
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '24'
+        cache: 'pnpm'
 
-    - name: Restore npm cache
-      uses: actions/cache@v4
-      with:
-        path: ./node_modules
-        key: ${{ runner.os }}-node-modules
-
-    - name: Install dependencies (npm ci)
-      run: npm ci --no-audit --no-fund
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
 
     - name: Install Internal Package
       uses: DevExpress/github-actions/install-internal-package@main
 
     - name: Build
-      run: npm run build -- --configuration=production --base-href https://devexpress.github.io/devextreme-angular-template/ --extract-licenses=false
+      run: pnpm run build -- --configuration=production --base-href https://devexpress.github.io/devextreme-angular-template/ --extract-licenses=false
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@ba1486788b0490a235422264426c45848eac35c6
