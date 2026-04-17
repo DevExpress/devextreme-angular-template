@@ -1,6 +1,7 @@
 {
   "name": "devextreme-angular-template",
   "version": "0.0.0",
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build-themes": "devextreme build",
-    "postinstall": "npm run build-themes"
+    "postinstall": "pnpm run build-themes"
   },
   "private": true,
   "dependencies": {
@@ -35,8 +36,10 @@
     "sass-embedded": "1.66.0",
     "typescript": "~5.9.2"
   },
-  "overrides": {
-    "picomatch": "^4.0.4",
-    "vite@<7.3.2": "7.3.2"
+  "pnpm": {
+    "overrides": {
+      "picomatch": "^4.0.4",
+      "vite@<7.3.2": "7.3.2"
+    }
   }
 }

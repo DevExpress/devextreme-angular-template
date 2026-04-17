@@ -8,7 +8,7 @@
 
 # Node
 /node_modules
-npm-debug.log
+pnpm-debug.log
 yarn-error.log
 
 # IDEs and editors
