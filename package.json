@@ -33,7 +33,7 @@
     "@angular/compiler-cli": "^21.2.4",
     "devextreme-cli": "latest",
     "devextreme-themebuilder": "^25.2.5",
-    "sass-embedded": "1.66.0",
+    "sass-embedded": "1.99.0",
     "typescript": "~5.9.2"
   },
   "pnpm": {
