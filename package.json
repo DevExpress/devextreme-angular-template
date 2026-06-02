@@ -1,7 +1,7 @@
 {
   "name": "devextreme-angular-template",
   "version": "0.0.0",
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@11.5.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
