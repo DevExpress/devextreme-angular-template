@@ -10,7 +10,3 @@ allowBuilds:
   inferno: true
   lmdb: true
   msgpackr-extract: true
-
-minimumReleaseAgeExclude:
-  - esbuild@0.28.1
-  - piscina@5.1.5
