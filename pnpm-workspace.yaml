@@ -2,6 +2,7 @@ overrides:
   '@babel/core@<=7.29.0': ^7.29.1
   picomatch: ^4.0.4
   esbuild@>=0.27.3 <0.28.1: ^0.28.1
+  piscina@<=5.1.4: ^5.1.5
 
 allowBuilds:
   '@parcel/watcher': true
@@ -11,5 +12,3 @@ allowBuilds:
   lmdb: true
   msgpackr-extract: true
 
-minimumReleaseAgeExclude:
-  - piscina@5.1.5
