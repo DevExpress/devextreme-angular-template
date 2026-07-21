@@ -65,7 +65,7 @@ importers:
         version: 22.0.2(@angular/compiler@22.0.2)(typescript@6.0.3)
       devextreme-cli:
         specifier: latest
-        version: 1.15.0
+        version: 1.16.0
       devextreme-themebuilder:
         specifier: ^25.2.8
         version: 25.2.8(bootstrap@5.3.8(@popperjs/core@2.11.8))
@@ -1304,6 +1304,11 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
+  baseline-browser-mapping@2.10.43:
+    resolution: {integrity: sha512-AjYpR78kDWAY3Efj+cDTFH9t9SCoL7OoTp1BOb0mQV7S+6CiLwnWM3FyxhJtdPufDFKzmCSFoUncKjWgJEZTCQ==}
+    engines: {node: '>=6.0.0'}
+    hasBin: true
+
   beasties@0.4.2:
     resolution: {integrity: sha512-NvcGjG/7AVUAfRbvrJmHunDQS9uHnE6Q/7AkaPr8oKE8HjOlpjRG5075z/th2Tmlezk3VlaaS8+X9I1RwHJMQw==}
     engines: {node: '>=18.0.0'}
@@ -1323,12 +1328,17 @@ packages:
     peerDependencies:
       '@popperjs/core': ^2.11.8
 
-  brace-expansion@5.0.6:
-    resolution: {integrity: sha512-kLpxurY4Z4r9sgMsyG0Z9uzsBlgiU/EFKhj/h91/8yHu0edo7XuixOIH3VcJ8kkxs6/jPzoI6U9Vj3WqbMQ94g==}
+  brace-expansion@5.0.7:
+    resolution: {integrity: sha512-7oFy703dxfY3/NLxC1fh2SUCQ0H9rmAY+5EpDVfXjUTTs+HEwR2nYaqLv+GWcTsumwxPfiz6CzCNkwXwBUwqCA==}
     engines: {node: 18 || 20 || >=22}
 
   browserslist@4.28.2:
     resolution: {integrity: sha512-48xSriZYYg+8qXna9kwqjIVzuQxi+KYWp2+5nCYnYKPTr0LvD89Jqk2Or5ogxz0NUMfIjhh2lIUX/LyX9B4oIg==}
+    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
+    hasBin: true
+
+  browserslist@4.28.6:
+    resolution: {integrity: sha512-FQBYNK15VMslhLHpA7+n+n1GOlF1kId2xcCg7/j95f24AOF6VDYMNH4mFxF7KuaTdv627faazpOAjFzMrfJOUw==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
@@ -1359,6 +1369,9 @@ packages:
 
   caniuse-lite@1.0.30001799:
     resolution: {integrity: sha512-hG1bReV+OUU+MOqK4t/ZWI0tZOyz3rqS9XuhOUz1cIcbwBKjOyJEJuw9ER5JuNyqxNk8u/JUVbGibBOL1yrjFw==}
+
+  caniuse-lite@1.0.30001806:
+    resolution: {integrity: sha512-72Cuvd95zbSYPKq6Fhg8eDJRlzgWDf7/mtoZv6Qe/DYNCEBdNxoA3+rZAU2ZhGCpZlns3EssFavaZomckT5Uuw==}
 
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -1513,8 +1526,8 @@ packages:
       '@angular/forms': '>=19.0.0'
       devextreme: 25.2.8
 
-  devextreme-cli@1.15.0:
-    resolution: {integrity: sha512-qQtirIcpR4zatzigkpYJALktcyMlMHGtBF3v0WA3oTCv31AB5LISyxv0OzI3u3HEyi3OkuptnuoNjC9KJagdXw==}
+  devextreme-cli@1.16.0:
+    resolution: {integrity: sha512-4m78pNYGA5f3nea6Yp1TkCtrpzcS4i7m/3tvabZW3bQcMpn5UqNjvd83917f+RPLRKWl1oaY/0ZURFOkt1xx3w==}
     engines: {node: '>20.19.0', npm: '>9.6.0', yarn: '>1.21'}
     hasBin: true
 
@@ -1555,6 +1568,9 @@ packages:
 
   electron-to-chromium@1.5.376:
     resolution: {integrity: sha512-cUVA7/RvbFTEuw/i3obUwDTRIXojaxkResf+ibByPFxjc6XK3VNtcQXV0NSbAlJ0FMjcJGgftVVB4Qo184EXvA==}
+
+  electron-to-chromium@1.5.393:
+    resolution: {integrity: sha512-kiDJdIUawuEIcp9XoICKp1iTYDEbgguIPq526N1Q7jIQDeQ3CqoMx71025PI/7E48Ddtw2HuWsVjY7afEgNxmg==}
 
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
@@ -2081,8 +2097,8 @@ packages:
     resolution: {integrity: sha512-dkEJPVvun4FryqBmZ5KhDo0K9iDXAwn08tMLDinNdRBNPcYEDiWYysLcc6k3mjTMlbP9KyylvRpd4wFtwrT9rw==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  nanoid@3.3.14:
-    resolution: {integrity: sha512-U9kYi5bpVMEI31yC8iw4bJJp0avcHXA0W8/wNfLfnvJYzihQo2ZRPYPvpAAd570HAcCBjCTN7vnr+v4StKl1IQ==}
+  nanoid@3.3.16:
+    resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -2110,6 +2126,10 @@ packages:
 
   node-releases@2.0.48:
     resolution: {integrity: sha512-1uz8041X6LoI6ZSdZacM9lVY28vuzDlSKitnpbSNK0RfKoIJkX29NBPVEFXhnuSuEOA9Ww0xnPJ+ILWbGAv8DA==}
+    engines: {node: '>=18'}
+
+  node-releases@2.0.51:
+    resolution: {integrity: sha512-wRNIrw4DmVLKQlbgOMdkMx27Wrpzes2hh5Jtbi2bjPd+4wJstWIqP5A+lscnqbm0xxmT5Bpg8Lec5ItEBwx6BQ==}
     engines: {node: '>=18'}
 
   nopt@9.0.0:
@@ -2595,8 +2615,8 @@ packages:
     resolution: {integrity: sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q==}
     engines: {node: '>=10'}
 
-  tar@7.5.16:
-    resolution: {integrity: sha512-56adEpPMouktRlBLXiaYFFzZ/3+JXa8P9n7WbR+ibIjtviN55mEaOkiysCnPnWm+7kkui1Dn8J9l+g6zV8731w==}
+  tar@7.5.20:
+    resolution: {integrity: sha512-9FcyK4PA6+WbzlTM9WhQm6vB5W7cP7dUiPsv1g7YDwEQnQ1CGpK3MGlKk/ITVWMk05kHZuBhmVhiv8LZoy/PFQ==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.16:
@@ -3101,7 +3121,7 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.29.7
       '@babel/helper-validator-option': 7.29.7
-      browserslist: 4.28.2
+      browserslist: 4.28.6
       lru-cache: 5.1.1
       semver: 6.3.1
 
@@ -3861,6 +3881,8 @@ snapshots:
 
   baseline-browser-mapping@2.10.38: {}
 
+  baseline-browser-mapping@2.10.43: {}
+
   beasties@0.4.2:
     dependencies:
       css-select: 6.0.0
@@ -3899,7 +3921,7 @@ snapshots:
     dependencies:
       '@popperjs/core': 2.11.8
 
-  brace-expansion@5.0.6:
+  brace-expansion@5.0.7:
     dependencies:
       balanced-match: 4.0.4
 
@@ -3910,6 +3932,14 @@ snapshots:
       electron-to-chromium: 1.5.376
       node-releases: 2.0.48
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
+
+  browserslist@4.28.6:
+    dependencies:
+      baseline-browser-mapping: 2.10.43
+      caniuse-lite: 1.0.30001806
+      electron-to-chromium: 1.5.393
+      node-releases: 2.0.51
+      update-browserslist-db: 1.2.3(browserslist@4.28.6)
 
   buffer-builder@0.2.0: {}
 
@@ -3946,6 +3976,8 @@ snapshots:
       get-intrinsic: 1.3.0
 
   caniuse-lite@1.0.30001799: {}
+
+  caniuse-lite@1.0.30001806: {}
 
   chalk@4.1.2:
     dependencies:
@@ -4084,7 +4116,7 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  devextreme-cli@1.15.0:
+  devextreme-cli@1.16.0:
     dependencies:
       '@yarnpkg/lockfile': 1.1.0
       import-cwd: 3.0.0
@@ -4165,6 +4197,8 @@ snapshots:
   ee-first@1.1.1: {}
 
   electron-to-chromium@1.5.376: {}
+
+  electron-to-chromium@1.5.393: {}
 
   emoji-regex@10.6.0: {}
 
@@ -4653,7 +4687,7 @@ snapshots:
 
   minimatch@10.2.5:
     dependencies:
-      brace-expansion: 5.0.6
+      brace-expansion: 5.0.7
 
   minimist@1.2.8: {}
 
@@ -4716,7 +4750,7 @@ snapshots:
 
   mute-stream@3.0.0: {}
 
-  nanoid@3.3.14: {}
+  nanoid@3.3.16: {}
 
   native-request@1.1.2:
     optional: true
@@ -4742,12 +4776,14 @@ snapshots:
       nopt: 9.0.0
       proc-log: 6.1.0
       semver: 7.7.4
-      tar: 7.5.16
+      tar: 7.5.20
       tinyglobby: 0.2.17
       undici: 6.27.0
       which: 6.0.1
 
   node-releases@2.0.48: {}
+
+  node-releases@2.0.51: {}
 
   nopt@9.0.0:
     dependencies:
@@ -4867,7 +4903,7 @@ snapshots:
       proc-log: 6.1.0
       sigstore: 4.1.1
       ssri: 13.0.1
-      tar: 7.5.16
+      tar: 7.5.20
     transitivePeerDependencies:
       - supports-color
 
@@ -4927,7 +4963,7 @@ snapshots:
 
   postcss@8.5.15:
     dependencies:
-      nanoid: 3.3.14
+      nanoid: 3.3.16
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -5302,7 +5338,7 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  tar@7.5.16:
+  tar@7.5.20:
     dependencies:
       '@isaacs/fs-minipass': 4.0.1
       chownr: 3.0.0
@@ -5357,6 +5393,12 @@ snapshots:
   update-browserslist-db@1.2.3(browserslist@4.28.2):
     dependencies:
       browserslist: 4.28.2
+      escalade: 3.2.0
+      picocolors: 1.1.1
+
+  update-browserslist-db@1.2.3(browserslist@4.28.6):
+    dependencies:
+      browserslist: 4.28.6
       escalade: 3.2.0
       picocolors: 1.1.1
 
