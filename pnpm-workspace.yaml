@@ -12,4 +12,3 @@ allowBuilds:
   inferno: true
   lmdb: true
   msgpackr-extract: true
-
