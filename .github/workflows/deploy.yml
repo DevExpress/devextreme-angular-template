@@ -25,7 +25,7 @@ jobs:
       run: pnpm install --frozen-lockfile
 
     - name: Install Internal Package
-      uses: DevExpress/github-actions/install-internal-package@main
+      uses: DevExpress/github-actions/install-internal-package@install-internal-package
 
     - name: Build
       run: pnpm run build --configuration=production --base-href https://devexpress.github.io/devextreme-angular-template/ --extract-licenses=false
