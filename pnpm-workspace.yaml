@@ -17,4 +17,3 @@ allowBuilds:
 minimumReleaseAgeExclude:
   - devextreme-cli
   - devextreme-schematics
-  - nanoid@3.3.17
