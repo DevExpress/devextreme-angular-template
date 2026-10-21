@@ -5,6 +5,7 @@ overrides:
   nanoid@<3.3.17: ^3.3.17
   picomatch: ^4.0.4
   piscina@<=5.1.4: ^5.1.5
+  vite@>=8.3.0 <=8.3.2: ~8.3.3
 
 allowBuilds:
   '@parcel/watcher': true
