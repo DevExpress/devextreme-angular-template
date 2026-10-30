@@ -1,6 +1,6 @@
 [tools]
 node = "24.15.0"
-pnpm = "11.7.0"
+pnpm = "11.28.8"
 
 [hooks]
 enter = "mise install"
