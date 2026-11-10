@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 
 export interface IUser {
@@ -12,11 +12,11 @@ const defaultUser = {
   avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png'
 };
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthService {
-  private _user: IUser | null = defaultUser;
+  private _user = signal<IUser | null>(defaultUser);
   get loggedIn(): boolean {
-    return !!this._user;
+    return !!this._user();
   }
 
   private _lastAuthenticatedPath: string = defaultPath;
@@ -30,12 +30,12 @@ export class AuthService {
 
     try {
       // Send request
-      this._user = { ...defaultUser, email };
+      this._user.set({ ...defaultUser, email });
       this.router.navigate([this._lastAuthenticatedPath]);
 
       return {
         isOk: true,
-        data: this._user
+        data: this._user()
       };
     }
     catch {
@@ -52,7 +52,7 @@ export class AuthService {
 
       return {
         isOk: true,
-        data: this._user
+        data: this._user()
       };
     }
     catch {
@@ -113,12 +113,12 @@ export class AuthService {
   }
 
   async logOut() {
-    this._user = null;
+    this._user.set(null);
     this.router.navigate(['/login-form']);
   }
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthGuardService implements CanActivate {
   constructor(private router: Router, private authService: AuthService) { }
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { ValidationCallbackData } from 'devextreme-angular/common';
 import { DxFormModule } from 'devextreme-angular/ui/form';
@@ -21,7 +21,7 @@ import { AuthService } from '../../services';
   ]
 })
 export class CreateAccountFormComponent {
-  loading = false;
+  loading = signal(false);
   formData: any = {};
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -29,10 +29,10 @@ export class CreateAccountFormComponent {
   async onSubmit(e: Event) {
     e.preventDefault();
     const { email, password } = this.formData;
-    this.loading = true;
+    this.loading.set(true);
 
     const result = await this.authService.createAccount(email, password);
-    this.loading = false;
+    this.loading.set(false);
 
     if (result.isOk) {
       this.router.navigate(['/login-form']);
