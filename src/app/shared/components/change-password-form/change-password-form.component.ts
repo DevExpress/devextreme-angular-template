@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ValidationCallbackData } from 'devextreme-angular/common';
 import { DxFormModule } from 'devextreme-angular/ui/form';
@@ -20,7 +20,7 @@ import { AuthService } from '../../services';
   ]
 })
 export class ChangePasswordFormComponent implements OnInit {
-  loading = false;
+  loading = signal(false);
   formData: any = {};
   recoveryCode: string = '';
 
@@ -35,10 +35,10 @@ export class ChangePasswordFormComponent implements OnInit {
   async onSubmit(e: Event) {
     e.preventDefault();
     const { password } = this.formData;
-    this.loading = true;
+    this.loading.set(true);
 
     const result = await this.authService.changePassword(password, this.recoveryCode);
-    this.loading = false;
+    this.loading.set(false);
 
     if (result.isOk) {
       this.router.navigate(['/login-form']);

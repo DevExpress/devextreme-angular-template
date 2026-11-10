@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, signal } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -27,32 +27,32 @@ import { ThemeService } from '../../shared/services/theme.service';
 })
 export class SideNavInnerToolbarComponent implements OnInit {
   @ViewChild(DxScrollViewComponent, { static: true }) scrollView!: DxScrollViewComponent;
-  selectedRoute = '';
+  selectedRoute = signal('');
 
-  menuOpened!: boolean;
-  temporaryMenuOpened = false;
+  menuOpened = signal(false);
+  temporaryMenuOpened = signal(false);
 
   @Input()
   title!: string;
 
-  menuMode: DxDrawerTypes.OpenedStateMode = 'shrink';
-  menuRevealMode: DxDrawerTypes.RevealMode = 'expand';
-  minMenuSize = 0;
-  shaderEnabled = false;
-  swatchClassName = 'dx-swatch-additional';
+  menuMode = signal<DxDrawerTypes.OpenedStateMode>('shrink');
+  menuRevealMode = signal<DxDrawerTypes.RevealMode>('expand');
+  minMenuSize = signal(0);
+  shaderEnabled = signal(false);
+  swatchClassName = signal('dx-swatch-additional');
 
   constructor(protected themeService: ThemeService, private screen: ScreenService, private router: Router) {
     themeService.isDark.subscribe((isDark) => {
-      this.swatchClassName = 'dx-swatch-additional' + (isDark ? '-dark' : '');
+      this.swatchClassName.set('dx-swatch-additional' + (isDark ? '-dark' : ''));
     })
   }
 
   ngOnInit() {
-    this.menuOpened = this.screen.sizes['screen-large'];
+    this.menuOpened.set(this.screen.sizes['screen-large']);
 
     this.router.events.subscribe(val => {
       if (val instanceof NavigationEnd) {
-        this.selectedRoute = val.urlAfterRedirects.split('?')[0];
+        this.selectedRoute.set(val.urlAfterRedirects.split('?')[0]);
       }
     });
 
@@ -65,30 +65,30 @@ export class SideNavInnerToolbarComponent implements OnInit {
     const isXSmall = this.screen.sizes['screen-x-small'];
     const isLarge = this.screen.sizes['screen-large'];
 
-    this.menuMode = isLarge ? 'shrink' : 'overlap';
-    this.menuRevealMode = isXSmall ? 'slide' : 'expand';
-    this.minMenuSize = isXSmall ? 0 : 60;
-    this.shaderEnabled = !isLarge;
+    this.menuMode.set(isLarge ? 'shrink' : 'overlap');
+    this.menuRevealMode.set(isXSmall ? 'slide' : 'expand');
+    this.minMenuSize.set(isXSmall ? 0 : 60);
+    this.shaderEnabled.set(!isLarge);
   }
 
   toggleMenu = (e: DxToolbarTypes.ItemClickEvent) => {
-    this.menuOpened = !this.menuOpened;
+    this.menuOpened.update((opened) => !opened);
     e.event?.stopPropagation();
   }
 
   get hideMenuAfterNavigation() {
-    return this.menuMode === 'overlap' || this.temporaryMenuOpened;
+    return this.menuMode() === 'overlap' || this.temporaryMenuOpened();
   }
 
   get showMenuAfterClick() {
-    return !this.menuOpened;
+    return !this.menuOpened();
   }
 
   navigationChanged(event: DxTreeViewTypes.ItemClickEvent) {
     const path = (event.itemData as any).path;
     const pointerEvent = event.event;
 
-    if (path && this.menuOpened) {
+    if (path && this.menuOpened()) {
       if (event.node?.selected) {
         pointerEvent?.preventDefault();
       } else {
@@ -97,8 +97,8 @@ export class SideNavInnerToolbarComponent implements OnInit {
       }
 
       if (this.hideMenuAfterNavigation) {
-        this.temporaryMenuOpened = false;
-        this.menuOpened = false;
+        this.temporaryMenuOpened.set(false);
+        this.menuOpened.set(false);
         pointerEvent?.stopPropagation();
       }
     } else {
@@ -108,8 +108,8 @@ export class SideNavInnerToolbarComponent implements OnInit {
 
   navigationClick() {
     if (this.showMenuAfterClick) {
-      this.temporaryMenuOpened = true;
-      this.menuOpened = true;
+      this.temporaryMenuOpened.set(true);
+      this.menuOpened.set(true);
     }
   }
 }

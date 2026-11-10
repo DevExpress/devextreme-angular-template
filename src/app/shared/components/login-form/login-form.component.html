@@ -1,5 +1,5 @@
 <form class="login-form" (submit)="onSubmit($event)">
-  <dx-form [formData]="formData" [disabled]="loading">
+  <dx-form [formData]="formData" [disabled]="loading()">
 
     <dxi-form-item dataField="email" editorType="dxTextBox"
       [editorOptions]="{ stylingMode: 'filled', placeholder: 'Email', mode: 'email' }">
@@ -27,7 +27,7 @@
     <ng-container *dxTemplate="let item of 'signInTemplate'">
       <div>
         <span class="dx-button-text">
-          @if (loading) {
+          @if (loading()) {
             <dx-load-indicator width="24px" height="24px" [visible]="true"></dx-load-indicator>
           } @else {
             <div>Sign In</div>

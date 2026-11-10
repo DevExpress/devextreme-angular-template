@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { DxFormModule } from 'devextreme-angular/ui/form';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
@@ -22,7 +22,7 @@ import { AuthService } from '../../services';
   ]
 })
 export class LoginFormComponent {
-  loading = false;
+  loading = signal(false);
   formData: any = {};
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -30,11 +30,11 @@ export class LoginFormComponent {
   async onSubmit(e: Event) {
     e.preventDefault();
     const { email, password } = this.formData;
-    this.loading = true;
+    this.loading.set(true);
 
     const result = await this.authService.logIn(email, password);
     if (!result.isOk) {
-      this.loading = false;
+      this.loading.set(false);
       notify(result.message, 'error', 2000);
     }
   }

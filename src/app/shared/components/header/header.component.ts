@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DxButtonModule } from 'devextreme-angular/ui/button';
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   @Input()
   title!: string;
 
-  user: IUser | null = { email: '' };
+  user = signal<IUser | null>({ email: '' });
 
   userMenuItems = [{
     text: 'Profile',
@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    this.authService.getUser().then((e) => this.user = e.data);
+    this.authService.getUser().then((e) => this.user.set(e.data));
   }
 
   toggleMenu = () => {
