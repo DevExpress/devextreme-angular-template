@@ -35,7 +35,7 @@ export class AuthService {
 
       return {
         isOk: true,
-        data: this._user
+        data: this._user()
       };
     }
     catch {
